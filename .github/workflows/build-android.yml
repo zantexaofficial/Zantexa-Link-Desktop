@@ -68,4 +68,6 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release view "${{ inputs.tag }}" >/dev/null 2>&1 || gh release create "${{ inputs.tag }}" --draft --target main --title "${{ inputs.tag }}" --notes "" || true
-          gh release upload "${{ inputs.tag }}" android/dist/Zantexa Link-*.apk --clobber
+          assets=(android/dist/"Zantexa Link-"*.apk)
+          ((${#assets[@]})) || { echo "No APKs found to upload" >&2; exit 1; }
+          gh release upload "${{ inputs.tag }}" "${assets[@]}" --clobber
