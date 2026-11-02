@@ -53,7 +53,7 @@ static bool FindCamera(ComPtr<IMFActivate>* out = nullptr) {
 
 static HRESULT Camera(ComPtr<IMFVirtualCamera>& vc) {
   wchar_t clsid[64];
-  StringFromGUID2(CLSID_Zantexa LinkVcam, clsid, 64);
+  StringFromGUID2(CLSID_ZantexaLinkVcam, clsid, 64);
   return MFCreateVirtualCamera(MFVirtualCameraType_SoftwareCameraSource, MFVirtualCameraLifetime_System,
     MFVirtualCameraAccess_CurrentUser, VCAM_NAME, clsid, nullptr, 0, &vc);
 }
@@ -138,7 +138,7 @@ static int SelfTest(const wchar_t* dll, int count) {
     GetClass get = (GetClass)GetProcAddress(m, "DllGetClassObject");
     if (!get) return Fail("DllGetClassObject", E_NOINTERFACE);
     ComPtr<IClassFactory> f;
-    hr = get(CLSID_Zantexa LinkVcam, IID_PPV_ARGS(&f));
+    hr = get(CLSID_ZantexaLinkVcam, IID_PPV_ARGS(&f));
     if (FAILED(hr)) return Fail("class", hr);
     hr = f->CreateInstance(nullptr, IID_PPV_ARGS(&act));
     if (FAILED(hr)) return Fail("CreateInstance", hr);

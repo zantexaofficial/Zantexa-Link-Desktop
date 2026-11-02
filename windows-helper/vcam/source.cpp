@@ -1,6 +1,6 @@
 // Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // twindesk-vcam.dll: the virtual camera's media source. Windows' Frame Server makes it through
-// its COM class (CLSID_Zantexa LinkVcam, an IMFActivate) and hands its pictures to every app that
+// its COM class (CLSID_ZantexaLinkVcam, an IMFActivate) and hands its pictures to every app that
 // picks "Zantexa Link Camera": one stream, NV12 1280×720 at 30 fps, made from the newest frame
 // Zantexa Link put in shared memory (vcam.h), black while there's none.
 // Registered once, elevated (regsvr32, windows/scripts/vcam-install.ps1): HKLM, because Frame
@@ -585,7 +585,7 @@ static Factory g_factory;
 
 static void ClsidKey(wchar_t* out, size_t n) {
   wchar_t clsid[64];
-  StringFromGUID2(CLSID_Zantexa LinkVcam, clsid, 64);
+  StringFromGUID2(CLSID_ZantexaLinkVcam, clsid, 64);
   swprintf_s(out, n, L"Software\\Classes\\CLSID\\%s", clsid);
   (void)n;
 }
@@ -605,7 +605,7 @@ HRESULT __stdcall DllCanUnloadNow() { return g_objects == 0 ? S_OK : S_FALSE; }
 HRESULT __stdcall DllGetClassObject(REFCLSID clsid, REFIID riid, void** ppv) {
   if (!ppv) return E_POINTER;
   *ppv = nullptr;
-  if (clsid != CLSID_Zantexa LinkVcam) return CLASS_E_CLASSNOTAVAILABLE;
+  if (clsid != CLSID_ZantexaLinkVcam) return CLASS_E_CLASSNOTAVAILABLE;
   return g_factory.QueryInterface(riid, ppv);
 }
 

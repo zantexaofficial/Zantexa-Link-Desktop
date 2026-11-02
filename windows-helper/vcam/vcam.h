@@ -17,7 +17,7 @@
 #define VCAM_STALE_MS 1500 // no new frame for this long: black
 
 // {36D4122A-6D38-4C6A-B622-E9DD756F6C5D}
-static const GUID CLSID_Zantexa LinkVcam = { 0x36d4122a, 0x6d38, 0x4c6a, { 0xb6, 0x22, 0xe9, 0xdd, 0x75, 0x6f, 0x6c, 0x5d } };
+static const GUID CLSID_ZantexaLinkVcam = { 0x36d4122a, 0x6d38, 0x4c6a, { 0xb6, 0x22, 0xe9, 0xdd, 0x75, 0x6f, 0x6c, 0x5d } };
 
 // A seqlock: the writer makes seq odd, copies the frame, makes it even again; a reader that saw
 // it odd, or changed by the end of its copy, keeps the frame it had.
