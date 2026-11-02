@@ -27,7 +27,7 @@
         rec {
           zantexaLink = pkgs.stdenv.mkDerivation rec {
             pname = "zantexa-link";
-            version = "2.5.0-beta.1";
+            version = "2.5.0";
 
             src = self;
 
@@ -126,7 +126,7 @@ EOF
  "http://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd">
 <policyconfig>
   <vendor>Zantexa Link</vendor>
-  <vendor_url>https://github.com/InukaAsith/TwinDesk</vendor_url>
+  <vendor_url>https://github.com/zantexaofficial/Zantexa-Link-Desktop</vendor_url>
   <action id="org.twindesk.linux.connector">
     <description>Switch a spare display output on for Zantexa Link's Extend</description>
     <message>Zantexa Link wants to switch a spare display output on or off</message>
@@ -177,7 +177,7 @@ EOF
 
             meta = with pkgs.lib; {
               description = "All your computers and your phone, working as one desk";
-              homepage = "https://github.com/InukaAsith/TwinDesk";
+              homepage = "https://github.com/zantexaofficial/Zantexa-Link-Desktop";
               license = licenses.gpl3Only;
               platforms = supportedSystems;
               mainProgram = "zantexa-link";

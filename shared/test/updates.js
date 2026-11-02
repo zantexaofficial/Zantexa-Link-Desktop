@@ -38,7 +38,7 @@ const notes = `## What's Changed
 * Add Homebrew Cask and headless installer by @user in #60
 * Performance **improvements** and \`zero-gc\` latency
 
-Check details at https://github.com/InukaAsith/TwinDesk`;
+Check details at https://github.com/zantexaofficial/Zantexa-Link-Desktop`;
 
 const formatted = formatReleaseNotes(notes);
 assert(formatted.includes('<h4 class="updater-heading">What&#39;s Changed</h4>') || formatted.includes('What&#39;s Changed') || formatted.includes('What\'s Changed'));
@@ -47,7 +47,7 @@ assert(formatted.includes('<span class="updater-mention">@InukaAsith</span>'));
 assert(formatted.includes('<span class="updater-issue">#54</span>'));
 assert(formatted.includes('<strong>improvements</strong>'));
 assert(formatted.includes('<code class="mono">zero-gc</code>'));
-assert(formatted.includes('https://github.com/InukaAsith/TwinDesk') && !formatted.includes('<a '));
+assert(formatted.includes('https://github.com/zantexaofficial/Zantexa-Link-Desktop') && !formatted.includes('<a '));
 
 // HTML escaping verification
 const dirty = '## <script>alert(1)</script>\n* <img src=x onerror=alert(2)>';
@@ -65,6 +65,7 @@ let savedSettings = { updates: { auto: true, notified: '', skipped: '' } };
 let notificationCalled = 0;
 let modalCalled = 0;
 let changed = 0;
+let requestedUrl = '';
 
 const u = new Updates({
   current: '2.3.0',
@@ -78,22 +79,26 @@ const u = new Updates({
   },
   onChange: () => { changed++; },
   onShowModal: () => { modalCalled++; },
-  fetch: async () => ({
-    ok: true,
-    status: 200,
-    json: async () => ({
-      tag_name: 'v2.4.0',
-      name: 'Zantexa Link 2.4.0',
-      body: notes,
-      published_at: '2026-10-27T10:00:00Z',
-      html_url: 'https://github.com/InukaAsith/TwinDesk/releases/tag/v2.4.0',
-      assets: [{ name: 'Zantexa Link-Setup-2.4.0.exe', browser_download_url: 'https://example.invalid/TwinDesk-Setup-2.4.0.exe', size: 1024 }],
-    }),
-  }),
+  fetch: async (url) => {
+    requestedUrl = url;
+    return {
+      ok: true,
+      status: 200,
+      json: async () => ({
+        tag_name: 'v2.4.0',
+        name: 'Zantexa Link 2.4.0',
+        body: notes,
+        published_at: '2026-10-27T10:00:00Z',
+        html_url: 'https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/tag/v2.4.0',
+        assets: [{ name: 'Zantexa Link-Setup-2.4.0.exe', browser_download_url: 'https://example.invalid/TwinDesk-Setup-2.4.0.exe', size: 1024 }],
+      }),
+    };
+  },
 });
 
 (async () => {
   await u.check(true);
+  assert.strictEqual(requestedUrl.split('?')[0], 'https://api.github.com/repos/zantexaofficial/Zantexa-Link-Desktop/releases/latest');
   assert.strictEqual(u.status.available, true);
   assert.strictEqual(u.status.latest, '2.4.0');
   assert.strictEqual(u.status.skipped, false);

@@ -59,7 +59,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: twindesk-linux-x64
-          path: linux/dist/Zantexa Link-*
+          path: linux/dist/Zantexa-Link-*
 
       # Straight onto the release, no download and re-upload.
       - name: Upload to the release

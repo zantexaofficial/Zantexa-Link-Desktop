@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <a href="#download"><b>⬇️ Download 2.4</b></a> ·
+  <a href="#download"><b>⬇️ Download 2.5.0</b></a> ·
   <a href="https://twin-desk.vercel.app"><b>Website</b></a> ·
   <a href="#-new-in-23"><b>What's new</b></a> ·
   <a href="#-get-started"><b>Get started</b></a> ·
@@ -19,13 +19,13 @@
 </p>
 
 <p align="center">
-  <img alt="Version" src="https://img.shields.io/github/v/release/InukaAsith/TwinDesk?label=version&color=4b8bff">
+  <img alt="Version" src="https://img.shields.io/github/v/release/zantexaofficial/Zantexa-Link-Desktop?label=version&color=4b8bff">
   <img alt="macOS 13+" src="https://img.shields.io/badge/macOS-13%2B-black">
   <img alt="Windows 10/11" src="https://img.shields.io/badge/Windows-10%20%7C%2011-0078d4">
   <img alt="Linux X11 and Wayland" src="https://img.shields.io/badge/Linux-X11%20%7C%20Wayland-f0a30a">
   <img alt="Android 10+" src="https://img.shields.io/badge/Android-10%2B-3ddc84">
   <img alt="License: GPL-3.0" src="https://img.shields.io/badge/license-GPL--3.0-blue">
-  <a href="https://github.com/inukaasith/twindesk/releases"><img src="https://img.shields.io/github/downloads/inukaasith/twindesk/total" alt="Downloads"></a>
+  <a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases"><img src="https://img.shields.io/github/downloads/zantexaofficial/Zantexa-Link-Desktop/total" alt="Downloads"></a>
 </p>
 
 <p align="center">
@@ -96,25 +96,25 @@ X11 and Wayland · shared folders through Samba · the phone app page by page ·
 
 **🍎 macOS**<br><sub>13 Ventura or later</sub>
 
-<a href="https://github.com/InukaAsith/TwinDesk/releases/download/v2.4.0/TwinDesk-2.4.0-arm64.dmg"><img src="https://img.shields.io/badge/Apple_Silicon-.dmg-000000?style=for-the-badge" alt="macOS, Apple Silicon"></a><br>
-<a href="https://github.com/InukaAsith/TwinDesk/releases/download/v2.4.0/TwinDesk-2.4.0-x64_Intel.dmg"><img src="https://img.shields.io/badge/Intel-.dmg-555555?style=for-the-badge" alt="macOS, Intel"></a>
+<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.0/Zantexa%20Link-2.5.0-arm64.dmg"><img src="https://img.shields.io/badge/Apple_Silicon-.dmg-000000?style=for-the-badge" alt="macOS, Apple Silicon"></a><br>
+<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.0/Zantexa%20Link-2.5.0-x64.dmg"><img src="https://img.shields.io/badge/Intel-.dmg-555555?style=for-the-badge" alt="macOS, Intel"></a>
 
 </td>
 <td width="25%" align="center" valign="top">
 
 **🪟 Windows**<br><sub>10 and 11</sub>
 
-<a href="https://github.com/InukaAsith/TwinDesk/releases/download/v2.4.0/TwinDesk-Setup-2.4.0.exe"><img src="https://img.shields.io/badge/x64-Installer-0078d4?style=for-the-badge" alt="Windows, x64"></a><br>
-<a href="https://github.com/InukaAsith/TwinDesk/releases/download/v2.4.0/TwinDesk-Setup-2.4.0-arm64.exe"><img src="https://img.shields.io/badge/ARM64-Installer-005a9e?style=for-the-badge" alt="Windows on ARM"></a>
+<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.0/Zantexa-Link-Setup-2.5.0.exe"><img src="https://img.shields.io/badge/x64-Installer-0078d4?style=for-the-badge" alt="Windows, x64"></a><br>
+<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.0/Zantexa-Link-Setup-2.5.0-arm64.exe"><img src="https://img.shields.io/badge/ARM64-Installer-005a9e?style=for-the-badge" alt="Windows on ARM"></a>
 
 </td>
 <td width="25%" align="center" valign="top">
 
 **🐧 Linux**<br><sub>X11 and Wayland, x86_64</sub>
 
-<a href="https://github.com/InukaAsith/TwinDesk/releases/download/v2.4.0/TwinDesk-2.4.0-amd64.deb"><img src="https://img.shields.io/badge/Debian_·_Ubuntu-.deb-d70a53?style=for-the-badge" alt="Linux, .deb"></a><br>
-<a href="https://github.com/InukaAsith/TwinDesk/releases/download/v2.4.0/TwinDesk-2.4.0-x86_64.AppImage"><img src="https://img.shields.io/badge/Any_distro-AppImage-f0a30a?style=for-the-badge" alt="Linux, AppImage"></a><br>
-<a href="https://github.com/InukaAsith/TwinDesk/releases/download/v2.4.0/twindesk-bin-2.4.0-1-x86_64.pkg.tar.zst"><img src="https://img.shields.io/badge/Arch-pkg.tar.zst-1793d1?style=for-the-badge" alt="Linux, Arch package"></a><br>
+<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.0/Zantexa-Link-2.5.0-x64.deb"><img src="https://img.shields.io/badge/Debian_·_Ubuntu-.deb-d70a53?style=for-the-badge" alt="Linux, .deb"></a><br>
+<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.0/Zantexa-Link-2.5.0-x64.AppImage"><img src="https://img.shields.io/badge/Any_distro-AppImage-f0a30a?style=for-the-badge" alt="Linux, AppImage"></a><br>
+<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.0/twindesk-bin-2.5.0-1-x86_64.pkg.tar.zst"><img src="https://img.shields.io/badge/Arch-pkg.tar.zst-1793d1?style=for-the-badge" alt="Linux, Arch package"></a><br>
 <sub>NixOS: <code>nix run .</code> from a checkout (<a href="#nixos--nix-flakes">more</a>)</sub>
 
 </td>
@@ -122,8 +122,8 @@ X11 and Wayland · shared folders through Samba · the phone app page by page ·
 
 **🤖 Android**<br><sub>10 or later, phones and tablets</sub>
 
-<a href="https://github.com/InukaAsith/TwinDesk/releases/download/v2.4.0/TwinDesk-2.4.0.apk"><img src="https://img.shields.io/badge/Phone_app-.apk-3ddc84?style=for-the-badge" alt="Android app"></a><br>
-<a href="https://github.com/InukaAsith/TwinDesk/releases/download/v2.4.0/TwinDesk-2.4.0-full.apk"><img src="https://img.shields.io/badge/Full_app-.apk-1b8a4c?style=for-the-badge" alt="Android full app"></a><br>
+<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.0/Zantexa%20Link-2.5.0.apk"><img src="https://img.shields.io/badge/Phone_app-.apk-3ddc84?style=for-the-badge" alt="Android app"></a><br>
+<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.0/Zantexa%20Link-2.5.0-full.apk"><img src="https://img.shields.io/badge/Full_app-.apk-1b8a4c?style=for-the-badge" alt="Android full app"></a><br>
 <sub>The full app adds notifications, texts and Accessibility; the computer can install it for you over wireless debugging</sub>
 
 </td>
@@ -179,7 +179,7 @@ Zantexa Link**, tap **⋮ › Allow restricted settings**, then turn them on.
 
 </details>
 
-<p align="center"><sub>Every file and older version is on the <a href="https://github.com/InukaAsith/TwinDesk/releases">releases page</a>.</sub></p>
+<p align="center"><sub>Every file and older version is on the <a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases">releases page</a>.</sub></p>
 
 ---
 
@@ -221,7 +221,7 @@ Thanks to everyone who sent pull requests for this release: see [Thanks](#thanks
 
 <sub>Older releases: 2.2 brought [Zantexa Link Mesh](#-zantexa-link-mesh-every-device-at-once), 2.1 brought
 [Bluetooth and Wi-Fi Direct](#-connections) and the phone's [calls, texts, photos and files](#-calls-and-messages).
-Every release's notes are on the [releases page](https://github.com/InukaAsith/TwinDesk/releases).</sub>
+Every release's notes are on the [releases page](https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases).</sub>
 
 ---
 
@@ -471,7 +471,7 @@ computers** (off until you want it), on the Overview and in General.
   <img src=".github/assets/tour.gif" alt="A tour of the Zantexa Link window" width="820">
 </p>
 
-1. **Download** Zantexa Link for each computer and your phone ([above](#download), or from the [releases](https://github.com/InukaAsith/TwinDesk/releases/latest)).
+1. **Download** Zantexa Link for each computer and your phone ([above](#download), or from the [releases](https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/latest)).
 2. **Open it on both.** They find each other on the same network, over Bluetooth, or over a USB cable for a phone.
 3. **Pair once** by comparing a code (on a USB cable, just click Allow). From then on they connect by themselves.
 4. **Turn on what you want.** Each feature has a tab with a switch, and shows what it does until you turn it on.
@@ -664,8 +664,8 @@ npm start                       # run from source
 npm run dist && npm run dmg     # build Zantexa Link.app and Zantexa Link-<version>-<arch>.dmg in mac/dist/
 ```
 
-The disk image is named after the app inside it: `Zantexa Link-2.4.0-arm64.dmg` for Apple Silicon,
-`Zantexa Link-2.4.0-x64.dmg` for Intel. Keep those names on a release: the in-app updater picks the
+The disk image is named after the app inside it: `Zantexa Link-2.5.0-arm64.dmg` for Apple Silicon,
+`Zantexa Link-2.5.0-x64.dmg` for Intel. Keep those names on a release: the in-app updater picks the
 one for each Mac by them.
 
 By default, `npm run dist` targets the Mac's current architecture. To build an Intel

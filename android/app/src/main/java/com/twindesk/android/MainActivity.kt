@@ -1586,11 +1586,11 @@ private fun AboutPage(core: Core, v: Int) {
     MacCard("Made by") {
         MacRow("Babar Ali", "", first = true)
         MacRow("Source code", "Zantexa Link project repository") { Secondary("GitHub") { open("https://github.com/Babar-Ali-Arain/TwinDesk") } }
-        MacRow("Releases", "New versions for every platform") { Secondary("Open") { open("https://github.com/InukaAsith/TwinDesk/releases") } }
+        MacRow("Releases", "New versions for every platform") { Secondary("Open") { open("https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases") } }
     }
     MacCard("License") {
         MacRow("GNU General Public License v3", "Free and open source. Copyright © 2026 inukaasith", first = true) {
-            Secondary("Read") { open("https://github.com/InukaAsith/TwinDesk/blob/main/LICENSE") }
+            Secondary("Read") { open("https://github.com/zantexaofficial/Zantexa-Link-Desktop/blob/main/LICENSE") }
         }
         MacRow("Screen, input and sound over wireless debugging", "scrcpy-server (Apache-2.0)")
         MacRow("Network", "OkHttp (Apache-2.0)")

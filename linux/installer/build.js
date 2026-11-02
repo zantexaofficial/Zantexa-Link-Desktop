@@ -91,7 +91,7 @@ async function main() {
   fs.writeFileSync(path.join(STAGE, 'package.json'), JSON.stringify({
     name: 'zantexa-link', productName: pkg.productName, version: pkg.version, description: pkg.description,
     license: pkg.license, author: { name: 'Zantexa', email: 'zantexa.official@gmail.com' },
-    homepage: 'https://github.com/InukaAsith/TwinDesk', main: 'linux/main.js', dependencies: pkg.dependencies,
+    homepage: 'https://github.com/zantexaofficial/Zantexa-Link-Desktop', main: 'linux/main.js', dependencies: pkg.dependencies,
   }, null, 2));
 
   console.log('Packaging…');

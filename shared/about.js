@@ -9,9 +9,9 @@ const os = require('os');
 const fs = require('fs');
 
 const LINKS = {
-  github: 'https://github.com/InukaAsith/TwinDesk',
-  releases: 'https://github.com/InukaAsith/TwinDesk/releases',
-  licence: 'https://github.com/InukaAsith/TwinDesk/blob/main/LICENSE',
+  github: 'https://github.com/zantexaofficial/Zantexa-Link-Desktop',
+  releases: 'https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases',
+  licence: 'https://github.com/zantexaofficial/Zantexa-Link-Desktop/blob/main/LICENSE',
 };
 
 const NAME = { darwin: 'Zantexa Link for macOS', win32: 'Zantexa Link for Windows', linux: 'Zantexa Link for Linux' };

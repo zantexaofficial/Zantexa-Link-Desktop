@@ -1,7 +1,7 @@
 {
   "name": "macshare-win",
   "productName": "Zantexa Link",
-  "version": "2.5.0-beta.1",
+  "version": "2.5.0",
   "description": "Zantexa Link for Windows: pair with a Mac, view its screen, share mouse, keyboard and clipboard.",
   "license": "GPL-3.0",
   "private": true,

@@ -38,8 +38,13 @@ jobs:
       - name: Signing key
         env:
           KEYSTORE: ${{ secrets.ANDROID_KEYSTORE }}
+          RELEASE_TAG: ${{ inputs.tag }}
         run: |
           if [ -z "$KEYSTORE" ]; then
+            if [ -n "$RELEASE_TAG" ]; then
+              echo "::error::Set the ANDROID_KEYSTORE repository secret before publishing an Android release"
+              exit 1
+            fi
             echo "::warning::No ANDROID_KEYSTORE secret: signed with the runner's debug key"
           else
             mkdir -p ~/.android
