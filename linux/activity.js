@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // ReZume here (shared/rezume.js): what is in use in the window in front. X11: the helper names
 // it (activeWindow: class, title); Wayland has no such query, and the accessibility bus (AT-SPI, on
 // by default on GNOME and KDE) says which window is active. A browser's address comes from its

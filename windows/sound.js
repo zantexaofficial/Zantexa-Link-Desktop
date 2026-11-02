@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Audio both ways: its own peer connections in a hidden
 // window, independent of the screen. Mac → PC: we answer `audio.offer {dir:'m2w'}` while "Play the
 // Mac's sound" is on (our `audio.policy`). PC → Mac: we offer `dir:'w2m'` while "Send this PC's

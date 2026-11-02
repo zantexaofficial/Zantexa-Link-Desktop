@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The phone window's bridge to main: video, size, sound and status in; input out.
 'use strict';
 

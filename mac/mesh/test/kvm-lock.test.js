@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The Mac's cursor lock (shared/cursorlock.js) with a computer AND a phone connected, set up as
 // kvm-edges.test.js. Locked, the pointer stays where it is: at home no edge crosses, driving the device
 // we drive is told (kvm.lock; the phone bridge keeps the pointer at the phone's edge), driven the edges

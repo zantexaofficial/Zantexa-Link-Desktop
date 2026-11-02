@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Share screen (copy of windows/pcscreen.js): this computer's
 // screen in a window on the other one. Mirror = one existing monitor; Extend = the virtual monitor
 // (vdd.js). On X11 each monitor is a desktopCapturer source; on Wayland the desktop's portal asks

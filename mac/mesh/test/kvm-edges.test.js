@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // The Mac's cursor edges with a computer AND a phone connected at the same time (docs/mesh.md,
 // "Cursor and keyboard"). Real Server, Pairing, LinkManager, Hub and Kvm on loopback. The computer B
 // is a real node (it dials this Mac). The phone is a raw client that is paired on this Mac (its record

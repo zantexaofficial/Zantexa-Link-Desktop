@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Bluetooth LE and Wi-Fi Direct commands (Ble.cs, Wfd.cs), for a device that isn't on this PC's
 // network. Handled on the reader thread, not the main one: the session's bytes go through here and
 // the hooks on the main thread never wait for them; bleSend keeps its order.

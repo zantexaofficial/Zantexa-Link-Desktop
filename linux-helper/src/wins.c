@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Top-level windows for Apps (linux/pcapps.js, the same commands as windows-helper): `windows`
 // lists the desktop's app windows (EWMH _NET_CLIENT_LIST) and the menus / pop-ups on screen
 // (override-redirect windows), with their process, class, title and place in physical pixels;

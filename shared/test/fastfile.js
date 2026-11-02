@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Tests for shared/fastfile.js: a host and a guest in one process, a real HTTPS server (a
 // throwaway self-signed certificate from openssl), files both ways, file.end waiting for the last
 // bytes, and the cases that must fall back to file.chunk.

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Mac apps on this computer (copy of windows/apps.js), main-process
 // side: the app list and launching for the Apps tab, and the per-app windows. Those windows are
 // opened by the Monitor 2 renderer (window.open, so they can show the same video stream, cropped);
@@ -100,7 +100,7 @@ class Apps {
     return crypto.createHash('sha1').update(id).digest('hex').slice(0, 10);
   }
 
-  // How this copy of TwinDesk opens one Mac app.
+  // How this copy of Zantexa Link opens one Mac app.
   static command(id) {
     const base = process.env.APPIMAGE ? [process.env.APPIMAGE] : app.isPackaged ? [process.execPath] : [process.execPath, app.getAppPath()];
     return base.concat('--mac-app=' + id);
@@ -117,7 +117,7 @@ class Apps {
   // The name of a Mac app we made a launcher for earlier (the list isn't loaded yet at start).
   _shortcutName(id) {
     try {
-      const m = /^X-TwinDesk-Name=(.*)$/m.exec(fs.readFileSync(this._desktopFile(id), 'utf8'));
+      const m = /^X-ZantexaLink-Name=(.*)$/m.exec(fs.readFileSync(this._desktopFile(id), 'utf8'));
       return m ? m[1] : '';
     } catch (_) { return ''; }
   }
@@ -136,10 +136,10 @@ class Apps {
       fs.writeFileSync(this._desktopFile(id), [
         '[Desktop Entry]', 'Type=Application',
         'Name=' + clean(a.name),
-        'Comment=' + clean(a.name + ' on ' + this.peerName() + ' (TwinDesk)'),
+        'Comment=' + clean(a.name + ' on ' + this.peerName() + ' (Zantexa Link)'),
         'Exec=' + Apps.command(id).map(q).join(' '),
         ...(icon ? ['Icon=' + icon] : []),
-        'Terminal=false', 'Categories=Network;RemoteAccess;', 'X-TwinDesk-Name=' + clean(a.name), '',
+        'Terminal=false', 'Categories=Network;RemoteAccess;', 'X-ZantexaLink-Name=' + clean(a.name), '',
       ].join('\n'));
     } catch (e) {
       this.message = 'Couldn’t add ' + a.name + ' to the app menu: ' + e.message;

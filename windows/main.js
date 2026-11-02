@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Main process: lifecycle, windows, tray, IPC and the state pushed to the main window.
 const { app, BrowserWindow, Tray, Menu, nativeImage, nativeTheme, Notification, shell, globalShortcut } = require('electron');
 const { Updates } = require('../shared/updates.js');
@@ -68,7 +68,7 @@ app.commandLine.appendSwitch('disable-features', 'WebRtcHideLocalIpsWithMdns');
 // (jitterBufferTarget). FlexFEC repairs lost packets without a resend round trip; it costs bandwidth
 // only while packets are lost. The Mac sets the same trials.
 app.commandLine.appendSwitch('force-fieldtrials', 'WebRTC-ForceSendPlayoutDelay/min_ms:0,max_ms:0/WebRTC-FlexFEC-03/Enabled/WebRTC-FlexFEC-03-Advertised/Enabled/');
-// Renamed MacShare → TwinDesk: settings, pairing and keys stay in the folder they've always been
+// Renamed MacShare → Zantexa Link: settings, pairing and keys stay in the folder they've always been
 // in (Electron would follow the new product name). A dev copy's --user-data-dir still wins.
 if (!app.commandLine.hasSwitch('user-data-dir')) app.setPath('userData', path.join(app.getPath('appData'), 'MacShare'));
 require('../shared/applog.js').start(app); // console.* and crashes into the log folder, both apps
@@ -79,10 +79,10 @@ if (!app.requestSingleInstanceLock()) {
 } else {
   Menu.setApplicationMenu(null); // its accelerators would steal keys meant for the Mac
   app.setAppUserModelId(AUMID); // toasts need it; the installer's shortcut carries the same id
-  // A pinned Mac app starts "TwinDesk.exe --mac-app=<id>": open it, else show the window.
-  // twindesk: links (a toast's Copy, Explorer's TwinDesk menu) come to this copy of TwinDesk.
-  if (app.isPackaged) app.setAsDefaultProtocolClient('twindesk');
-  else app.setAsDefaultProtocolClient('twindesk', process.execPath, [path.resolve(process.argv[1] || '.')]);
+  // A pinned Mac app starts "Zantexa Link.exe --mac-app=<id>": open it, else show the window.
+  // zantexalink: links (a toast's Copy, Explorer's Zantexa Link menu) come to this copy.
+  if (app.isPackaged) app.setAsDefaultProtocolClient('zantexalink');
+  else app.setAsDefaultProtocolClient('zantexalink', process.execPath, [path.resolve(process.argv[1] || '.')]);
   app.on('second-instance', (_e, argv) => {
     if (openLink(argv)) return;
     if (sendTo && sendTo.handle(argv)) return; // Explorer › Send to
@@ -91,11 +91,11 @@ if (!app.requestSingleInstanceLock()) {
   app.whenReady().then(start);
 }
 
-// twindesk:copy?code=… (a one-time code's Copy on a toast), twindesk:open?app=… (the toast itself:
-// the app on the phone), twindesk:go?tab=… (a page). True: it was one of them.
+// zantexalink:copy?code=… (a one-time code's Copy on a toast), zantexalink:open?app=… (the toast:
+// the app on the phone), zantexalink:go?tab=… (a page). True: it was one of them.
 function openLink(argv) {
-  if (explorer && explorer.handle(argv)) return true; // Explorer's TwinDesk › Import / Capture from phone
-  const a = (argv || []).find((x) => /^twindesk:/i.test(String(x)));
+  if (explorer && explorer.handle(argv)) return true; // Explorer's Zantexa Link › Import / Capture from phone
+  const a = (argv || []).find((x) => /^zantexalink:/i.test(String(x)));
   if (!a) return false;
   let u;
   try { u = new URL(a); } catch (_) { return true; }
@@ -149,7 +149,7 @@ let sendTo = null;
 let pairSync = null;
 let fileRecv = null;
 let notifs = null;
-let explorer = null; // Explorer's right-click › TwinDesk (explorer.js)
+let explorer = null; // Explorer's right-click › Zantexa Link (explorer.js)
 let devctl = null; // Overview's controls of the other device, and this PC's for it (shared/devctl.js)
 let chats = null; // Messages' chat apps from a phone, kept per phone (shared/chats.js)
 let fileClip = null;
@@ -465,7 +465,7 @@ function startPhone(server, pairing) {
   phoneViews.on('change', pushState);
   // Remote off: its page hears so; on, PhoneRemote answers instead.
   pl.on(`t:${P.T.REMOTE_HELLO}`, () => !phoneRemote && pl.current && pl.current.os === P.OS.ANDROID
-    && pl.sendToClient({ t: P.T.REMOTE_STATE, allowed: false, off: true, why: 'Remote is off on this computer: turn it on in TwinDesk’s Remote page there' }));
+    && pl.sendToClient({ t: P.T.REMOTE_STATE, allowed: false, off: true, why: 'Remote is off on this computer: turn it on in Zantexa Link’s Remote page there' }));
   loadRemote();
   viaWifi(phoneViews, 'openScreen', 'phone');
   viaWifi(phoneViews, 'openApp', 'phone');
@@ -884,7 +884,7 @@ function openMacAppArg(argv) {
   return true;
 }
 
-// A pinned phone app starts "TwinDesk.exe --phone-app=<package>": open it once the phone's
+// A pinned phone app starts "Zantexa Link.exe --phone-app=<package>": open it once the phone's
 // wireless debugging is ready (connecting a paired phone nearby first, if none is connected).
 let pendingPhoneApp = null; // {pkg, until}
 let pendingView = null; // a phone window waiting for wireless debugging (phoneViews.onNoAdb)
@@ -901,7 +901,7 @@ function openPhoneApp(pkg) {
   const first = !pendingPhoneApp;
   pendingPhoneApp = { pkg, until: (pendingPhoneApp && pendingPhoneApp.until) || Date.now() + 2 * 60 * 1000 };
   if (first && hud) hud.show('home', 'Opening it when the phone is ready…');
-  // Until then, every 2 s: the phone may not be up (TwinDesk just started) or nearby yet.
+  // Until then, every 2 s: the phone may not be up (Zantexa Link just started) or nearby yet.
   clearTimeout(openPhoneApp.timer);
   if (Date.now() > pendingPhoneApp.until) return (pendingPhoneApp = null);
   if (phone && !phone.connected && !phone.connecting) {
@@ -1029,7 +1029,7 @@ function buildState() {
     pcScreen: pcScreen.view(),
     pcApps: pcApps.view(),
     macApps: settings.macApps,
-    terminal: { ...settings.terminal, ...(terminal ? terminal.view() : { status: 'off', message: '', command: 'ssh twindesk' }), installedKey: undefined, server: sshd.view() },
+    terminal: { ...settings.terminal, ...(terminal ? terminal.view() : { status: 'off', message: '', command: 'ssh zantexa-link' }), installedKey: undefined, server: sshd.view() },
     files: { ...settings.files, importTo: explorer ? explorer.view : null, ...fileDrop.view(), received: receivedDir(settings, app.getPath('downloads')), smb: smb.view(), incoming: fileRecv.view(), drag: kvm.dragRecv.view(), macDrags: kvm.peerDrags, clip: fileClip.view() },
     notifs: { ...settings.notifs, ...notifs.view() },
     chats: chats ? chats.view() : null, // Messages' WhatsApp, Instagram… conversations
@@ -1062,7 +1062,7 @@ function qrPairView() {
   const addrs = ownAddresses().filter((a) => isIPv4(a)).slice(0, 4);
   if (!port || !addrs.length) return { url: '', why: !addrs.length ? 'No network' : 'Starting…' };
   const q = new URLSearchParams({ id: device.id, n: device.name, a: addrs.join(','), p: String(port), k: qrPair.nonce });
-  return { url: 'twindesk://pair?' + q.toString(), until: qrPair.until };
+  return { url: 'zantexalink://pair?' + q.toString(), until: qrPair.until };
 }
 // Connection › Wireless debugging › Pair with a QR code (shared/adbqr.js): on while shown.
 let adbQr = null;
@@ -1164,7 +1164,7 @@ function createMainWindow(tab) {
     y: b.y,
     minWidth: 720,
     minHeight: 480,
-    title: 'TwinDesk',
+    title: 'Zantexa Link',
     icon: path.join(__dirname, 'assets', 'icon.png'),
     backgroundColor: nativeTheme.shouldUseDarkColors ? '#2b2b2e' : '#e9e9ee',
     show: false,
@@ -1235,7 +1235,7 @@ function checkTaskbar() {
 
 function createTray() {
   tray = new Tray(trayIcon());
-  tray.setToolTip('TwinDesk');
+  tray.setToolTip('Zantexa Link');
   tray.on('click', showMain);
   checkTaskbar();
   updateTray();
@@ -1250,7 +1250,7 @@ function updateTray(s = buildState()) {
   const sharing = s.pcScreen.mode !== 'off';
   const found = s.found.filter((d) => !s.peer || d.id !== s.peer.id);
   const rtt = connected && s.link.rtt != null ? ' · ' + s.link.rtt + ' ms' : '';
-  tray.setToolTip('TwinDesk: ' + statusLine(s));
+  tray.setToolTip('Zantexa Link: ' + statusLine(s));
   // Rebuild only when something in the menu changed (state pushes are frequent).
   const watching = screen.sentAccept === true;
   const host = s.paired && s.paired.macName;
@@ -1296,7 +1296,7 @@ function updateTray(s = buildState()) {
     lookAgain: () => discovery.probe(),
     again: again ? { label: (s.link.busy ? 'Take Over ' : 'Connect to ') + host, click: () => link.connect(true) } : null,
     disconnect: connected ? { label: 'Disconnect ' + name, click: () => link.disconnect() } : null,
-    update: s.updates && s.updates.available ? { label: 'Download TwinDesk ' + s.updates.latest + '…', click: showUpdateWindow } : null,
+    update: s.updates && s.updates.available ? { label: 'Download Zantexa Link ' + s.updates.latest + '…', click: showUpdateWindow } : null,
     rezume: rezumeItems(),
     open: showMain,
     log: () => require('../shared/applog.js').open(),

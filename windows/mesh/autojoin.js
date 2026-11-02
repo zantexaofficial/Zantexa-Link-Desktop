@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Joining everyone (docs/mesh.md "Joining everyone", protocol in shared/intro.js): this PC introduces
 // two devices it is connected to when they are not linked to each other (introducer), makes a pairing
 // for a device its trusted peer vouches for (host), and stores a grant it receives (guest).

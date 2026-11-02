@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The phone window: decodes the phone's H.264 (WebCodecs, Annex B with SPS/PPS in band) onto a
 // canvas, plays its sound (raw 48 kHz stereo PCM through pcm-worklet.js), and turns this
 // computer's mouse, touchpad and keyboard into the phone's touches, scrolls and keys (port of

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // A drag from the other computer across the edge while it drives this computer: `drag.start`
 // (the whole tree), then `file.offer {drop:'drag', rel}` for every file. Port of
 // windows/dragrecv.js as a drop into a folder: a Linux desktop lets only the app under a pressed

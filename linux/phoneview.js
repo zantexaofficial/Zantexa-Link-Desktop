@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The phone in windows on this computer: its screen (mirror, with its sound), and phone apps each in a
 // window of their own on a virtual display of the window's size (scrcpy new_display + flex, so
 // resizing the window resizes the app). One scrcpy session per window (scrcpy.js); the window
@@ -167,7 +167,7 @@ class PhoneViews extends EventEmitter {
   }
 
   cameraState() {
-    if (!this.cameraOn) return { on: false, facing: null, error: 'Camera is off on this computer: turn it on in TwinDesk’s Camera tab there', virtual: false };
+    if (!this.cameraOn) return { on: false, facing: null, error: 'Camera is off on this computer: turn it on in Zantexa Link’s Camera tab there', virtual: false };
     const v = [...this.views.values()].find((x) => x.kind === 'camera' && !x.ending);
     return { on: !!v, facing: v ? v.facing : null, error: v ? v.error || '' : '', virtual: !!(this.vcam && this.vcam.ready) };
   }

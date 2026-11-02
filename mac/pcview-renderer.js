@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // PC-screen viewer: answers the PC's rtc2 offer (recvonly) and plays it at the lowest
 // latency (jitter buffer target 0, H.264 decoded by VideoToolbox); sends mouse input over the drawn
 // picture as in.* (normalized 0–1, semantics). Keys are sent by main.

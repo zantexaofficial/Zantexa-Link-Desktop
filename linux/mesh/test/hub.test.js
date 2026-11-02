@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // The hub (windows/hub.js) on real sockets: real Server, Pairing and LinkManager per node, the real
 // pairing protocol, a shared Mesh per node, and the pooled features (Clip, Notifs) over the hub's bus.
 // Run with: node linux/mesh/test/hub.test.js  (NODE_PATH and ELECTRON_OVERRIDE_DIST_PATH as in CI)
@@ -79,7 +79,7 @@ async function world(names, pairs, { clip = false, notifs = false } = {}) {
         settings: n.settings,
         save: () => {},
         spawn: require('./support/fake-net.js').fakeMonitor().spawn, // no real dbus-monitor in tests
-        selfIds: ['TwinDesk.test'],
+        selfIds: ['Zantexa Link.test'],
         peerName: () => '',
         onChange: () => {},
         onClick: () => {},

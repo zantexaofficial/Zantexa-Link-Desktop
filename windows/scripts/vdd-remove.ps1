@@ -1,4 +1,4 @@
-# TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+# Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 # Run elevated (vdd.js): removes the Extend tasks and — only if MacShare installed it —
 # the Virtual Display Driver device and driver package. C:\VirtualDisplayDriver is left alone.
 param([Parameter(Mandatory = $true)][string]$Log)

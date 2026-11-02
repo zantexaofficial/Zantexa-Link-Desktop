@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The call window's API (callwin.js): its state, and Answer / Decline / End / Mute / where the sound is.
 'use strict';
 

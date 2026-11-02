@@ -1,5 +1,5 @@
 #!/bin/sh
-# TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+# Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 # Builds bin/macshare-linuxhelper. Needs gcc and the X11 dev packages, and GLib for Bluetooth:
 #   sudo apt install build-essential libx11-dev libxi-dev libxtst-dev libxrandr-dev libxfixes-dev libglib2.0-dev
 # Without GLib it builds anyway, without Bluetooth (ble.c says so to every ble* command).

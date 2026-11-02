@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The phone's sound on this PC as its Bluetooth speaker (Audio › Play phone sound here
 // (Bluetooth), windows/btaudio.js): Windows' AudioPlaybackConnection (Windows 10 2004 and later)
 // takes a paired phone's A2DP audio and plays it on the default output, and the phone sends its

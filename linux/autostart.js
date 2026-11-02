@@ -1,6 +1,6 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // "Open at login": an XDG autostart entry, ~/.config/autostart/twindesk.desktop, that
-// starts TwinDesk in the tray (--hidden). It starts the AppImage itself when run from one (its
+// starts Zantexa Link in the tray (--hidden). It starts the AppImage itself when run from one (its
 // path is in $APPIMAGE), else the installed binary, else (development) electron with this folder.
 'use strict';
 
@@ -13,7 +13,7 @@ const file = () => path.join(process.env.XDG_CONFIG_HOME || path.join(os.homedir
 const quote = (s) => (/^[\w@%+=:,./-]+$/.test(s) ? s : '"' + String(s).replace(/(["`$\\])/g, '\\$1') + '"');
 
 function command() {
-  if (process.env.TWINDESK_BIN) return [process.env.TWINDESK_BIN, '--hidden'];
+  if (process.env.ZANTEXA_LINK_BIN) return [process.env.ZANTEXA_LINK_BIN, '--hidden'];
   if (process.env.APPIMAGE) return [process.env.APPIMAGE, '--hidden'];
   if (app.isPackaged) return [process.execPath, '--hidden'];
   return [process.execPath, app.getAppPath(), '--hidden'];
@@ -38,10 +38,10 @@ function set(on) {
   fs.writeFileSync(f, [
     '[Desktop Entry]',
     'Type=Application',
-    'Name=TwinDesk',
+    'Name=Zantexa Link',
     'Comment=Share mouse, keyboard, clipboard and screens with your other computer',
     'Exec=' + command().map(quote).join(' '),
-    'Icon=twindesk',
+    'Icon=zantexa-link',
     'Terminal=false',
     'X-GNOME-Autostart-enabled=true',
     '',

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The phone's media controls (Mac, PC and Linux), on the right of the Phone page's card:
 // what plays there (its art, title, artist and app), Previous, Play/Pause, Next and where it is,
 // only while something plays (and a few minutes after a pause). Audio › Media controls on the Phone page
@@ -19,7 +19,7 @@ UI.mediaControlsRow = () => {
       sw.set(on);
       const m = s.phoneMedia;
       row.setHint(on && m && m.why === 'listener'
-        ? 'Needs the full TwinDesk app on the phone, with its notification access on'
+        ? 'Needs the full Zantexa Link app on the phone, with its notification access on'
         : 'What plays on a connected phone, with Play, Pause, Next and Previous, on the Phone page while it plays');
     },
   };
@@ -55,7 +55,7 @@ UI.phoneAudioCard = () => {
       media.set(a.phoneMedia !== false);
       const m = s.phoneMedia;
       mediaRow.setHint(m && m.why === 'listener' && a.phoneMedia !== false
-        ? 'Needs the full TwinDesk app on {name}, with its notification access on'
+        ? 'Needs the full Zantexa Link app on {name}, with its notification access on'
         : 'What plays on {name}, with Play, Pause, Next and Previous, on the Phone page while it plays');
     },
   };

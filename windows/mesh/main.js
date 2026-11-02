@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Main process with Multi-device on (docs/multi-device.md): ../main.js starts this file instead of its
 // own code when multi.json says so. Lifecycle, windows, tray, IPC and the state pushed to the main
 // window, as ../main.js, over the mesh (hub.js) instead of one peer. When a fix in ../main.js applies
@@ -74,7 +74,7 @@ if (!app.requestSingleInstanceLock()) {
 } else {
   Menu.setApplicationMenu(null); // its accelerators would steal keys meant for the Mac
   app.setAppUserModelId(AUMID); // toasts need it; the installer's shortcut carries the same id
-  // A pinned Mac app starts "TwinDesk.exe --mac-app=<id>": open it, else show the window.
+  // A pinned Mac app starts "Zantexa Link.exe --mac-app=<id>": open it, else show the window.
   app.on('second-instance', (_e, argv) => {
     if (sendTo && sendTo.handle(argv)) return; // Explorer › Send to
     if (!openMacAppArg(argv) && !openPhoneAppArg(argv)) showMain();
@@ -704,7 +704,7 @@ function openMacAppArg(argv) {
   return true;
 }
 
-// A pinned phone app starts "TwinDesk.exe --phone-app=<package>": open it once the phone's
+// A pinned phone app starts "Zantexa Link.exe --phone-app=<package>": open it once the phone's
 // wireless debugging is ready (connecting a paired phone nearby first, if none is connected).
 let pendingPhoneApp = null; // {pkg, until}
 let pendingView = null; // a phone window waiting for wireless debugging (phoneViews.onNoAdb)
@@ -721,7 +721,7 @@ function openPhoneApp(pkg) {
   const first = !pendingPhoneApp;
   pendingPhoneApp = { pkg, until: (pendingPhoneApp && pendingPhoneApp.until) || Date.now() + 2 * 60 * 1000 };
   if (first && hud) hud.show('home', 'Opening it when the phone is ready…');
-  // Until then, every 2 s: the phone may not be up (TwinDesk just started) or nearby yet.
+  // Until then, every 2 s: the phone may not be up (Zantexa Link just started) or nearby yet.
   clearTimeout(openPhoneApp.timer);
   if (Date.now() > pendingPhoneApp.until) return (pendingPhoneApp = null);
   if (phone && !phone.connected && !phone.connecting) {
@@ -958,7 +958,7 @@ function createMainWindow() {
     y: b.y,
     minWidth: 720,
     minHeight: 480,
-    title: 'TwinDesk',
+    title: 'Zantexa Link',
     icon: path.join(__dirname, '..', 'assets', 'icon.png'),
     backgroundColor: nativeTheme.shouldUseDarkColors ? '#2b2b2e' : '#e9e9ee',
     show: false,
@@ -1028,7 +1028,7 @@ function checkTaskbar() {
 
 function createTray() {
   tray = new Tray(trayIcon());
-  tray.setToolTip('TwinDesk');
+  tray.setToolTip('Zantexa Link');
   tray.on('click', showMain);
   checkTaskbar();
   updateTray();
@@ -1043,7 +1043,7 @@ function updateTray(s = buildState()) {
   const sharing = s.pcScreen.mode !== 'off';
   const found = s.found.filter((d) => !s.peer || d.id !== s.peer.id);
   const rtt = connected && s.link.rtt != null ? ' · ' + s.link.rtt + ' ms' : '';
-  tray.setToolTip('TwinDesk: ' + statusLine(s));
+  tray.setToolTip('Zantexa Link: ' + statusLine(s));
   // Rebuild only when something in the menu changed (state pushes are frequent).
   const watching = screen.sentAccept === true;
   const host = s.paired && s.paired.macName;
@@ -1087,7 +1087,7 @@ function updateTray(s = buildState()) {
     } })),
     byAddress: () => goTab('connection'),
     lookAgain: () => discovery.probe(),
-    update: s.updates && s.updates.available ? { label: 'Download TwinDesk ' + s.updates.latest + '…', click: showUpdateWindow } : null,
+    update: s.updates && s.updates.available ? { label: 'Download Zantexa Link ' + s.updates.latest + '…', click: showUpdateWindow } : null,
     open: showMain,
     log: () => require('../../shared/applog.js').open(),
     quit: () => app.quit(),

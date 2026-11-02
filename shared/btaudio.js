@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Audio › Play phone sound here (Bluetooth): this computer as the connected phone's Bluetooth
 // speaker (A2DP), so its music, videos and every other sound play here; the phone sends it as to
 // any speaker. Only while a phone is connected, paired with this computer over classic Bluetooth

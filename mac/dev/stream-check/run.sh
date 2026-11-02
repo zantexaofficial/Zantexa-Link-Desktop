@@ -1,5 +1,5 @@
 #!/bin/sh
-# TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+# Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 # Restarts the Mac app with stats logging and runs the loopback stream check. From mac/: dev/stream-check/run.sh [seconds] [log]
 cd "$(dirname "$0")/../.."
 LOG=${2:-/tmp/macshare-stream-check.log}

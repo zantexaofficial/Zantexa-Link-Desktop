@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // DOM KeyboardEvent.code -> Android KeyEvent keycodes and meta-state bits, for the keys the Mac
 // sends to the phone (the phone window and the mouse and keyboard across the edge).
 'use strict';

@@ -1,8 +1,8 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Calls on the computer (Hub.kt): the phone's call state as it changes (call.state), Answer,
 // Decline, End and Call from there (call.do), the call history and contacts. Made only while
 // Calls is on; the one receiver it has is registered then and gone with it.
-package com.twindesk.android
+package com.zantexalink.android
 
 import android.Manifest
 import android.annotation.SuppressLint

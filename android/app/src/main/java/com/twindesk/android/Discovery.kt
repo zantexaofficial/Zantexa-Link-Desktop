@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Discovery on UDP DISCOVERY_PORT, as on the computers: beacons to every broadcast address (we are a
 // guest: role 'guest'), answers probes, and keeps the computers nearby. A Mac's invite (its phone
 // tile was clicked, or Pair) arrives here too.
@@ -6,7 +6,7 @@
 // With the screen off the multicast lock goes and beacons slow down: held, it lets every
 // broadcast on the Wi-Fi (ARP, mDNS, SSDP…) wake the phone, all day. Invites and probes sent to
 // our own address are unicast and still arrive; the computers' broadcasts wait for the screen.
-package com.twindesk.android
+package com.zantexalink.android
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -74,14 +74,14 @@ class Discovery(
         val since = w.busySince
         if (since != 0L && System.currentTimeMillis() - since > STUCK_MS) {
             val where = w.thread?.stackTrace?.joinToString("\n  at ") ?: "?"
-            Log.w("TwinDesk", "discovery: a packet's handling is stuck (${System.currentTimeMillis() - since} ms), going on without it:\n  at $where")
+            Log.w("Zantexa Link", "discovery: a packet's handling is stuck (${System.currentTimeMillis() - since} ms), going on without it:\n  at $where")
             w.exec.shutdownNow()
             worker = Worker()
         }
         val now = worker
         now.exec.execute {
             now.busySince = System.currentTimeMillis()
-            try { block() } catch (e: Exception) { Log.w("TwinDesk", "discovery: ${e.message}") } finally { now.busySince = 0L }
+            try { block() } catch (e: Exception) { Log.w("Zantexa Link", "discovery: ${e.message}") } finally { now.busySince = 0L }
         }
     }
 
@@ -191,7 +191,7 @@ class Discovery(
             } catch (e: Exception) {
                 if (!running) return
                 error = "Can’t listen (${e.message})"
-                Log.w("TwinDesk", "discovery: ${e.message}")
+                Log.w("Zantexa Link", "discovery: ${e.message}")
                 runCatching { sock?.close() } // its port is free for the next one
                 onChange()
                 Thread.sleep(5000)

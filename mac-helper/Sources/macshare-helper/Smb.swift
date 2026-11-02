@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Mount / unmount the PC's SMB share with the NetFS framework: the password is passed
 // in-process, never on a command line. Mounts under /Volumes/<share> (shows in Finder's sidebar).
 import Foundation

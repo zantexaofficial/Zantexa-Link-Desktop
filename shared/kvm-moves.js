@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Pointer moves summed into one message: on the driving side before they go to the other computer,
 // on the driven side before they go to the helper. A move goes on the next turn of the event loop
 // (all that came in meanwhile, summed), or after delay() ms (through Bluetooth every message is a

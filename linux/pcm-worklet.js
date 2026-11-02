@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // AudioWorklet: plays raw PCM pushed from main (48 kHz stereo float32 interleaved) with a small
 // jitter buffer. Keeps ~40–60 ms queued; drops the oldest audio if it falls >160 ms behind. (More
 // than the Mac's: the phone's sound comes over Wi-Fi and adb, and PC timers are coarser, so

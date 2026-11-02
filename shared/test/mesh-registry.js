@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Tests for Mesh in shared/mesh.js: the peer registry, roster messages, events, pools wired to it,
 // and a small network built from Mesh objects. Also keepalive timing.
 // Run with: node shared/test/mesh-registry.js

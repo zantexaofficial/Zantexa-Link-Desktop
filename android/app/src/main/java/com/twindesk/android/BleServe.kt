@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Bluetooth LE the other way round, for a PC whose Bluetooth can't advertise reliably (Ble.kt finds
 // computers that advertise): this phone advertises P.BLE.PHONE_SERVICE and serves the same
 // characteristics, and the PC connects to it (shared/blepipe.js BlePhones). The PC says hello on
@@ -6,7 +6,7 @@
 // its person pressed Pair or Connect (an invite), or because we asked ({op: want}, our Pair or
 // Connect). The PC writes UP, we notify DOWN; the session (TLS, pinned certificate, token) is
 // still ours to the PC's server, through a 127.0.0.1 port here as for Ble.kt's pipes.
-package com.twindesk.android
+package com.zantexalink.android
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -90,8 +90,8 @@ class BleServe(
     // ---- advertising ----
 
     private val advCb = object : AdvertiseCallback() {
-        override fun onStartSuccess(s: AdvertiseSettings) { Log.i("TwinDesk", "blp: advertising") }
-        override fun onStartFailure(code: Int) { Log.w("TwinDesk", "blp: advertising failed $code"); advertising = false }
+        override fun onStartSuccess(s: AdvertiseSettings) { Log.i("Zantexa Link", "blp: advertising") }
+        override fun onStartFailure(code: Int) { Log.w("Zantexa Link", "blp: advertising failed $code"); advertising = false }
     }
 
     // On while a PC may want us (not connected); the server stays up for the PCs already linked.
@@ -107,7 +107,7 @@ class BleServe(
                 .setTimeout(0)
                 .build()
             val data = AdvertiseData.Builder().addServiceUuid(ParcelUuid(PHONE_SERVICE)).setIncludeDeviceName(false).build()
-            runCatching { adv.startAdvertising(settings, data, advCb); advertising = true }.onFailure { Log.w("TwinDesk", "blp: advertise: ${it.message}") }
+            runCatching { adv.startAdvertising(settings, data, advCb); advertising = true }.onFailure { Log.w("Zantexa Link", "blp: advertise: ${it.message}") }
         } else {
             advertising = false
             runCatching { adv?.stopAdvertising(advCb) }
@@ -119,7 +119,7 @@ class BleServe(
         for (p in peers.values.toList()) if (!p.piped) runCatching { server?.cancelConnection(p.dev) } // onConnectionStateChange cleans up
     }
 
-    // Bluetooth off for TwinDesk: no advertising, no PCs.
+    // Bluetooth off for Zantexa Link: no advertising, no PCs.
     fun stop() {
         advertise(false)
         for (p in peers.values) p.closePipe(false)
@@ -228,7 +228,7 @@ class BleServe(
                 ok = runCatching { s.sendResponse(device, requestId, BluetoothGatt.GATT_SUCCESS, offset, value) }.getOrDefault(false)
                 if (!ok) Thread.sleep(5)
             }
-            if (!ok) Log.w("TwinDesk", "blp: a write's response didn't go out")
+            if (!ok) Log.w("Zantexa Link", "blp: a write's response didn't go out")
             responding.decrementAndGet()
         }
     }
@@ -365,7 +365,7 @@ class BleServe(
                 gen++
                 runCatching { s?.close() }
             }
-            Log.i("TwinDesk", "blp: pipe closed${if (tell) "" else " by the PC"}")
+            Log.i("Zantexa Link", "blp: pipe closed${if (tell) "" else " by the PC"}")
             if (tell) ctrlNote(JSONObject().put("op", "closed"))
         }
     }

@@ -1,5 +1,5 @@
 {
-  description = "TwinDesk — All your computers and your phone, working as one desk";
+  description = "Zantexa Link — All your computers and your phone, working as one desk";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -25,8 +25,8 @@
           };
         in
         rec {
-          twindesk = pkgs.stdenv.mkDerivation rec {
-            pname = "twindesk";
+          zantexaLink = pkgs.stdenv.mkDerivation rec {
+            pname = "zantexa-link";
             version = "2.5.0-beta.1";
 
             src = self;
@@ -86,7 +86,7 @@
             installPhase = ''
               runHook preInstall
 
-              local share="$out/share/twindesk"
+              local share="$out/share/zantexa-link"
               mkdir -p "$share/linux" "$share/shared" "$share/linux-helper/bin" "$share/linux/vendor" "$share/node_modules/ws"
               mkdir -p "$out/bin" "$out/libexec" "$out/share/applications" "$out/share/icons/hicolor/512x512/apps" "$out/share/polkit-1/actions"
 
@@ -125,11 +125,11 @@ EOF
 <!DOCTYPE policyconfig PUBLIC "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN"
  "http://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd">
 <policyconfig>
-  <vendor>TwinDesk</vendor>
+  <vendor>Zantexa Link</vendor>
   <vendor_url>https://github.com/InukaAsith/TwinDesk</vendor_url>
   <action id="org.twindesk.linux.connector">
-    <description>Switch a spare display output on for TwinDesk's Extend</description>
-    <message>TwinDesk wants to switch a spare display output on or off</message>
+    <description>Switch a spare display output on for Zantexa Link's Extend</description>
+    <message>Zantexa Link wants to switch a spare display output on or off</message>
     <defaults>
       <allow_any>auth_admin</allow_any>
       <allow_inactive>auth_admin</allow_inactive>
@@ -149,25 +149,25 @@ EOF
               tar -xzf ${wsSource} -C "$share/node_modules/ws" --strip-components=1
 
               # Desktop entry & icon
-              cp linux/assets/icon.png "$out/share/icons/hicolor/512x512/apps/twindesk.png"
+              cp linux/assets/icon.png "$out/share/icons/hicolor/512x512/apps/zantexa-link.png"
 
-              cat << 'EOF' > "$out/share/applications/twindesk.desktop"
+              cat << 'EOF' > "$out/share/applications/zantexa-link.desktop"
 [Desktop Entry]
-Name=TwinDesk
+Name=Zantexa Link
 Comment=Share mouse, keyboard, clipboard, files and screens with your other computer
-Exec=twindesk %U
-Icon=twindesk
+Exec=zantexa-link %U
+Icon=zantexa-link
 Type=Application
-StartupWMClass=TwinDesk
+StartupWMClass=Zantexa Link
 Categories=Utility;
 Keywords=KVM;mouse;keyboard;clipboard;screen;share;
 EOF
 
               # Electron wrapper
-              makeWrapper ${pkgs.electron}/bin/electron "$out/bin/twindesk" \
+              makeWrapper ${pkgs.electron}/bin/electron "$out/bin/zantexa-link" \
                 --add-flags "$share/linux/main.js" \
                 --set NODE_PATH "$share/node_modules" \
-                --set TWINDESK_BIN "$out/bin/twindesk" \
+                --set ZANTEXA_LINK_BIN "$out/bin/zantexa-link" \
                 --prefix PATH : ${pkgs.lib.makeBinPath runtimeDeps} \
                 --prefix GI_TYPELIB_PATH : "${pkgs.lib.makeSearchPath "lib/girepository-1.0" [ pkgs.glib pkgs.gobject-introspection pkgs.gst_all_1.gstreamer pkgs.gst_all_1.gst-plugins-base ]}" \
                 --prefix GST_PLUGIN_SYSTEM_PATH_1_0 : "${pkgs.lib.makeSearchPath "lib/gstreamer-1.0" [ pkgs.gst_all_1.gstreamer pkgs.gst_all_1.gst-plugins-base ]}"
@@ -180,19 +180,19 @@ EOF
               homepage = "https://github.com/InukaAsith/TwinDesk";
               license = licenses.gpl3Only;
               platforms = supportedSystems;
-              mainProgram = "twindesk";
+              mainProgram = "zantexa-link";
             };
           };
 
-          default = twindesk;
+          default = zantexaLink;
         }
       );
 
       apps = forAllSystems (system: {
         default = {
           type = "app";
-          program = "${self.packages.${system}.default}/bin/twindesk";
-          meta.description = "TwinDesk multi-device desktop app";
+          program = "${self.packages.${system}.default}/bin/zantexa-link";
+          meta.description = "Zantexa Link multi-device desktop app";
         };
       });
 
@@ -206,7 +206,7 @@ EOF
         in
         {
           default = pkgs.mkShell {
-            name = "twindesk-dev";
+            name = "zantexa-link-dev";
             packages = [
               pkgs.nodejs
               pkgs.electron
@@ -239,20 +239,20 @@ EOF
       );
 
       overlays.default = final: prev: {
-        twindesk = self.packages.${final.system}.twindesk;
+        zantexaLink = self.packages.${final.system}.zantexaLink;
       };
 
       nixosModules = rec {
-        twindesk = { config, lib, pkgs, ... }:
+        zantexaLink = { config, lib, pkgs, ... }:
           with lib;
           let
-            mkTwindeskOptions = {
-              enable = mkEnableOption "TwinDesk multi-device sharing";
+            mkZantexaLinkOptions = {
+              enable = mkEnableOption "Zantexa Link multi-device sharing";
 
               package = mkOption {
                 type = types.package;
                 default = self.packages.${pkgs.system}.default;
-                description = "The TwinDesk package to use.";
+                description = "The Zantexa Link package to use.";
               };
 
               openFirewall = mkOption {
@@ -280,12 +280,12 @@ EOF
               };
             };
 
-            cfg = if config.programs.twindesk.enable then config.programs.twindesk else config.services.twindesk;
-            enabled = config.services.twindesk.enable || config.programs.twindesk.enable;
+            cfg = if config.programs.zantexaLink.enable then config.programs.zantexaLink else config.services.zantexaLink;
+            enabled = config.services.zantexaLink.enable || config.programs.zantexaLink.enable;
           in
           {
-            options.services.twindesk = mkTwindeskOptions;
-            options.programs.twindesk = mkTwindeskOptions;
+            options.services.zantexaLink = mkZantexaLinkOptions;
+            options.programs.zantexaLink = mkZantexaLinkOptions;
 
             config = mkIf enabled {
               environment.systemPackages = [ cfg.package ];
@@ -293,7 +293,7 @@ EOF
               # Ensure polkit is enabled for Virtual Display connector and privileged helpers
               security.polkit.enable = mkDefault true;
 
-              # Open ports for TwinDesk communication and discovery
+              # Open ports for Zantexa Link communication and discovery
               networking.firewall.allowedTCPPorts = mkIf cfg.openFirewall [ 47800 ];
               networking.firewall.allowedUDPPorts = mkIf cfg.openFirewall [ 47801 5353 ];
 
@@ -320,7 +320,7 @@ EOF
             };
           };
 
-        default = twindesk;
+        default = zantexaLink;
       };
     };
 }

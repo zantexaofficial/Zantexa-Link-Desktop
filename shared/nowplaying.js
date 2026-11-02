@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // What plays on the connected phone, for the Phone page's media controls (ui-nowplaying.js): asked of
 // the phone while Audio › Media controls on the Phone page is on (phone.media.want), its answer kept
 // (phone.media, NowPlaying.kt), and Play, Pause, Next, Previous and Seek sent back.

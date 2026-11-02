@@ -1,6 +1,6 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // What the phone remembers: its identity, the computers it paired with (hosts) and its settings.
-package com.twindesk.android
+package com.zantexalink.android
 
 import android.content.Context
 import android.os.Build
@@ -34,7 +34,7 @@ data class Host(
 class Store(private val ctx: Context) {
     private val prefs = ctx.getSharedPreferences("twindesk", Context.MODE_PRIVATE)
 
-    // Every feature is off on a fresh install until it's turned on; a phone that had TwinDesk before
+    // Every feature is off on a fresh install until it's turned on; a phone that had Zantexa Link before
     // keeps what it had (a switch it never saved was on for it). Decided once, before anything is saved.
     val was: Boolean = if (prefs.contains("was")) prefs.getBoolean("was", false)
     else prefs.contains("deviceId").also { prefs.edit().putBoolean("was", it).apply() }

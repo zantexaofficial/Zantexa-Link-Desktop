@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // linux/pointeraccel.js: the desktop's mouse acceleration read from KDE's and Sway's settings.
 'use strict';
 

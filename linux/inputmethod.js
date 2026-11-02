@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Input methods across computers on Linux (shared/keylayout.js): keys typed with one (Japanese,
 // Pinyin, Korean) type a–z and the input method composes them, so the language goes along with the
 // keys (keyLayout's im) and the other side switches to its own input method of that language while

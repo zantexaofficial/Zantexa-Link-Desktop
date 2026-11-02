@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // A QR code for a short text (byte mode, error correction M, versions 1–20), drawn on a canvas or
 // returned as a module grid: pairing a phone (shared/ui-qrpair.js) and wireless debugging's Pair
 // device with QR code (shared/ui-adbqr.js). After Project Nayuki's QR Code generator (MIT).

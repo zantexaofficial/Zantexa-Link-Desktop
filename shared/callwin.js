@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The small window for a phone call (phonehub.js): who's calling with Answer and Decline, then the
 // time, Mute, End and where the sound is. Made when a call starts and closed a moment after it
 // ends; never made while Calls is off (this module isn't even loaded then).

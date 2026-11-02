@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Cursor tab: share the pointer across the screen edge. Two direction cards, the
 // crossing map (shared/kvm-map-ui.js: drag the other computer where it is; either side can change it)
 // and the live state below. Behaviour: kvm.js and windows-helper.
@@ -69,7 +69,7 @@ UI.tab({
       via.set(br.input || (pset.input === 'phone' ? 'phone' : 'adb'));
       adbBtn.hidden = br.state === 'ready';
       viaRow.setHint(br.inputMode === 'auto' ? (br.state === 'ready' ? 'Automatic: ADB, wireless debugging is ready' : 'Automatic: Accessibility until wireless debugging is set up')
-        : br.input === 'phone' ? 'Accessibility: TwinDesk on the phone taps and types. Works over Wi-Fi, Wi-Fi Direct and Bluetooth, no developer options'
+        : br.input === 'phone' ? 'Accessibility: Zantexa Link on the phone taps and types. Works over Wi-Fi, Wi-Fi Direct and Bluetooth, no developer options'
           : 'ADB: full control through wireless debugging' + (br.state === 'ready' ? '' : ' (not set up yet)'));
       status.update(s);
       lock.update(s);

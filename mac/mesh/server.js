@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // HTTPS + WebSocket server on PORT: many authenticated clients at once (mesh), liveness, routing of
 // authenticated messages. The Mac is the native host here; the certificate comes from identity.js.
 //

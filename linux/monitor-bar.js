@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Monitor 2 toolbar, as on the Mac's viewer: top centre, in when the pointer reaches the top edge.
 // The other computer's Extend/Mirror and Stop (its screen.state: usable when it lets us), frame
 // generation and full screen here. The pointer on it stays here: never sent to the other computer.

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Hidden sender window (copy of windows/sender-renderer.js): each `rtc2` session captures
 // one monitor of this computer, optionally with its sound (the loopback source by its label,
 // loopback.js), and sends it to the other computer (we offer, it answers recvonly). Low-latency

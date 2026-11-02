@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // ReZume (windows/activity.js): what is in use in the window in front. Its app (the .exe), its
 // title, and what it shows: a browser's address (its address bar, read with UI Automation, never the
 // page itself), else the document whose name the title shows, found among the files Windows lists

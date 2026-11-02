@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Terminal, PC -> Mac: the PC's public key arrives over
 // the paired link and goes into ~/.ssh/authorized_keys with a `macshare:<pcId>` marker; the Mac
 // answers with its user, port and host keys so the PC never has to trust-on-first-use.

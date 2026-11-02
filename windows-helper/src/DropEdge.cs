@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Drag files across the edge, PC → Mac: while the left button is
 // held at home, an invisible top-most strip covers the outer edge facing the Mac. A file drag that
 // enters it is accepted as a copy and ended right there (a marked left-up on the strip; dropping

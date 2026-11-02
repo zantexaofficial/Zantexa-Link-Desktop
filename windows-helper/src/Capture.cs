@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Portions adapted from Beamer (https://github.com/kalkman-code/beamer), Copyright (C) Kalkman Code,
 // GPL-3.0. Changed: C# port of win_app/capture_win.py hooks and raw-mouse edge push.
 // Low-level hooks (capture + hotkey), Raw Input (edge push at home, local return-edge motion),

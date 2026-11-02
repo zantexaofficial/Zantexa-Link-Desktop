@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Fast files (one-to-one): the bytes of an accepted file go over HTTPS on the session's port, as a
 // plain stream, instead of base64 file.chunk messages on the control socket. Nothing else changes:
 // file.offer / accept / end / done / cancel go as before, and the receiving side gets the bytes as

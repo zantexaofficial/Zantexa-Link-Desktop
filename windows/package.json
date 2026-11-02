@@ -1,8 +1,8 @@
 {
   "name": "macshare-win",
-  "productName": "TwinDesk",
+  "productName": "Zantexa Link",
   "version": "2.5.0-beta.1",
-  "description": "TwinDesk for Windows: pair with a Mac, view its screen, share mouse, keyboard and clipboard.",
+  "description": "Zantexa Link for Windows: pair with a Mac, view its screen, share mouse, keyboard and clipboard.",
   "license": "GPL-3.0",
   "private": true,
   "main": "main.js",

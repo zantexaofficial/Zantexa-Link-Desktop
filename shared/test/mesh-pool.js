@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Tests for Pool in shared/mesh.js: fan-out, dedupe, relay, hop limit, legacy peers.
 // Run with: node shared/test/mesh-pool.js
 'use strict';

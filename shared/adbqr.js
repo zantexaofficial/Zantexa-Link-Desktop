@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Wireless debugging's Pair device with QR code, from here (Connection, shared/ui-adbqr.js): the QR
 // carries a service name and password of ours (WIFI:T:ADB;S:<name>;P:<password>;;); the phone, once
 // it scanned it, announces a pairing service by that name over mDNS, and `adb pair` with the
@@ -14,7 +14,7 @@ const ALNUM = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789';
 const word = (n) => [...crypto.randomBytes(n)].map((b) => ALNUM[b % ALNUM.length]).join('');
 
 function startAdbQr({ adb, onPaired, onEnd }) {
-  const name = 'twindesk-' + word(8);
+  const name = 'zantexa-link-' + word(8);
   const pass = word(10);
   let stopped = false;
   let busy = false;

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // A "clipboard" event whenever anything is copied (WM_CLIPBOARDUPDATE on a message-only window),
 // pictures included: windows/clip.js then looks at the clipboard once instead of reading a picture
 // every time it polls. {seq}: Windows' clipboard sequence number.

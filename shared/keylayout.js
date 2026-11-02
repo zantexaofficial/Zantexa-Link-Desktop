@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Shortcuts and alphabets across keyboard layouts (one-to-one and Multi-device). Keys go as their
 // physical place (`code`), which types what that place types on the other computer's layout: a German
 // Mac's Cmd+Z is the key in the Y place, Ctrl+Y (redo) on an English PC. So each key also says the

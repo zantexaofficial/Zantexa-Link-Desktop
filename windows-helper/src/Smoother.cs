@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Smooth pointer motion for the phone's Remote (its touchpad and right stick: k.mm with smooth).
 // The phone sends a move about every 16 ms and Wi-Fi bunches them, so instead of jumping, each
 // one is given out in small steps on a 2 ms clock, easing out over about one frame (TauMs): the

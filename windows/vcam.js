@@ -1,9 +1,9 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
-// The virtual camera on Windows 11 (shared/vcam.js's driver): "TwinDesk Camera", a camera every
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// The virtual camera on Windows 11 (shared/vcam.js's driver): "Zantexa Link Camera", a camera every
 // app can pick (Windows' MFCreateVirtualCamera). Its media source, windows-helper/bin/
 // twindesk-vcam-<arch>.dll, is registered once for the whole PC (one UAC prompt,
 // scripts/vcam-install.ps1); twindesk-vcam.exe then adds the camera for this user, and feeds it the
-// frames TwinDesk sends (NV12, 1280×720) through shared memory. Windows 10 has no virtual cameras.
+// frames Zantexa Link sends (NV12, 1280×720) through shared memory. Windows 10 has no virtual cameras.
 const { app } = require('electron');
 const { execFile, spawn } = require('child_process');
 const crypto = require('crypto');
@@ -19,7 +19,7 @@ const ARCH = /arm64/i.test(process.env.PROCESSOR_ARCHITEW6432 || process.env.PRO
 const DLL = path.join(BIN, `twindesk-vcam-${ARCH}.dll`);
 const CLSID = '{36D4122A-6D38-4C6A-B622-E9DD756F6C5D}';
 const REG = path.join(process.env.SystemRoot || 'C:\\Windows', 'System32', 'reg.exe');
-const DIR = path.join(process.env.ProgramData || 'C:\\ProgramData', 'TwinDesk', 'vcam');
+const DIR = path.join(process.env.ProgramData || 'C:\\ProgramData', 'Zantexa Link', 'vcam');
 
 function run(file, args, timeout = 20000) {
   return new Promise((resolve) => {
@@ -50,11 +50,11 @@ async function registered() {
 }
 
 const driver = {
-  name: 'TwinDesk Camera',
+  name: 'Zantexa Link Camera',
 
   async check() {
     if (Number((os.release().split('.')[2]) || 0) < 22000) return { supported: false, message: 'Needs Windows 11: Windows 10 has no virtual cameras' };
-    if (!fs.existsSync(EXE) || !fs.existsSync(DLL)) return { supported: false, message: 'Not in this build of TwinDesk' };
+    if (!fs.existsSync(EXE) || !fs.existsSync(DLL)) return { supported: false, message: 'Not in this build of Zantexa Link' };
     const [reg, st] = await Promise.all([registered(), exe('status')]);
     return { supported: true, installed: reg && st.camera === true };
   },

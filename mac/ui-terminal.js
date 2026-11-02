@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Terminal tab: shells both ways, no passwords — keys travel over the paired link.
 'use strict';
 
@@ -17,11 +17,11 @@ UI.tab({
     const outSw = UI.switch((v) => api.setTerminal({ connectPc: v }), { label: 'Open shells there' });
     const shellBtn = UI.button('Open', () => api.openPcShell(), 'small');
     const outRow = UI.row('Open shells on {name} from {me}', '', [outSw]);
-    const cmdRow = UI.row('In Terminal', '', [el('code', { class: 'mono', text: 'ssh twindesk' }), shellBtn]);
+    const cmdRow = UI.row('In Terminal', '', [el('code', { class: 'mono', text: 'ssh zantexa-link' }), shellBtn]);
     const inSw = UI.switch((v) => api.setTerminal({ allowPc: v }), { label: 'Allow shells here' });
     const inRow = UI.row('Let {name} open shells on {me}', '', [inSw]);
     const rl = UI.row('Remote Login', '', [UI.button('Settings', () => api.openSharingSettings(), 'small')]);
-    const how = UI.row('On {name}', '', [el('code', { class: 'mono', text: 'ssh twindesk' })]);
+    const how = UI.row('On {name}', '', [el('code', { class: 'mono', text: 'ssh zantexa-link' })]);
     body.append(
       UI.pair(
         UI.dir('m2w', [outRow, cmdRow]),
@@ -35,12 +35,12 @@ UI.tab({
       const o = t.toPc || {};
       outSw.set(t.connectPc);
       shellBtn.hidden = !o.ready;
-      const WHY = { waiting: `Waiting for ${pc}…`, not_allowed: `Turned off on ${pc}`, remote_login_off: UI.peer(s).os === 'mac' ? `Turn on Remote Login on ${pc}` : `Set up the SSH server in TwinDesk on ${pc}`,
+      const WHY = { waiting: `Waiting for ${pc}…`, not_allowed: `Turned off on ${pc}`, remote_login_off: UI.peer(s).os === 'mac' ? `Turn on Remote Login on ${pc}` : `Set up the SSH server in Zantexa Link on ${pc}`,
         bluetooth: `The terminal doesn’t work over Bluetooth. Connect with Wi-Fi Direct, or join ${pc}’s network.` };
       outRow.setHint(!t.connectPc ? '' : o.ready ? `Ready, signed in as ${o.user}` : WHY[o.why] || (o.why ? `Not ready: ${o.why}` : `Waiting for ${pc}`));
       cmdRow.setHint('');
       inSw.set(t.allowPc);
-      inRow.setHint(!t.allowPc ? '' : t.installed ? 'Ready' : `Turn on Terminal in TwinDesk on ${pc}`);
+      inRow.setHint(!t.allowPc ? '' : t.installed ? 'Ready' : `Turn on Terminal in Zantexa Link on ${pc}`);
       rl.setHint(t.remoteLogin ? 'On' : t.remoteLogin === false ? 'Off. Turn it on in Sharing settings.' : '');
     };
   },

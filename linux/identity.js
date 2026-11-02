@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // This computer's host identity: a self-signed TLS certificate made once with `openssl`
 // (present on every desktop Linux) in userData/identity/{key,cert}.pem, and its fingerprint.
 // The key file is readable by this user only.

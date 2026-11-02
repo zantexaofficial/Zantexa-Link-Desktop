@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Apps tab (copy of windows/ui-apps.js). The other computer → here: its apps with their icons;
 // click one and it opens there, its windows appearing here as their own windows (a Mac: apps.js,
 // cropped from its screen stream, with Add to app menu; a PC or Linux: peerapps.js). Here → there:

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // A phone's stylus (the `pen` command: in.* with `pen`, shared/protocol.js P.penOf) as a tablet
 // pen, on X11 and Wayland alike: a uinput tablet (/dev/uinput) with its pressure and tilt, the side
 // button as BTN_STYLUS and the eraser end as the rubber tool, which libinput hands the desktop as a
@@ -58,7 +58,7 @@ static int ready(void) {
   us.id.bustype = BUS_VIRTUAL;
   us.id.vendor = 0x1209;
   us.id.product = 0x7d03;
-  snprintf(us.name, sizeof us.name, "TwinDesk virtual pen"); // "TwinDesk virtual": not read back (wl.c)
+  snprintf(us.name, sizeof us.name, "Zantexa Link virtual pen"); // "Zantexa Link virtual": not read back (wl.c)
   if (ioctl(fd, UI_DEV_SETUP, &us) < 0) goto fail;
   abs_setup(ABS_X, 0, PEN_MAXV, 200); // libinput needs a size: about 33 cm wide
   abs_setup(ABS_Y, 0, PEN_MAXV, 200);

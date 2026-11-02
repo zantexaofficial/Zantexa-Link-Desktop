@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Wayland backend: on Wayland no client may read or inject global input,
 // so the helper goes under the compositor instead: it reads the keyboards, mice and touchpads
 // from /dev/input (the `input` group, set up once from Setup), grabs them (EVIOCGRAB) while this
@@ -25,7 +25,7 @@
 #include <linux/input.h>
 #include <linux/uinput.h>
 
-#define NAME_PREFIX "TwinDesk virtual"
+#define NAME_PREFIX "Zantexa Link virtual"
 #define ABS_MAXV 65535
 #define MAX_IN 32
 

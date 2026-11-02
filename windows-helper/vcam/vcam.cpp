@@ -1,6 +1,6 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
-// twindesk-vcam.exe: the virtual camera's side in TwinDesk (windows/vcam.js).
-//   status          {"camera":true|false}: is "TwinDesk Camera" among this PC's cameras
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// twindesk-vcam.exe: the virtual camera's side in Zantexa Link (windows/vcam.js).
+//   status          {"camera":true|false}: is "Zantexa Link Camera" among this PC's cameras
 //   add             makes it (MFCreateVirtualCamera, for this user, kept until removed); needs
 //                   twindesk-vcam.dll registered first (elevated, scripts/vcam-install.ps1)
 //   remove          takes it away again
@@ -26,7 +26,7 @@ static int Fail(const char* what, HRESULT hr) {
   return 1;
 }
 
-// "TwinDesk Camera" among this PC's cameras (Windows may add " (Windows Virtual Camera)").
+// "Zantexa Link Camera" among this PC's cameras (Windows may add " (Windows Virtual Camera)").
 static bool FindCamera(ComPtr<IMFActivate>* out = nullptr) {
   ComPtr<IMFAttributes> a;
   if (FAILED(MFCreateAttributes(&a, 1))) return false;
@@ -53,7 +53,7 @@ static bool FindCamera(ComPtr<IMFActivate>* out = nullptr) {
 
 static HRESULT Camera(ComPtr<IMFVirtualCamera>& vc) {
   wchar_t clsid[64];
-  StringFromGUID2(CLSID_TwinDeskVcam, clsid, 64);
+  StringFromGUID2(CLSID_Zantexa LinkVcam, clsid, 64);
   return MFCreateVirtualCamera(MFVirtualCameraType_SoftwareCameraSource, MFVirtualCameraLifetime_System,
     MFVirtualCameraAccess_CurrentUser, VCAM_NAME, clsid, nullptr, 0, &vc);
 }
@@ -130,7 +130,7 @@ static int SelfTest(const wchar_t* dll, int count) {
   ComPtr<IMFActivate> act;
   HRESULT hr;
   if (!wcscmp(dll, L"camera")) {
-    if (!FindCamera(&act)) return Fail("no TwinDesk Camera", E_FAIL);
+    if (!FindCamera(&act)) return Fail("no Zantexa Link Camera", E_FAIL);
   } else {
     HMODULE m = LoadLibraryW(dll);
     if (!m) return Fail("LoadLibrary", HRESULT_FROM_WIN32(GetLastError()));
@@ -138,7 +138,7 @@ static int SelfTest(const wchar_t* dll, int count) {
     GetClass get = (GetClass)GetProcAddress(m, "DllGetClassObject");
     if (!get) return Fail("DllGetClassObject", E_NOINTERFACE);
     ComPtr<IClassFactory> f;
-    hr = get(CLSID_TwinDeskVcam, IID_PPV_ARGS(&f));
+    hr = get(CLSID_Zantexa LinkVcam, IID_PPV_ARGS(&f));
     if (FAILED(hr)) return Fail("class", hr);
     hr = f->CreateInstance(nullptr, IID_PPV_ARGS(&act));
     if (FAILED(hr)) return Fail("CreateInstance", hr);

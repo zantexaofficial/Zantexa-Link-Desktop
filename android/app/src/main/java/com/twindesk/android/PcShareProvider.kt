@@ -1,10 +1,10 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The computer's shared folder in Android's Files app and every app's file picker, while it shares
 // one with this phone (FolderShare.kt, shared/foldershare.js there): browse, open, save, new
 // folder, rename, delete. Files open from a copy here (apps want to seek in them); what an app
 // writes goes back to the computer when it closes the file. No root when nothing is shared.
 // Over HTTPS with the session's certificate, pinned as the session pins it (paired).
-package com.twindesk.android
+package com.zantexalink.android
 
 import android.content.Context
 import android.database.Cursor
@@ -131,7 +131,7 @@ class PcShareProvider : DocumentsProvider() {
             add(Root.COLUMN_ROOT_ID, ROOT)
             add(Root.COLUMN_DOCUMENT_ID, "/")
             add(Root.COLUMN_TITLE, p.name)
-            add(Root.COLUMN_SUMMARY, "TwinDesk")
+            add(Root.COLUMN_SUMMARY, "Zantexa Link")
             add(Root.COLUMN_FLAGS, Root.FLAG_SUPPORTS_CREATE or Root.FLAG_SUPPORTS_IS_CHILD)
             add(Root.COLUMN_ICON, R.mipmap.ic_launcher)
             add(Root.COLUMN_MIME_TYPES, "*/*")
@@ -207,7 +207,7 @@ class PcShareProvider : DocumentsProvider() {
         else copy(documentId, signal)
         return ParcelFileDescriptor.open(f, m, writes) { e ->
             if (e == null) {
-                runCatching { call("PUT", "file", documentId, body = f) }.onFailure { Log.w("TwinDesk", "pcshare: write back $documentId: $it") }
+                runCatching { call("PUT", "file", documentId, body = f) }.onFailure { Log.w("Zantexa Link", "pcshare: write back $documentId: $it") }
                 notifyChildren(parentId(documentId))
             }
             f.delete()

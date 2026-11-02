@@ -1,10 +1,10 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // This device as the computer's remote (the Remote page): a touchpad and keyboard, or a gamepad
 // whose sticks and buttons press the computer's keys. RemoteActivity shows remote.html, which
 // sends remote.* straight to the computer; the computer moves its pointer and types while it lets
 // this device control it (remote.state says whether it does, and why not). Windows, Mac and Linux;
-// an older TwinDesk on a Mac or Linux doesn't answer, and the page says so.
-package com.twindesk.android
+// an older Zantexa Link on a Mac or Linux doesn't answer, and the page says so.
+package com.zantexalink.android
 
 import android.content.pm.ActivityInfo
 import android.os.Bundle
@@ -36,7 +36,7 @@ class Remote(core: Core) : Feature(core) {
     val tapClick: Boolean get() = core.store.flag("remote.tapClick", true)
     fun setTapClick(on: Boolean) { core.store.setFlag("remote.tapClick", on); push() }
 
-    // An older TwinDesk on a Mac or Linux doesn't take the remote (it never answers remote.hello).
+    // An older Zantexa Link on a Mac or Linux doesn't take the remote (it never answers remote.hello).
     val unsupported: Boolean get() = allowed == null && active && core.host?.os.let { it == "mac" || it == "linux" }
 
     // What each gamepad control presses: a KeyboardEvent.code, "Mouse0/1/2" (left, right, middle), or "".

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Tests for linux/inputmethod.js: Fcitx 5 and IBus input methods by language, with fake command lines.
 // Run with: node shared/test/inputmethod.js
 'use strict';

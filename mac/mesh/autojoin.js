@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Joining everyone on the Mac (shared/intro.js is the protocol, docs/mesh.md "Joining everyone"):
 // this Mac is a host (ask -> pairing.grantFor -> reply), a guest (grant -> links.addGrant) and an
 // introducer (plan() over its direct mesh sessions: ask the host, forward its reply as a grant).

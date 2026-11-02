@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The address of the tab a browser window shows, from the browser's own files, for ReZume
 // (shared/rezume.js) where the window itself doesn't say it (Linux without the accessibility bus,
 // Firefox on the Mac, a Windows browser UI Automation can't read). Nothing to allow: the files are

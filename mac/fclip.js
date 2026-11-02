@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Copy and paste files between the computers with two global shortcuts (default
 // ⌃⌥C / ⌃⌥V, Files tab). Copy announces the files selected in Finder (else the files on the
 // clipboard) with `fclip.offer`; paste on the other computer asks for them with `fclip.paste` and
@@ -193,7 +193,7 @@ class FileClip extends EventEmitter {
     try {
       const src = await this.helper.request('fileSource');
       if (src.front === 'com.apple.finder') dir = await finderFolder();
-      // An app in front (not Finder, nor TwinDesk and its windows): the files go into it.
+      // An app in front (not Finder, nor Zantexa Link and its windows): the files go into it.
       else if (src.front && !src.front.startsWith('org.macshare.')) into = { app: src.front };
     } catch { /* Desktop */ }
     if (into) dir = pastefiles.pasteDir();

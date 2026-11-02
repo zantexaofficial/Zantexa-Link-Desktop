@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Cursor lock (shared/cursorlock.js) on real sockets, set up as kvm-edges.test.js: node A has a real Kvm
 // with a recording helper, B and C are other computers whose hub bus records what they get. Locked, the
 // pointer stays where it is: at home no edge crosses, driving the device we drive is told (kvm.lock),

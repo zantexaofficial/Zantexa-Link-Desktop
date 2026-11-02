@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // The mesh with the new transports: a session through Bluetooth (blepipe.js) keeps its own,
 // longer silence limit on the server, and a Session reports its transport and tells its features
 // when it moves between Bluetooth and the network (session.js, the hub's 'transport' event).

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Dev check for the helper's Wayland backend (wl.c): screens, absolute moves through
 // the virtual pointer (read back from its /dev/input node), edge push from a fake mouse, capture
 // (grab, motion, keys forwarded), the hotkey, injected moves and the return edge, dead-man.
@@ -61,7 +61,7 @@ function findNode(name) {
 
   // 1. absolute move lands where asked (read from the virtual pointer's node)
   await sleep(300);
-  const node = findNode('TwinDesk virtual pointer');
+  const node = findNode('Zantexa Link virtual pointer');
   ok('virtual pointer node', !!node, node || '');
   const absSeen = [];
   let rd = null;

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Wi-Fi for a session that runs through Bluetooth (the phone's side of shared/netlink.js, same
 // messages and the same choice of who hosts): files and screens need more than Bluetooth carries,
 // so this phone hosts a Wi-Fi Direct group the computer joins (a Mac), or joins the computer's
@@ -8,7 +8,7 @@
 //
 // A Mac asks for the phone's own hotspot instead for the screen (net.hotspot): a notification
 // opens the hotspot settings.
-package com.twindesk.android
+package com.zantexalink.android
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -49,7 +49,7 @@ class Direct(private val ctx: Context) {
             }
         })
         done.await(10, TimeUnit.SECONDS)
-        if (err != null) Log.i("TwinDesk", "direct: $what: $err")
+        if (err != null) Log.i("Zantexa Link", "direct: $what: $err")
         return err
     }
 
@@ -68,10 +68,10 @@ class Direct(private val ctx: Context) {
     private val wifi get() = ctx.applicationContext.getSystemService(android.net.wifi.WifiManager::class.java)
 
     // Wi-Fi off: Wi-Fi Direct can't work (Android answers "busy"). Ask the person to switch it on
-    // (a notification, or the Wi-Fi panel if TwinDesk is open) and wait for it.
+    // (a notification, or the Wi-Fi panel if Zantexa Link is open) and wait for it.
     private fun ensureWifi(name: String) {
         if (wifi?.isWifiEnabled == true) return
-        Log.i("TwinDesk", "direct: Wi-Fi is off, asking for it")
+        Log.i("Zantexa Link", "direct: Wi-Fi is off, asking for it")
         Notify.wifiOff(ctx, name)
         repeat(90) {
             if (wifi?.isWifiEnabled == true) { Notify.cancelWifiOff(ctx); Thread.sleep(1500); return } // P2P comes up a moment after Wi-Fi
@@ -333,7 +333,7 @@ class Netlink(core: Core) : Feature(core) {
             val swap = !swapped && direct.can() && synchronized(this) { peerCaps?.optBoolean("join") == true }
             if (swap) {
                 swapped = true
-                Log.i("TwinDesk", "netlink: couldn’t join $s (${e.message}): hosting here")
+                Log.i("Zantexa Link", "netlink: couldn’t join $s (${e.message}): hosting here")
                 core.link.send(msg(Proto.T.NET_JOINED, "ok" to false, "error" to (e.message ?: "failed"), "retry" to true))
                 Thread.sleep(2000) // the Wi-Fi chip settles after the joins first
                 if (state != "joining") return
@@ -352,7 +352,7 @@ class Netlink(core: Core) : Feature(core) {
     }
 
     private fun fail(why: String) {
-        Log.i("TwinDesk", "netlink: $why")
+        Log.i("Zantexa Link", "netlink: $why")
         synchronized(this) { needs.clear() }
         down()
         set("failed", why)

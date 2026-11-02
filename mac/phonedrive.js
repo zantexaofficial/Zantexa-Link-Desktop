@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // An Android phone in Finder: shared/phonedrive.js's WebDAV server, which Finder mounts as a
 // network volume (Locations, like any server). Basic auth with a password made per run.
 'use strict';

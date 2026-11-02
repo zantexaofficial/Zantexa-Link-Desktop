@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Open at login. A packaged app uses the system login item; a dev checkout gets a
 // LaunchAgent that starts this Electron with this folder and --hidden (no window, menu bar only).
 'use strict';

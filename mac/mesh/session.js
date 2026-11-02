@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // One Session per remote device. It hides how the connection came about:
 //   host  — the device connected to our server (a ctx from server.js): we are its host, the
 //           usual case for a PC or a phone; this Mac is the native side, nothing is swapped;

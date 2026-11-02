@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The Mac's screen on the phone (like windows/monitor.js): answers the Mac's WebRTC offer and
 // plays the picture (and its sound), and sends input back as in.* (normalized 0–1):
 //   touch   touchpad (opts.touch 'pad', the default): slide = move the pointer (never clicks) ·

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // One CGVirtualDisplay at a time (private API, header from DeskPad), plus explicit mode selection.
 import Cocoa
 import VirtualDisplayBridge

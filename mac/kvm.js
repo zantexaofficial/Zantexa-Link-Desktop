@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Shared cursor + keyboard: the state machine for both roles.
 //   driving: this Mac's input goes to the PC (owner)
 //   driven:  the PC's input drives this Mac

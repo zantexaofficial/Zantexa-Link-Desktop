@@ -1,7 +1,7 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // An introduction to a feature, on its page in place of the settings: a picture of its own, animated, in
 // the colours of its sidebar icon, its name, what it does, and Dismiss, which shows the settings. On a page
-// with a switch at the top it's there while that's off, and Dismiss holds until TwinDesk starts again; on
+// with a switch at the top it's there while that's off, and Dismiss holds until Zantexa Link starts again; on
 // one without (Files, Terminal, Mount) it's there until dismissed, which is remembered. Every desktop app;
 // shared/mesh-intro.js draws devices with device().
 //   FeatureArt.FREE                -> tab ids that work without a connected device; on the others (and Overview's
@@ -220,7 +220,7 @@
     },
     // A terminal: the command typed, the other computer answering.
     terminal: (id) => {
-      const cmd = 'ssh twindesk';
+      const cmd = 'ssh zantexa-link';
       let out = '<circle class="fa-bg" cx="200" cy="120" r="108"/>'
         + `<rect fill="url(#fa-g-${id})" class="fa-termwin" x="54" y="32" width="292" height="176" rx="12"/>`
         + '<path class="fa-termbar" d="M54 44a12 12 0 0 1 12-12h268a12 12 0 0 1 12 12v12H54z"/>'

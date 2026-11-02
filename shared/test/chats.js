@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // shared/chats.js: a phone's chat app conversations kept per phone, merged without doubles, an
 // answer typed here replaced by the phone's copy, chat.want sent once per change.
 'use strict';

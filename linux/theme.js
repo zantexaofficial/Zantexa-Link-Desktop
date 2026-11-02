@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Dark unless the desktop explicitly asks for light: the portal's org.freedesktop.appearance
 // color-scheme (0 no preference, 1 dark, 2 light), read through gdbus and followed with
 // `gdbus monitor`. "No preference" and a light GTK theme alone stay dark. No portal or no

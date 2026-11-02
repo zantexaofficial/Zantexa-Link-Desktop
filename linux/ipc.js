@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Main-window actions (preload-app.js → here; copy of windows/ipc.js). Every value is validated by
 // settings.apply().
 const { app, ipcMain, dialog, shell, BrowserWindow, clipboard } = require('electron');
@@ -41,7 +41,7 @@ function setupIpc(ctx) {
     link.startPairing({ address: m[1], port, macName: m[1] });
   });
   // Connect by address: ask who is there (unicast probe works where broadcast is blocked); no
-  // answer in PROBE_REPLY_MS → try WSS on that address directly ("No TwinDesk at …" if nothing).
+  // answer in PROBE_REPLY_MS → try WSS on that address directly ("No Zantexa Link at …" if nothing).
   handle('connectAddress', async (text) => {
     const m = typeof text === 'string' && /^\s*([^\s:]+)(?::(\d{1,5}))?\s*$/.exec(text);
     if (!m) return;
@@ -106,7 +106,7 @@ function setupIpc(ctx) {
   handle('setTab', (tab) => change('ui', { tab }));
   handle('setChats', (on) => { change('ui', { chats: on === true }); if (ctx.chats && ctx.chats()) ctx.chats().sync(); }); // Messages: WhatsApp, Telegram and Instagram there too
   handle('setOverview', (o) => o && typeof o === 'object' && change('ui', { overview: { ...settings.ui.overview, ...o } })); // General › Overview // invalid names fall back in normalize()
-  handle('setMulti', (on) => require('./multi').set(on === true)); // Multi-device: TwinDesk restarts
+  handle('setMulti', (on) => require('./multi').set(on === true)); // Multi-device: Zantexa Link restarts
   handle('setAudio', (partial) => change('audio', partial, () => {
     sound.apply();
     // Loaded when first turned on (applied then); off, the loaded one stops.

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Clipboard pictures between the two devices of a session (one-to-one: a computer with a computer
 // or a phone). A PNG of up to CLIP_IMAGE_MAX_BYTES goes as clip.image {id, w, h, bytes, parts,
 // shot?} followed by `parts` clip.image.part {id, i, data}, each piece at most

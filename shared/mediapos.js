@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Where the video playing in a browser here is, for ReZume's video handoff (shared/rezume.js): the
 // other device opens the same YouTube video at the same second. From the system's media controls:
 // Windows' media sessions (GlobalSystemMediaTransportControls, through PowerShell), Linux's MPRIS

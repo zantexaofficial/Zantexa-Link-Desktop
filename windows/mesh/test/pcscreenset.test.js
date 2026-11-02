@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Share screen to several devices: every connected device gets a PcScreen of its own on a link scoped to
 // it (hub.scoped); the stream table enforces one virtual display. The PcScreen here is a fake.
 // Run with: node windows/test/pcscreenset.test.js  (NODE_PATH as in CI)

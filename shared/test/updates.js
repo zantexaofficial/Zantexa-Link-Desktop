@@ -1,6 +1,6 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // shared/updates.js pickAsset: each computer finds its own download among a release's files,
-// with the Mac's disk images named TwinDesk-<version>-<arch>.dmg (mac/build-dmg.sh) and as before.
+// with the Mac's disk images named Zantexa Link-<version>-<arch>.dmg (mac/build-dmg.sh) and as before.
 'use strict';
 
 const assert = require('assert');
@@ -8,29 +8,29 @@ const { Updates, pickAsset, formatReleaseNotes } = require('../updates.js');
 
 const files = (...names) => names.map((name) => ({ name, browser_download_url: 'https://example.invalid/' + name, size: 1 }));
 const pick = (assets, platform, arch, prefer) => (pickAsset(assets, platform, arch, prefer) || {}).name || null;
-const OTHERS = ['TwinDesk-2.3.0-amd64.deb', 'TwinDesk-2.3.0-x86_64.AppImage', 'TwinDesk-2.3.0.apk', 'TwinDesk-2.3.0-full.apk',
-  'TwinDesk-Setup-2.3.0.exe', 'TwinDesk-Setup-2.3.0-arm64.exe'];
+const OTHERS = ['Zantexa Link-2.3.0-amd64.deb', 'Zantexa Link-2.3.0-x86_64.AppImage', 'Zantexa Link-2.3.0.apk', 'Zantexa Link-2.3.0-full.apk',
+  'Zantexa Link-Setup-2.3.0.exe', 'Zantexa Link-Setup-2.3.0-arm64.exe'];
 
 // Versioned, both Macs: each its own.
-const both = files(...OTHERS, 'TwinDesk-2.3.0-arm64.dmg', 'TwinDesk-2.3.0-x64.dmg');
-assert.strictEqual(pick(both, 'mac', 'arm64'), 'TwinDesk-2.3.0-arm64.dmg');
-assert.strictEqual(pick(both, 'mac', 'x64'), 'TwinDesk-2.3.0-x64.dmg');
+const both = files(...OTHERS, 'Zantexa Link-2.3.0-arm64.dmg', 'Zantexa Link-2.3.0-x64.dmg');
+assert.strictEqual(pick(both, 'mac', 'arm64'), 'Zantexa Link-2.3.0-arm64.dmg');
+assert.strictEqual(pick(both, 'mac', 'x64'), 'Zantexa Link-2.3.0-x64.dmg');
 // The order on the release doesn't matter.
-assert.strictEqual(pick(both.slice().reverse(), 'mac', 'arm64'), 'TwinDesk-2.3.0-arm64.dmg');
-assert.strictEqual(pick(both.slice().reverse(), 'mac', 'x64'), 'TwinDesk-2.3.0-x64.dmg');
+assert.strictEqual(pick(both.slice().reverse(), 'mac', 'arm64'), 'Zantexa Link-2.3.0-arm64.dmg');
+assert.strictEqual(pick(both.slice().reverse(), 'mac', 'x64'), 'Zantexa Link-2.3.0-x64.dmg');
 // Only Apple Silicon's on the release yet: an Intel Mac isn't given it (the release page opens instead).
-const armOnly = files(...OTHERS, 'TwinDesk-2.3.0-arm64.dmg');
-assert.strictEqual(pick(armOnly, 'mac', 'arm64'), 'TwinDesk-2.3.0-arm64.dmg');
+const armOnly = files(...OTHERS, 'Zantexa Link-2.3.0-arm64.dmg');
+assert.strictEqual(pick(armOnly, 'mac', 'arm64'), 'Zantexa Link-2.3.0-arm64.dmg');
 assert.strictEqual(pick(armOnly, 'mac', 'x64'), null);
 // The names up to 2.2.0 still work.
-const old = files(...OTHERS, 'TwinDesk.dmg', 'Twindesk_intel.dmg');
-assert.strictEqual(pick(old, 'mac', 'arm64'), 'TwinDesk.dmg');
+const old = files(...OTHERS, 'Zantexa Link.dmg', 'Twindesk_intel.dmg');
+assert.strictEqual(pick(old, 'mac', 'arm64'), 'Zantexa Link.dmg');
 assert.strictEqual(pick(old, 'mac', 'x64'), 'Twindesk_intel.dmg');
 // The other platforms are unaffected by the Mac's names.
-assert.strictEqual(pick(both, 'win', 'x64'), 'TwinDesk-Setup-2.3.0.exe');
-assert.strictEqual(pick(both, 'win', 'arm64'), 'TwinDesk-Setup-2.3.0-arm64.exe');
-assert.strictEqual(pick(both, 'linux', 'x64'), 'TwinDesk-2.3.0-x86_64.AppImage');
-assert.strictEqual(pick(both, 'linux', 'x64', 'deb'), 'TwinDesk-2.3.0-amd64.deb');
+assert.strictEqual(pick(both, 'win', 'x64'), 'Zantexa Link-Setup-2.3.0.exe');
+assert.strictEqual(pick(both, 'win', 'arm64'), 'Zantexa Link-Setup-2.3.0-arm64.exe');
+assert.strictEqual(pick(both, 'linux', 'x64'), 'Zantexa Link-2.3.0-x86_64.AppImage');
+assert.strictEqual(pick(both, 'linux', 'x64', 'deb'), 'Zantexa Link-2.3.0-amd64.deb');
 
 // Release notes formatting (Quotio-style markdown parser)
 const notes = `## What's Changed
@@ -83,11 +83,11 @@ const u = new Updates({
     status: 200,
     json: async () => ({
       tag_name: 'v2.4.0',
-      name: 'TwinDesk 2.4.0',
+      name: 'Zantexa Link 2.4.0',
       body: notes,
       published_at: '2026-10-27T10:00:00Z',
       html_url: 'https://github.com/InukaAsith/TwinDesk/releases/tag/v2.4.0',
-      assets: [{ name: 'TwinDesk-Setup-2.4.0.exe', browser_download_url: 'https://example.invalid/TwinDesk-Setup-2.4.0.exe', size: 1024 }],
+      assets: [{ name: 'Zantexa Link-Setup-2.4.0.exe', browser_download_url: 'https://example.invalid/TwinDesk-Setup-2.4.0.exe', size: 1024 }],
     }),
   }),
 });

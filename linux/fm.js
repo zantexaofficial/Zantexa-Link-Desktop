@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The file manager on this desktop, for pastes and drops (fclip.js, dragrecv.js, filerecv.js):
 //   front(helper) → {app, title, fm, desktop, folder} for the window in front, or null
 //   at(helper)    → the same for the window under the pointer (X11; on Wayland the front one)

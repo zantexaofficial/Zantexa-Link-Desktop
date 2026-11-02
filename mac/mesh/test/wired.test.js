@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // The USB cable check (wired.js _poll) with no phone connected: it asks hasPhone (from main.js) before
 // it looks at the cable, so Wired must keep it; without it every poll threw and no phone on a cable
 // was ever found in Multi-device mode.

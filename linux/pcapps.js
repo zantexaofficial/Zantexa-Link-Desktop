@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Apps, this computer → the other one (copy of windows/pcapps.js): the
 // app-menu apps (desktopapps.js) with icons, opened on the other computer's request; every visible
 // window of an app opened that way is streamed on its own (`rtc2` kind 'window', sender.js) while

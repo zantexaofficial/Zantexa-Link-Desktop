@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Copy and paste files between the computers with two shortcuts (default Ctrl+Alt+C /
 // Ctrl+Alt+V, Files tab). Port of windows/fclip.js.
 // The helper sees the shortcuts at home (shortcut.c: Electron's global shortcuts need X11 and an X
@@ -188,7 +188,7 @@ class FileClip {
     this.pasting = { id: inc.id, files: inc.files };
     const win = await fm.front(this.helper);
     const front = win && win.folder && fs.existsSync(win.folder) ? win.folder : '';
-    // An app in front (not a file manager, the desktop or TwinDesk itself): the files go into it.
+    // An app in front (not a file manager, the desktop or Zantexa Link itself): the files go into it.
     const into = !front && win && win.app && !win.fm && !win.desktop && !/twindesk/i.test(win.app) ? pastefiles.pasteDir() : '';
     if (into) this.pasting.into = { app: win.app };
     this.fileRecv.expectBatch(inc.id, front || into || receivedDir(this.settings, app.getPath('downloads')), inc.bytes, !front && !into);
@@ -217,7 +217,7 @@ class FileClip {
   }
 }
 
-// The clipboard as Electron sees it (when TwinDesk is in front on Wayland, or on X11).
+// The clipboard as Electron sees it (when Zantexa Link is in front on Wayland, or on X11).
 function electronClipboard() {
   try {
     const formats = clipboard.availableFormats();

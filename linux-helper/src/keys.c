@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // DOM KeyboardEvent.code <-> Linux evdev key codes (linux/input-event-codes.h). X keycode =
 // evdev + 8 with the evdev/libinput drivers. Same keys as windows-helper/src/Keys.cs.
 #include "helper.h"

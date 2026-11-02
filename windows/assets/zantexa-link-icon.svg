@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-label="Zantexa Link app icon">
+  <title>Zantexa Link app icon</title>
+  <defs>
+    <linearGradient id="gBridge" gradientUnits="userSpaceOnUse" x1="340" y1="765" x2="940" y2="215">
+      <stop offset="0" stop-color="#ff5aa0"/><stop offset="0.45" stop-color="#b52be0"/>
+      <stop offset="0.7" stop-color="#8a4dff"/><stop offset="1" stop-color="#5a66ff"/>
+    </linearGradient>
+    <linearGradient id="gTL" gradientUnits="userSpaceOnUse" x1="355" y1="440" x2="640" y2="260">
+      <stop offset="0" stop-color="#ff4fb8"/><stop offset="0.45" stop-color="#b02ae0"/><stop offset="1" stop-color="#5b3df5"/>
+    </linearGradient>
+    <linearGradient id="gBR" gradientUnits="userSpaceOnUse" x1="640" y1="700" x2="925" y2="560">
+      <stop offset="0" stop-color="#5a3df0"/><stop offset="0.6" stop-color="#7a58ff"/><stop offset="1" stop-color="#9a78ff"/>
+    </linearGradient>
+    <linearGradient id="gLink" gradientUnits="userSpaceOnUse" x1="399" y1="0" x2="861" y2="0">
+      <stop offset="0" stop-color="#ff3d9a"/><stop offset="0.5" stop-color="#8a2be2"/><stop offset="1" stop-color="#6a6bff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" rx="224" fill="#ffffff"/>
+  <g transform="translate(512 512) translate(-640 -490)">
+    <path fill="url(#gTL)" d="M462 223C500 223 525 242 548 265C580 298 610 315 636 318C648 320 648 328 636 331C605 335 580 350 565 375C540 412 505 443 462 443C401 443 352 394 352 333C352 272 401 223 462 223Z"/>
+    <path fill="url(#gBR)" d="M808 538C770 538 745 557 722 580C690 613 660 630 634 633C622 635 622 643 634 646C665 650 690 665 705 690C730 727 765 758 808 758C869 758 918 709 918 648C918 587 869 538 808 538Z"/>
+    <path fill="url(#gBridge)" d="M822 445C700 440 575 520 570 645A115 115 0 1 1 457 530C580 525 690 470 705 335A115 115 0 1 1 822 445Z"/>
+  </g>
+</svg>

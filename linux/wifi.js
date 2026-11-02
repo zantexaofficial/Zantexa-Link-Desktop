@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // This computer's Wi-Fi for a session through Bluetooth (shared/netlink.js), through NetworkManager
 // (nmcli; the Linux side of windows/wifi.js): hosting a network the other side joins (an access
 // point with NetworkManager's shared IPv4, as Windows' Wi-Fi Direct access point), or joining the
@@ -27,8 +27,8 @@ const path = require('path');
 
 const P = require('../shared/protocol.js');
 
-const HOST = 'TwinDesk host';
-const JOIN = 'TwinDesk link';
+const HOST = 'Zantexa Link host';
+const JOIN = 'Zantexa Link';
 const JOIN_MS = 45000;
 const TOOL = process.env.TWINDESK_WIFIAP
   || (fs.existsSync('/run/wrappers/bin/twindesk-wifiap') ? '/run/wrappers/bin/twindesk-wifiap' : '/usr/local/libexec/twindesk-wifiap');
@@ -119,7 +119,7 @@ class Wifi {
   }
 
   // Bluetooth LE links we open: 5 s of silence before they drop, not the kernel's 420 ms (a phone or
-  // a Mac busy with Wi-Fi for half a second lost TwinDesk's link). Again after an adapter reset puts
+  // a Mac busy with Wi-Fi for half a second lost Zantexa Link's link). Again after an adapter reset puts
   // the default back: main.js calls this now and then. Only with the tool already set up: no prompt.
   async bleTimeout() {
     if (!this.current) return;

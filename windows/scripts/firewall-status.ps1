@@ -1,4 +1,4 @@
-# TwinDesk - Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+# Zantexa Link - Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 # Portions adapted from Beamer (https://github.com/kalkman-code/beamer), Copyright (C) Kalkman Code,
 # GPL-3.0 (win_app/firewall_win.py's status script). firewall.js: the inbound rules for Exe, the
 # networks and their categories, and whether this account is an administrator, as JSON.

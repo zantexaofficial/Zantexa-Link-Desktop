@@ -1,9 +1,9 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The computer asks the phone to wake (a phone notification clicked there opens its app in a
 // window, which a locked phone fills with its lock screen). The screen comes on and the phone asks
 // for its own unlock (PIN, pattern, fingerprint: only ever typed on the phone); `phone.awake` says
 // when it's unlocked. Through the app, not adb: MIUI drops wireless debugging while locked.
-package com.twindesk.android
+package com.zantexalink.android
 
 import android.app.Activity
 import android.app.KeyguardManager

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Five devices on real loopback sockets: a partial mesh (a chain, items are relayed) and a full mesh
 // (every pair linked, items reach every device exactly once, no storm).
 'use strict';

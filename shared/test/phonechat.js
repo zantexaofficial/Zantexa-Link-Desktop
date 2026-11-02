@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // shared/phonechat.js: Enter sends only in a chat app, and only as that app can; arrows swipe only when asked.
 'use strict';
 

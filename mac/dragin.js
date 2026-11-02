@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Files and folders dragged in from the PC as a native drag here ("Drag files
 // across the screen edge"). `drag.start` → the helper starts an NSDraggingSession with
 // one file promise per top-level item; the files stream into a private temp tree as they arrive

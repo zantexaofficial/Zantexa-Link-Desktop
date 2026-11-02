@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Messages page (Mac, PC and Linux): the phone's conversations on the left, one on the right with
 // its texts and pictures, and a box to answer (the phone sends it). New messages come as they
 // arrive while Messages is on; their alerts are the phone's own notifications (Notifications).

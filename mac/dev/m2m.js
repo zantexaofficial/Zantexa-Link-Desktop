@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Dev check for Mac ↔ Mac: two copies on one Mac, each with its own profile and port.
 //   MACSHARE_PROFILE=/tmp/a MACSHARE_DEV_PORT=47810 MACSHARE_DEV_TEST=host  npm start
 //   MACSHARE_PROFILE=/tmp/b MACSHARE_DEV_PORT=47820 MACSHARE_DEV_TEST=guest:127.0.0.1:47810 npm start

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // A phone stylus's `pen` on in.mm/md/mu (shared/protocol.js P.penOf): what the helpers get.
 // Run with: node shared/test/pen.js
 'use strict';

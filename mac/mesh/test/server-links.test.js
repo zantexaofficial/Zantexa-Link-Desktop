@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // The Mac's server with many clients (adaptive keep-alive with a fake clock) and the tie-break of two
 // computers that hold each other (one socket, not two), on real loopback sockets.
 'use strict';

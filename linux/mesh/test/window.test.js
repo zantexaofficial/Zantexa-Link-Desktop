@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // The Linux mesh window (linux/mesh/app.html) loads every script it names, and the same shared ones
 // as the Windows mesh window it was made from: without shared/sidebar-model.js, mesh/app.js threw on
 // every redraw (no device list, no layout grid).

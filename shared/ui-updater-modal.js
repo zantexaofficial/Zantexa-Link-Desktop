@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Quotio/Sparkle-style in-app updater notification:
 // Presents a rich update modal with release notes, version comparison, asset details,
 // "Skip this version", "Remind me later", and "Download & Install" actions.
@@ -121,14 +121,14 @@
     const icon = document.createElement('div');
     icon.className = 'updater-icon';
     icon.setAttribute('role', 'img');
-    icon.setAttribute('aria-label', 'TwinDesk icon');
+    icon.setAttribute('aria-label', 'Zantexa Link icon');
 
     const titleBox = document.createElement('div');
     titleBox.className = 'updater-title-box';
 
     const title = document.createElement('h2');
     title.className = 'updater-title';
-    title.textContent = 'A new version of TwinDesk is available!';
+    title.textContent = 'A new version of Zantexa Link is available!';
 
     const subtitle = document.createElement('p');
     subtitle.className = 'updater-subtitle';
@@ -335,8 +335,8 @@
     const latest = u.latest ? `v${u.latest}` : 'New Version';
     const current = u.current ? `v${u.current}` : '';
 
-    title.textContent = `TwinDesk ${u.latest || ''} is available`;
-    subtitle.textContent = `A new version of TwinDesk is ready to download and install${current ? ` (you have ${current})` : ''}.`;
+    title.textContent = `Zantexa Link ${u.latest || ''} is available`;
+    subtitle.textContent = `A new version of Zantexa Link is ready to download and install${current ? ` (you have ${current})` : ''}.`;
 
     pillNew.textContent = latest;
     pillCur.textContent = current ? `Current: ${current}` : '';
@@ -380,7 +380,7 @@
       const showBanner = u.available && !u.skipped && bannerDismissedFor !== u.latest;
       banner.hidden = !showBanner;
       if (showBanner) {
-        banner._refs.lead.textContent = `TwinDesk ${u.latest} is available.`;
+        banner._refs.lead.textContent = `Zantexa Link ${u.latest} is available.`;
         banner._refs.sub.textContent = u.current ? `(current: v${u.current})` : '';
         banner._refs.getBtn.textContent = u.download ? 'Download' : 'Update';
       }

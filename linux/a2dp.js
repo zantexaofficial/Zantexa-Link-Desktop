@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The phone's sound here as its Bluetooth speaker on Linux (shared/btaudio.js's backend): BlueZ
 // connects the paired phone's A2DP audio source (Device1.ConnectProfile), and the sound server
 // (PipeWire's Bluetooth support, or PulseAudio's module-bluetooth-policy) plays it on the

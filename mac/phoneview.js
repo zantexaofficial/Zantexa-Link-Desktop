@@ -1,10 +1,10 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The phone in windows on the Mac: its screen (mirror, with its sound), and phone apps each in a
 // window of their own on a virtual display of the window's size (scrcpy new_display + flex, so
 // resizing the window resizes the app). One scrcpy session per window (scrcpy.js); the window
 // decodes the H.264 itself (phoneview-renderer.js) and sends touches, keys and scrolls back.
 // A phone app with windows here has a Dock icon of its own (dockstub.js, like a PC app), and pin()
-// keeps it in the Dock: opened from there, it asks TwinDesk for macshare://pc-app/phone:<package>.
+// keeps it in the Dock: opened from there, it asks Zantexa Link for macshare://pc-app/phone:<package>.
 //
 // A phone notification clicked on the Mac opens its app here (openNotified): the phone wakes and
 // asks for its unlock first if it's locked (Wake.kt), as the app's window would show the lock screen.
@@ -186,7 +186,7 @@ class PhoneViews extends EventEmitter {
   }
 
   cameraState() {
-    if (!this.cameraOn) return { on: false, facing: null, error: 'Camera is off on this computer: turn it on in TwinDesk’s Camera tab there', virtual: false };
+    if (!this.cameraOn) return { on: false, facing: null, error: 'Camera is off on this computer: turn it on in Zantexa Link’s Camera tab there', virtual: false };
     const v = [...this.views.values()].find((x) => x.kind === 'camera' && !x.ending);
     return { on: !!v, facing: v ? v.facing : null, error: v ? v.error || '' : '', virtual: !!(this.vcam && this.vcam.ready) };
   }
@@ -567,7 +567,7 @@ class PhoneViews extends EventEmitter {
           if (ev === 'quit') return ws.forEach((v) => v.win.close());
           const w = ws[ev === 'focus' ? i : 0];
           if (w) {
-            app.focus({ steal: true }); // TwinDesk has no Dock icon of its own
+            app.focus({ steal: true }); // Zantexa Link has no Dock icon of its own
             w.win.show();
             w.win.focus();
           }

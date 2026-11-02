@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Terminal, the other computer → this PC (it may be a Mac, another PC or Linux): it sends `ssh.key`;
 // with "Let {name} open a terminal on {me}" on and Windows' OpenSSH Server running, its key goes
 // into authorized_keys (administrators_authorized_keys for admin accounts, written elevated) with

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The one session this Mac has, whichever side opened it:
 //   host  — a PC or a Mac connected to our server (server.js), the usual case;
 //   guest — we connected to another Mac (link.js).

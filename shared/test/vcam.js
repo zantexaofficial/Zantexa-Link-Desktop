@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // shared/vcam.js: Camera › Virtual camera with a stand-in driver — installed when turned on,
 // the camera's windows told when it's ready, frames to the feed, failures said in the tab.
 'use strict';
@@ -17,7 +17,7 @@ const { VirtualCam, FRAME } = require('../vcam.js');
 
 function fakeDriver({ installed = false, fail = '' } = {}) {
   const d = {
-    name: 'TwinDesk Camera',
+    name: 'Zantexa Link Camera',
     installs: 0,
     written: 0,
     feeds: 0,
@@ -112,12 +112,12 @@ function fakeDriver({ installed = false, fail = '' } = {}) {
     ipcMain.removeAllListeners('vcam:frame');
   }
 
-  // Targets (the Mac: TwinDesk Camera or OBS Virtual Camera): each checked, removed and fed as itself.
+  // Targets (the Mac: Zantexa Link Camera or OBS Virtual Camera): each checked, removed and fed as itself.
   {
     const seen = [];
     const driver = Object.assign(fakeDriver(), {
-      targets: [{ value: 'twindesk', label: 'TwinDesk Camera' }, { value: 'obs', label: 'OBS Virtual Camera' }],
-      nameOf: (t) => (t === 'obs' ? 'OBS Virtual Camera' : 'TwinDesk Camera'),
+      targets: [{ value: 'twindesk', label: 'Zantexa Link Camera' }, { value: 'obs', label: 'OBS Virtual Camera' }],
+      nameOf: (t) => (t === 'obs' ? 'OBS Virtual Camera' : 'Zantexa Link Camera'),
       removable: (t) => t !== 'obs',
       async check(t) { seen.push(t); return t === 'obs' ? { supported: true, installed: true } : { supported: false, message: 'Not in this build' }; },
     });

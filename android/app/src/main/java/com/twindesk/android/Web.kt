@@ -1,10 +1,10 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The Mac's screen and sound on the phone. The Mac already streams to the computers over WebRTC
 // (mac/stream.js, mac/audio.js); Android's WebView speaks the same WebRTC, so the phone answers
 // those offers in two small pages (assets/web): viewer.html for the screen (ViewerActivity) and
 // audio.html for the sound (a WebView kept without a window). WebHost carries messages between
 // the link and a page.
-package com.twindesk.android
+package com.zantexalink.android
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -37,7 +37,7 @@ class WebHost(ctx: Context, page: String, private val core: Core, private val on
                 android.graphics.Bitmap.createBitmap(1, 1, android.graphics.Bitmap.Config.ARGB_8888).apply { eraseColor(android.graphics.Color.BLACK) }
 
             override fun onConsoleMessage(m: ConsoleMessage): Boolean {
-                Log.i("TwinDesk", "web: ${m.message()}")
+                Log.i("Zantexa Link", "web: ${m.message()}")
                 return true
             }
         }
@@ -190,7 +190,7 @@ class Screen(core: Core) : Feature(core) {
     }
 
     // name: the computer we're connected to, for the viewer's messages (stream.info's is the
-    // display it shares, e.g. the Mac's "TwinDesk (virtual)"; a PC or Linux sends none).
+    // display it shares, e.g. the Mac's "Zantexa Link (virtual)"; a PC or Linux sends none).
     // touch: "pad" (slide moves the pointer, tap clicks) or "direct" (the
     // pointer goes where the finger is, tap = click); speed and tap are the Remote page's touchpad settings;
     // pen: a stylus is a pen on the computer (its pressure, tilt, eraser), else a mouse.
@@ -312,8 +312,8 @@ class WifiFast(ctx: Context) {
     private val wm = ctx.applicationContext.getSystemService(android.net.wifi.WifiManager::class.java)
     @Suppress("DEPRECATION")
     private val locks = listOfNotNull(
-        runCatching { wm.createWifiLock(android.net.wifi.WifiManager.WIFI_MODE_FULL_LOW_LATENCY, "TwinDesk:screen") }.getOrNull(),
-        runCatching { wm.createWifiLock(android.net.wifi.WifiManager.WIFI_MODE_FULL_HIGH_PERF, "TwinDesk:screen-bg") }.getOrNull(),
+        runCatching { wm.createWifiLock(android.net.wifi.WifiManager.WIFI_MODE_FULL_LOW_LATENCY, "Zantexa Link:screen") }.getOrNull(),
+        runCatching { wm.createWifiLock(android.net.wifi.WifiManager.WIFI_MODE_FULL_HIGH_PERF, "Zantexa Link:screen-bg") }.getOrNull(),
     ).onEach { it.setReferenceCounted(false) }
     private var held = false
 
@@ -321,6 +321,6 @@ class WifiFast(ctx: Context) {
         if (on == held) return
         held = on
         for (l in locks) runCatching { if (on) l.acquire() else l.release() }
-        Log.i("TwinDesk", "wifi low latency ${if (on) "on" else "off"}")
+        Log.i("Zantexa Link", "wifi low latency ${if (on) "on" else "off"}")
     }
 }

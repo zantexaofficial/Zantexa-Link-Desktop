@@ -1,5 +1,5 @@
 #!/bin/sh
-# TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+# Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 # Fetches adb for macOS (Android platform-tools) into mac/vendor/adb/adb. build-app.sh runs it,
 # so the packaged app has adb for wireless debugging (mac/adb.js finds it there). A dev run can
 # use the Android SDK's or Homebrew's adb instead. Needs curl and unzip (both ship with macOS).

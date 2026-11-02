@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.TwinDesk" parent="android:Theme.Material.NoActionBar">
+    <style name="Theme.ZantexaLink" parent="android:Theme.Material.NoActionBar">
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
     </style>
-    <style name="Theme.TwinDesk.Invisible" parent="android:Theme.Translucent.NoTitleBar">
+    <style name="Theme.ZantexaLink.Invisible" parent="android:Theme.Translucent.NoTitleBar">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Files tab (copy of windows/ui-files.js): Send files (drop zone + Choose…) and copy/paste files
 // with shortcuts, then two direction cards — files and the other computer's folder coming here,
 // files and this computer's folder going there — then transfers. Drags across the edge, Monitor 2

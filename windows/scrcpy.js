@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // A scrcpy-server session on the phone (scrcpy 5.0.1, Apache-2.0, vendor/scrcpy-server), spoken
 // directly: push the server, forward its abstract socket, start it, then up to three sockets in
 // order — video, audio, control. Several sessions may run at once (each its own scid): one

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Main process (Linux) with Multi-device on (docs/multi-device.md): ../main.js starts this file instead
 // of its own code when multi.json says so. ../main.js over the mesh (hub.js) instead of one peer, as
 // windows/mesh/main.js is to windows/main.js; computers connect over the network only (no Bluetooth
@@ -80,7 +80,7 @@ if (!app.requestSingleInstanceLock()) {
   app.quit();
 } else {
   Menu.setApplicationMenu(null); // its accelerators would steal keys meant for the other computer
-  // Starting TwinDesk again shows the window (no tray on some desktops); a Mac app's launcher starts
+  // Starting Zantexa Link again shows the window (no tray on some desktops); a Mac app's launcher starts
   // "twindesk --mac-app=<id>": open that app instead; the file managers' Send to, --send-files.
   app.on('second-instance', (_e, argv) => {
     if (sendTo && sendTo.handle(argv)) return;
@@ -1012,7 +1012,7 @@ function createMainWindow() {
     y: b.y,
     minWidth: 720,
     minHeight: 480,
-    title: 'TwinDesk',
+    title: 'Zantexa Link',
     icon: path.join(__dirname, '..', 'assets', 'icon.png'),
     backgroundColor: nativeTheme.shouldUseDarkColors ? '#2b2b2e' : '#e9e9ee',
     show: false,
@@ -1067,10 +1067,10 @@ function createTray() {
     img.addRepresentation({ scaleFactor: 2, buffer: nativeImage.createFromPath(path.join(__dirname, '..', 'assets', 'tray@2x.png')).toPNG() });
     tray = new Tray(img);
   } catch (e) {
-    console.error('[tray]', e.message); // no tray on this desktop: start TwinDesk again to show the window
+    console.error('[tray]', e.message); // no tray on this desktop: start Zantexa Link again to show the window
     return;
   }
-  tray.setToolTip('TwinDesk');
+  tray.setToolTip('Zantexa Link');
   tray.on('click', showMain);
   updateTray(buildState());
 }
@@ -1080,7 +1080,7 @@ function createTray() {
 let trayKey = '';
 function updateTray(s) {
   if (!tray) return;
-  tray.setToolTip('TwinDesk: ' + statusLine(s));
+  tray.setToolTip('Zantexa Link: ' + statusLine(s));
   const connected = s.link.state === 'connected';
   const name = connected && s.peer ? s.peer.name : '';
   const k = settings.kvm;
@@ -1130,7 +1130,7 @@ function updateTray(s) {
     } })),
     byAddress: () => goTab('connection'),
     lookAgain: () => discovery.probe(),
-    update: s.updates && s.updates.available ? { label: 'Download TwinDesk ' + s.updates.latest + '…', click: showUpdateWindow } : null,
+    update: s.updates && s.updates.available ? { label: 'Download Zantexa Link ' + s.updates.latest + '…', click: showUpdateWindow } : null,
     open: showMain,
     log: () => require('../../shared/applog.js').open(),
     quit: () => app.quit(),

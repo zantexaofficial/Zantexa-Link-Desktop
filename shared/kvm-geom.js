@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The crossing map (one-to-one): where two computers' monitors touch, and where the pointer lands.
 // Each computer reports its displays (kvm.displays, shared/screen-mesh.js normalizeDisplays: OS
 // coordinates, points). The arrangement is `{side, along}`: the other computer is on `side` of this

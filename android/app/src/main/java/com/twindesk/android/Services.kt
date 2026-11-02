@@ -1,7 +1,7 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The Android components around Core: the foreground service that keeps it running, the
 // notification listener, notification buttons, start at boot, and the Quick Settings tile.
-package com.twindesk.android
+package com.zantexalink.android
 
 import android.app.NotificationManager
 import android.app.Service
@@ -25,7 +25,7 @@ class TwinService : Service() {
         try {
             startForeground(Notify.ID_LINK, Notify.link(this, core), ServiceInfo.FOREGROUND_SERVICE_TYPE_CONNECTED_DEVICE)
         } catch (e: Exception) {
-            Log.w("TwinDesk", "foreground service: ${e.message}")
+            Log.w("Zantexa Link", "foreground service: ${e.message}")
         }
     }
 
@@ -42,7 +42,7 @@ class TwinService : Service() {
         fun start(ctx: Context) {
             Core.wake(ctx)
             runCatching { ctx.startForegroundService(Intent(ctx, TwinService::class.java)) }
-                .onFailure { Log.w("TwinDesk", "start service: ${it.message}") }
+                .onFailure { Log.w("Zantexa Link", "start service: ${it.message}") }
         }
 
         // The ongoing notification follows the link.
@@ -101,7 +101,7 @@ class ActionReceiver : BroadcastReceiver() {
     }
 
     // Exit: disconnect (so the computer hears it), stop the service and its notification, and end
-    // the process, so nothing reconnects or comes back until TwinDesk is opened again (or the phone
+    // the process, so nothing reconnects or comes back until Zantexa Link is opened again (or the phone
     // restarts: BootReceiver).
     private fun exit(ctx: Context, core: Core) {
         core.store.setFlag("exited", true)
@@ -112,16 +112,16 @@ class ActionReceiver : BroadcastReceiver() {
     }
 
     companion object {
-        const val DISCONNECT = "com.twindesk.android.DISCONNECT"
-        const val CONNECT = "com.twindesk.android.CONNECT"
-        const val SEND_CLIP = "com.twindesk.android.SEND_CLIP"
-        const val FCLIP_COPY = "com.twindesk.android.FCLIP_COPY"
-        const val FCLIP_SAVE = "com.twindesk.android.FCLIP_SAVE"
-        const val ADB_ON = "com.twindesk.android.ADB_ON"
-        const val PAIR_CODE = "com.twindesk.android.PAIR_CODE"
-        const val EXIT = "com.twindesk.android.EXIT"
-        const val SOUND_STOP = "com.twindesk.android.SOUND_STOP"
-        const val REZUME_DISMISS = "com.twindesk.android.REZUME_DISMISS"
+        const val DISCONNECT = "com.zantexalink.android.DISCONNECT"
+        const val CONNECT = "com.zantexalink.android.CONNECT"
+        const val SEND_CLIP = "com.zantexalink.android.SEND_CLIP"
+        const val FCLIP_COPY = "com.zantexalink.android.FCLIP_COPY"
+        const val FCLIP_SAVE = "com.zantexalink.android.FCLIP_SAVE"
+        const val ADB_ON = "com.zantexalink.android.ADB_ON"
+        const val PAIR_CODE = "com.zantexalink.android.PAIR_CODE"
+        const val EXIT = "com.zantexalink.android.EXIT"
+        const val SOUND_STOP = "com.zantexalink.android.SOUND_STOP"
+        const val REZUME_DISMISS = "com.zantexalink.android.REZUME_DISMISS"
     }
 }
 

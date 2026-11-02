@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // HTTPS + WebSocket server on PORT: sessions, liveness, routing of authenticated messages.
 //
 // Events:

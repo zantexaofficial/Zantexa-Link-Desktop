@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Where is the pointer, file-wise? The folder of the Explorer window under it, or the Desktop
 // (the receiver places files there).
 using System;

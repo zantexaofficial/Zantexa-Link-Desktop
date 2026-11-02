@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // ReZume's switches between two computers joined back to back (windows/ and linux/pairsync.js, and
 // mac/pairsync.js as the host): one switch for the pair, whichever side flips it.
 // Run with: node shared/test/pairsync.js

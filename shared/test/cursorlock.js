@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The cursor lock key (shared/cursorlock.js): what may be a lock key, and the key while driving.
 // Run with: node shared/test/cursorlock.js
 'use strict';

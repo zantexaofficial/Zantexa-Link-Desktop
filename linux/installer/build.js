@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Builds the Linux packages (`npm run dist`): the helper, a staging folder with the same
 // layout as the repo (linux/, shared/, linux-helper/bin/), then electron-builder → AppImage and
 // .deb (x64). Same approach as windows/installer/build.js: the layout is kept so
@@ -89,8 +89,8 @@ async function main() {
     return file + '=' + f.path;
   });
   fs.writeFileSync(path.join(STAGE, 'package.json'), JSON.stringify({
-    name: 'twindesk', productName: pkg.productName, version: pkg.version, description: pkg.description,
-    license: pkg.license, author: { name: 'inukaasith', email: 'inukaasith@users.noreply.github.com' },
+    name: 'zantexa-link', productName: pkg.productName, version: pkg.version, description: pkg.description,
+    license: pkg.license, author: { name: 'Zantexa', email: 'zantexa.official@gmail.com' },
     homepage: 'https://github.com/InukaAsith/TwinDesk', main: 'linux/main.js', dependencies: pkg.dependencies,
   }, null, 2));
 
@@ -100,7 +100,7 @@ async function main() {
     projectDir: LIN,
     config: {
       appId: 'org.macshare.linux',
-      productName: 'TwinDesk',
+      productName: pkg.productName,
       copyright: 'Copyright (C) 2026 inukaasith',
       electronVersion,
       directories: { app: STAGE, output: path.join(LIN, 'dist') },
@@ -108,15 +108,15 @@ async function main() {
       npmRebuild: false,
       linux: {
         icon: path.join(LIN, 'assets', 'icon.png'),
-        executableName: 'twindesk',
+        executableName: 'zantexa-link',
         category: 'Utility',
         synopsis: 'Share mouse, keyboard, clipboard, files and screens with your other computer',
-        maintainer: 'inukaasith',
-        desktop: { entry: { Name: 'TwinDesk', StartupWMClass: 'TwinDesk', Keywords: 'KVM;mouse;keyboard;clipboard;screen;share;' } },
-        artifactName: 'TwinDesk-${version}-${arch}.${ext}',
+        maintainer: 'Zantexa <zantexa.official@gmail.com>',
+        desktop: { entry: { Name: pkg.productName, StartupWMClass: pkg.productName, Keywords: 'KVM;mouse;keyboard;clipboard;screen;share;' } },
+        artifactName: 'Zantexa-Link-${version}-${arch}.${ext}',
       },
       deb: {
-        // Electron's own needs plus what TwinDesk calls: openssl (host certificate), pactl (sound),
+        // Electron's own needs plus what Zantexa Link calls: openssl (host certificate), pactl (sound),
         // dbus-monitor (notifications), pkexec (firewall / input access fixes), GIO (the helper's
         // Bluetooth through BlueZ). Bluetooth and the Wi-Fi it moves to (NetworkManager) are for
         // devices not on this network: recommended, not needed.

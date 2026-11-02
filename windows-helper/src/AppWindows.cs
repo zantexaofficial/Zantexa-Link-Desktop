@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // PC apps on the Mac: the visible top-level windows with their process (path, parent,
 // AppUserModelID), visible frame in physical px and whether they are a pop-up (menu, drop-down,
 // owned caption-less window) with their owner; a "shown" event when a top-level window appears or

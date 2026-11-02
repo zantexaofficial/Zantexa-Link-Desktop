@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Loads EVERY non-renderer module of the multi-device Mac app (mac/mesh/, and each module of mac/ it has no
 // version of; mac/main.js, the one-to-one app, is left out) with `electron` stubbed, then builds the classes that can be
 // built with fakes. Fails on any exception: an import of the wrong shape (a default import of a named

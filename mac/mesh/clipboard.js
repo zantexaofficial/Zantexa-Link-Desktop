@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Clipboard text sharing across every connected device (docs/mesh.md, one pool): a copy goes to the
 // devices that accept clipboard from us, a clip from any device is applied once and relayed by the
 // Pool. Instant and switch modes, the concealed (password) filter, size limit, clip.policy per

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Joining everyone (docs/mesh.md "Joining everyone"): pair once, the mesh pairs the rest.
 //
 // A device that is connected to two others that are NOT connected to each other introduces them:

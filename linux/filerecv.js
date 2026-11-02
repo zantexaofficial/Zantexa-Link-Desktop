@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Files from the other computer (copy of windows/filerecv.js): `file.offer {drop:'release'}`
 // waits in a temp folder until the other computer's left button comes up here, then goes to the
 // file manager folder under the pointer (fm.js), else Downloads — never overwriting — and is shown

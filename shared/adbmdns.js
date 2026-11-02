@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The phone's wireless debugging services (_adb-tls-connect, _adb-tls-pairing) asked for over
 // mDNS ourselves, next to `adb mdns services`: adb's own mDNS (Openscreen) often sees nothing on
 // the same network where the system's Bonjour sees the phone, and then a phone that just paired

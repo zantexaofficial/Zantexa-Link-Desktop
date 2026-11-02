@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The calls' sound on this Mac over Bluetooth (shared/phonehub.js makes this only while Calls and
 // its Bluetooth option are on with a phone connected): mac-helper's macshare-calls connects to the
 // phone as its hands-free, like a headset, and macOS plays the call through the Mac's speakers and

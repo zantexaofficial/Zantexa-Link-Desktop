@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Actions from the control window (and the menu bar): validate, save settings, apply.
 'use strict';
 
@@ -221,7 +221,7 @@ function setupIpc(ctx) {
     copyText(text) {
       if (typeof text === 'string' && text.length < 200) clipboard.writeText(text);
     },
-    // Ask first (that puts TwinDesk in the System Settings list), then open the pane.
+    // Ask first (that puts Zantexa Link in the System Settings list), then open the pane.
     async allowPermission(kind) {
       if (!SETTINGS_URLS[kind]) return;
       let granted = false;
@@ -279,13 +279,13 @@ function setupIpc(ctx) {
       if (typeof id !== 'string' || !choice || typeof choice !== 'object') return undefined;
       return ctx.stream.setTarget(id, { mode: String(choice.mode), displayId: choice.displayId });
     },
-    // null = the TwinDesk virtual display
+    // null = the Zantexa Link virtual display
     selectDisplay(displayId) {
       settings.sharing.displayId = displayId == null ? null : Number(displayId);
       save();
       ctx.stream.restart('display selected');
     },
-    // Extend: Monitor 2 is the TwinDesk virtual display. Mirror: it shows this Mac's main screen.
+    // Extend: Monitor 2 is the Zantexa Link virtual display. Mirror: it shows this Mac's main screen.
     setDisplayMode(mode) {
       if (mode === 'mirror') {
         settings.sharing.displayId = screen.getPrimaryDisplay().id;
@@ -363,7 +363,7 @@ function setupIpc(ctx) {
     muteNotifApp(arg) {
       if (arg && typeof arg.app === 'string') ctx.notifs.setMuted(arg.app.slice(0, 200), !!arg.muted);
     },
-    // Full Disk Access has no request API: open the pane and show TwinDesk in Finder to drag in.
+    // Full Disk Access has no request API: open the pane and show Zantexa Link in Finder to drag in.
     allowFullDisk() {
       shell.openExternal(SETTINGS_URLS.fullDisk);
       const bundle = process.execPath.replace(/\/Contents\/MacOS\/[^/]+$/, '');
@@ -387,7 +387,7 @@ function setupIpc(ctx) {
       if (settings.smb.connectPc) ctx.smb.mountPc();
       else ctx.smb.unmountPc();
     },
-    // One switch: on = share the chosen folder (default ~/TwinDesk); off = stop sharing.
+    // One switch: on = share the chosen folder (default ~/Zantexa Link); off = stop sharing.
     setShareMac(on) {
       if (on) ctx.smb.startSharing();
       else ctx.smb.stopSharing();
@@ -572,7 +572,7 @@ function setupIpc(ctx) {
       app.exit(0);
     },
     setMulti(on) {
-      require('../multi').set(on === true); // Multi-device off: TwinDesk restarts one to one
+      require('../multi').set(on === true); // Multi-device off: Zantexa Link restarts one to one
     },
   };
 

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Under the parked pointer while it drives the other computer: an invisible top-most square of
 // our own, so the window under the pointer is never the user's. The wheel hook already swallows the
 // wheel, but a precision touchpad's scrolling (DirectManipulation) and some drivers (Synaptics,

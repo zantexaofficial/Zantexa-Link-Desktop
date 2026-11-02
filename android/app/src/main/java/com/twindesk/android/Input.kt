@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The computer's mouse and keyboard on this phone without wireless debugging (the session through
 // Bluetooth, or adb not set up): the computer sends phone.in (shared/phoneinput.js) and we apply it
 // with an Accessibility service, which the person switches on once, when they first move the
@@ -7,7 +7,7 @@
 //   when the button comes up: Accessibility can't hold a touch open across messages).
 //   Wheel: a short swipe. Keys: Back / Home / Recents / notifications as system actions; typing
 //   goes into the focused text field (characters, Backspace, Delete, arrows, Enter, Ctrl+A/C/X/V).
-package com.twindesk.android
+package com.zantexalink.android
 
 import android.accessibilityservice.AccessibilityService
 import android.accessibilityservice.GestureDescription
@@ -286,7 +286,7 @@ class Input(core: Core) : Feature(core) {
         return true
     }
 
-    // The Accessibility settings (the person finds TwinDesk there and switches it on).
+    // The Accessibility settings (the person finds Zantexa Link there and switches it on).
     fun openSettings() {
         runCatching { core.ctx.startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)) }
     }

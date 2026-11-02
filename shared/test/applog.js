@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Tests for shared/applog.js: console into the log file, kept to three files, crashes, the link line.
 // Run with: node shared/test/applog.js
 'use strict';
@@ -27,18 +27,18 @@ const read = (f) => { try { return fs.readFileSync(path.join(dir, f), 'utf8'); }
     console.log('hello %s', 'world');
     console.warn('[helper] something');
     await wait(50);
-    let log = read('TwinDesk.log');
-    assert.ok(/TwinDesk 9\.9\.9 started/.test(log), 'the start line');
+    let log = read('Zantexa Link.log');
+    assert.ok(/Zantexa Link 9\.9\.9 started/.test(log), 'the start line');
     assert.ok(/Z hello world\n/.test(log), 'console.log, formatted');
     assert.ok(/WARN \[helper\] something/.test(log), 'warn says so');
 
-    // Past the size: TwinDesk.log -> .1 -> .2, never a fourth.
+    // Past the size: Zantexa Link.log -> .1 -> .2, never a fourth.
     for (let i = 0; i < 400; i++) console.log('line %d %s', i, 'x'.repeat(40));
     await wait(100);
-    const files = fs.readdirSync(dir).filter((f) => /^TwinDesk/.test(f)).sort();
-    assert.deepStrictEqual(files, ['TwinDesk.1.log', 'TwinDesk.2.log', 'TwinDesk.log'], files.join());
+    const files = fs.readdirSync(dir).filter((f) => /^Zantexa Link/.test(f)).sort();
+    assert.deepStrictEqual(files, ['Zantexa Link.1.log', 'Zantexa Link.2.log', 'Zantexa Link.log'], files.join());
     for (const f of files) assert.ok(fs.statSync(path.join(dir, f)).size <= 4200, `${f} kept small`);
-    assert.ok(/line 399 /.test(read('TwinDesk.log')), 'the newest in TwinDesk.log');
+    assert.ok(/line 399 /.test(read('Zantexa Link.log')), 'the newest in Zantexa Link.log');
 
     // Crashes: in crash.log at once, and the process goes on.
     process.emit('uncaughtException', new Error('boom'));
@@ -57,7 +57,7 @@ const read = (f) => { try { return fs.readFileSync(path.join(dir, f), 'utf8'); }
     const stop = applog.linkStats(() => (connected ? { rtt: (rtt = (rtt % 10) + 1), queued: rtt * 100 } : null), 200, 10);
     const moves = new KvmMoves({ send: () => {} });
     for (let i = 0; i < 100; i++) moves.add(1, 0);
-    const linkLines = () => read('TwinDesk.log').split('\n').filter((l) => l.includes('[link]'));
+    const linkLines = () => read('Zantexa Link.log').split('\n').filter((l) => l.includes('[link]'));
     await wait(230);
     connected = false;
     await wait(250); // the window it went in

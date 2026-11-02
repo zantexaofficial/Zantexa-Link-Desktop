@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Audio both ways (copy of windows/sound.js): its own peer
 // connections in a hidden window, independent of the screen. Other → here: we answer
 // `audio.offer {dir:'m2w'}` while "Play <name>'s sound" is on (our `audio.policy`). Here → other: we

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The menu bar / tray menu, laid out the same on every platform (each main.js gives the model).
 // Connected: the status, the way home, Cursor Sharing, then the switches by kind (Mouse and
 // Keyboard, Screen, Clipboard and Sound, Files, Connection) and the app. Not connected: only
@@ -31,7 +31,7 @@ function connectTo(m) {
 function template(m) {
   const status = { label: m.status, enabled: false };
   if (!m.connected) {
-    return [status, ...(m.again ? [m.again] : []), connectTo(m), sep, { label: 'Open TwinDesk…', click: m.open }, { label: 'Quit TwinDesk', click: m.quit }];
+    return [status, ...(m.again ? [m.again] : []), connectTo(m), sep, { label: 'Open Zantexa Link…', click: m.open }, { label: 'Quit Zantexa Link', click: m.quit }];
   }
   return [
     status,
@@ -57,9 +57,9 @@ function template(m) {
     { label: 'Connection', submenu: [...(m.disconnect ? [m.disconnect, sep] : []), connectTo(m)] },
     sep,
     ...(m.update ? [m.update] : []),
-    { label: 'Open TwinDesk…', click: m.open },
+    { label: 'Open Zantexa Link…', click: m.open },
     { label: 'Open Log Folder', click: m.log },
-    { label: 'Quit TwinDesk', click: m.quit },
+    { label: 'Quit Zantexa Link', click: m.quit },
   ];
 }
 

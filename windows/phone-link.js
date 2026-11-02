@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The phone's end of the session, shaped like the Mac's peer.js as mac/phone.js, phone-bridge.js
 // and phoneview.js use it, so their ports here stay the same line for line: 'client' / 'closed'
 // (ctx) from our server, 't:<type>' (msg, ctx) for what the peer sends, sendToClient(), inject()

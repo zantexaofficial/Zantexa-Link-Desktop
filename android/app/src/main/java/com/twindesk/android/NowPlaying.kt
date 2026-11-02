@@ -1,11 +1,11 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // What plays on this phone, for the computer's Overview (its media controls, shared/nowplaying.js):
 // the app's media session — title, artist, its art, playing or paused, where it is — and Play,
 // Pause, Next, Previous and Seek from there. Android shows media sessions only to a notification
 // listener, so it's the full app's (the standard one says why: phone.media {none, why: 'listener'}).
 // Sent only while the computer asks (phone.media.want, its Audio › Media controls on Overview),
 // on every change, the art only when it changes.
-package com.twindesk.android
+package com.zantexalink.android
 
 import android.content.ComponentName
 import android.graphics.Bitmap

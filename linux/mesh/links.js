@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // The guest side of the mesh: one Link (link.js) per paired host, kept in pairings.json (a list).
 //
 // A host is a computer we dial (we were paired from it). Pairing runs one at a time: startPairing()

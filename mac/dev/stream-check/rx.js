@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Receiver like Windows' Monitor 2 (answerer, jitterBufferTarget 0) + clock decoding.
 const BITS = 24, B = 48;
 const v = document.getElementById('v');

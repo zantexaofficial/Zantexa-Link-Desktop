@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // P/Invoke: SendInput, low-level hooks, raw input, cursor, monitors and DPI.
 using System;
 using System.Runtime.InteropServices;

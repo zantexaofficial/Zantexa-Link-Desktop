@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Fetches adb for Windows (Android platform-tools: adb.exe and its two DLLs) into a folder,
 // windows/vendor/adb by default. installer/build.js runs it for the installer; run it once
 // (`npm run fetch-adb`) for a dev copy that has no Android SDK. Needs tar (Windows 10 and later,

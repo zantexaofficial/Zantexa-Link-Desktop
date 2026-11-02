@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // This phone's controls on the computer's Overview, and the computer's here (shared/devctl.js):
 //   dev.state → the computer: what it can do here (ring, lock, quick settings, ringer, volume), its
 //     quick settings (Wi-Fi, Bluetooth, mobile data, hotspot, torch, Do not disturb, auto-rotate,
@@ -11,7 +11,7 @@
 //     wireless debugging when it can (shared/devadb.js); otherwise its panel opens here.
 //   dev.state ← the computer: its own (ring, lock, sleep, Bluetooth, Do not disturb, volume), for
 //     the Computer page here; dev.do → the computer from that page.
-package com.twindesk.android
+package com.zantexalink.android
 
 import android.Manifest
 import android.app.AppOpsManager
@@ -57,7 +57,7 @@ class DevCtl(core: Core) : Feature(core) {
     private var alarmBefore = -1
     private var last = ""
 
-    // The computer's own controls, for the Computer page (null: it hasn't said: an older TwinDesk).
+    // The computer's own controls, for the Computer page (null: it hasn't said: an older Zantexa Link).
     @Volatile var computer: JSONObject? = null; private set
     var onComputer: (() -> Unit)? = null
 
@@ -154,7 +154,7 @@ class DevCtl(core: Core) : Feature(core) {
         }
     }
 
-    // A setting this app can't switch: its panel on the phone (TwinDesk may start it from the
+    // A setting this app can't switch: its panel on the phone (Zantexa Link may start it from the
     // background with Display over other apps).
     private fun panel(vararg intents: Intent) {
         for (i in intents) if (runCatching { ctx.startActivity(i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)) }.isSuccess) return

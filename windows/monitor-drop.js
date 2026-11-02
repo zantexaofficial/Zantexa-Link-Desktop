@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Monitor 2: drop files onto the Mac's screen. Paths come from the preload
 // (webUtils.getPathForFile); main sends them; progress comes back for the little status line.
 (function () {

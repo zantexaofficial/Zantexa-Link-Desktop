@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The call window (callwin.js): ringing — who, Answer and Decline; in a call — the time, Mute,
 // where the sound is (this computer or the phone, over Bluetooth) and End; then "Call ended".
 'use strict';

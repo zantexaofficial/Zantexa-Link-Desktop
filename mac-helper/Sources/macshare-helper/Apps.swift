@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Mac apps on the PC: list apps with icons, launch, watch the windows
 // of launched apps, move them onto the shared display, raise / close one (Accessibility API).
 import Cocoa

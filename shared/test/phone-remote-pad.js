@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Remote › Real gamepad (shared/phone-remote.js): remote.pad as the feed's 12 bytes; the driver is
 // loaded only when it's turned on, installs when it isn't yet, and its feed runs only while the
 // phone is connected; what's held is let go (zeros) when the page closes or the phone goes.

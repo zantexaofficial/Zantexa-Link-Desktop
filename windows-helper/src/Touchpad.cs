@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // This PC's precision touchpad while we drive the other
 // computer. Raw Input from HID usage page 0x0D / usage 0x05 (the touchpad collection) gives the
 // contacts; the HID parser (hid.dll HidP_*) reads tip switch, contact id, X and Y per finger. Frames

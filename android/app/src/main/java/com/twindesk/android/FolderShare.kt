@@ -1,13 +1,13 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Shared folders with the computer, both ways (shared/foldershare.js there). On USB, Wi-Fi or
 // Wi-Fi Direct; through Bluetooth neither runs.
-//   - This phone's folder there: switched on in File access, the folder chosen (TwinDesk in the
+//   - This phone's folder there: switched on in File access, the folder chosen (Zantexa Link in the
 //     phone's storage unless another is) is served over WebDAV (Dav.kt) and the computer mounts it
-//     in its file manager (share.offer). Needs All files access: TwinDesk reads and writes the files
+//     in its file manager (share.offer). Needs All files access: Zantexa Link reads and writes the files
 //     itself. Offered again whenever the session moves (Bluetooth <-> Wi-Fi, the cable).
 //   - The computer's folder here: when it shares one (share.host), it shows in Android's Files app
 //     and every app's file picker (PcShareProvider.kt), until the session ends.
-package com.twindesk.android
+package com.zantexalink.android
 
 import android.net.Uri
 import android.os.Environment
@@ -46,7 +46,7 @@ class FolderShare(core: Core) : Feature(core) {
     private var lastLink = ""
 
     val on get() = core.store.flag("shareOn", false)
-    val folder: File get() = core.store.prefsString("shareFolder", "").let { if (it.isEmpty()) File(Environment.getExternalStorageDirectory(), "TwinDesk") else File(it) }
+    val folder: File get() = core.store.prefsString("shareFolder", "").let { if (it.isEmpty()) File(Environment.getExternalStorageDirectory(), "Zantexa Link") else File(it) }
     val serving get() = dav != null
     val allowed get() = FsBrowse.allowed()
 
@@ -116,7 +116,7 @@ class FolderShare(core: Core) : Feature(core) {
                 val d = dav ?: Dav(f, secret, volumeName(f), ShareKey.ssl(), ::fromComputer).also { it.start(); dav = it }
                 core.send(msg(Proto.T.SHARE_OFFER, "on" to true, "port" to d.port, "secret" to secret, "name" to volumeName(f), "cert" to ShareKey.cert()))
             }.onFailure {
-                Log.w("TwinDesk", "share: $it")
+                Log.w("Zantexa Link", "share: $it")
                 error = it.message ?: "didn’t start"
                 stopDav()
                 core.send(msg(Proto.T.SHARE_OFFER, "on" to false))
@@ -192,7 +192,7 @@ object ShareKey {
                     KeyGenParameterSpec.Builder(ALIAS, KeyProperties.PURPOSE_SIGN)
                         .setAlgorithmParameterSpec(ECGenParameterSpec("secp256r1"))
                         .setDigests(KeyProperties.DIGEST_NONE, KeyProperties.DIGEST_SHA256, KeyProperties.DIGEST_SHA384, KeyProperties.DIGEST_SHA512)
-                        .setCertificateSubject(X500Principal("CN=TwinDesk phone"))
+                        .setCertificateSubject(X500Principal("CN=Zantexa Link phone"))
                         .setCertificateNotBefore(Date(System.currentTimeMillis() - 86_400_000L))
                         .setCertificateNotAfter(Date(4_102_444_800_000L)) // 2100
                         .build(),

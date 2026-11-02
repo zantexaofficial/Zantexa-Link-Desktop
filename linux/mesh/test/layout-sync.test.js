@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // The shared layout (windows/layout-sync.js, shared/layout.js) on real sockets: every node has a real
 // Server, Pairing, LinkManager, Mesh, Hub and LayoutSync, paired with the real pairing protocol.
 // Run with: node linux/mesh/test/layout-sync.test.js  (NODE_PATH and ELECTRON_OVERRIDE_DIST_PATH as in CI)

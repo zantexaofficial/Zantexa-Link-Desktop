@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Apps › PC apps on this Mac: list and open the PC's apps; each of
 // their windows arrives as its own `rtc2` session (kind `window`, `wid`) and is shown in its own
 // Mac window (low-latency viewer), sized like on the PC. Each PC app gets its own
@@ -338,7 +338,7 @@ class PcApps extends EventEmitter {
     const pick = ev === 'focus' ? ws[i] : ws.sort((a, b) => b.focusedAt - a.focusedAt)[0];
     if (ev === 'activate') for (const w of ws) w.win.showInactive();
     if (pick) {
-      app.focus({ steal: true }); // TwinDesk has no Dock icon of its own
+      app.focus({ steal: true }); // Zantexa Link has no Dock icon of its own
       pick.win.show();
       pick.win.focus();
     }

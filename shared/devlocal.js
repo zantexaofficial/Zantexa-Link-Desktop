@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // This computer's own controls, for the other device's Overview (shared/devctl.js): ring until
 // stopped, lock, sleep, Bluetooth on or off, Do not disturb, the output volume. Each platform's
 // way, with what it can't do left out of can() (an older system, a missing tool):

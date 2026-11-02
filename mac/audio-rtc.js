@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Standalone sound: one audio-only peer connection per
 // direction. m2w: this Mac sends (offerer, PCM from the helper via an AudioWorklet).
 // w2m: the PC sends; this window answers and plays it.

@@ -1,9 +1,9 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Photos and videos on the computer (Hub.kt): the phone's gallery a page at a time (media.list),
 // small pictures for the grid (media.thumb, the ones on screen first), a big one to look at
 // (media.view), and the files themselves to the computer's Downloads (media.save, as Send).
 // Nothing runs on its own: it answers what the computer asks while its page is open.
-package com.twindesk.android
+package com.zantexalink.android
 
 import android.content.ContentUris
 import android.graphics.Bitmap

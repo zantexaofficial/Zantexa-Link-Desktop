@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // shared/qr.js: the pairing QR codes. Versions grow with the text, and the fixed patterns (finders,
 // timing) are where a reader looks for them. (Decoded with OpenCV while it was written: v1, 4, 7, 10.)
 'use strict';
@@ -6,8 +6,8 @@
 const assert = require('assert');
 const Q = require('../qr.js');
 
-const pair = 'twindesk://pair?id=a8fcde0b-e03b-4085-a469-76b3100db0cc&n=Inuka&a=192.168.1.20,10.0.0.5&p=47800&k=0123456789abcdef';
-const adb = 'WIFI:T:ADB;S:twindesk-AbCdEf12;P:kL9xQ2mN7p;;';
+const pair = 'zantexalink://pair?id=a8fcde0b-e03b-4085-a469-76b3100db0cc&n=Inuka&a=192.168.1.20,10.0.0.5&p=47800&k=0123456789abcdef';
+const adb = 'WIFI:T:ADB;S:zantexa-link-AbCdEf12;P:kL9xQ2mN7p;;';
 const sizes = [['hello', 1], [adb, 4], [pair, 7]].map(([t, v]) => {
   const q = Q.encode(t);
   assert.strictEqual(q.version, v, t);

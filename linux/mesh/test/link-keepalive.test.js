@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // The keep-alive in real time: a busy link pings about every second, an idle link about every five
 // seconds. Pings are counted on both ends of the one socket. A ping is only sent when nothing was
 // sent on the link for the interval, and a pong is a send too, so the side that hears silence pings

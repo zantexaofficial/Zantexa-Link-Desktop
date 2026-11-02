@@ -1,16 +1,16 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // ReZume (shared/rezume.js on the computer): go on with what's in use on the other device.
-//   Offering: the app in front here (TwinDesk's Accessibility says which), and in a browser its
+//   Offering: the app in front here (Zantexa Link's Accessibility says which), and in a browser its
 //   address (its address bar, read by its id), once it stayed in front STABLE_MS: rz.offer. The
 //   computer opens a tab in its browser, an app in a phone window (wireless debugging). Without
 //   Accessibility the computer asks through wireless debugging instead (policy detect: false).
 //   Taking: the computer's tab or document as a quiet notification (the last one only); tapped, a
 //   tab opens here, a document comes across (file.offer drop 'rezume') and opens. Sent on purpose
-//   (the computer's Send to): opened at once when Android lets TwinDesk (Display over other apps),
+//   (the computer's Send to): opened at once when Android lets Zantexa Link (Display over other apps),
 //   else a notification that rings once.
 //   "Open on computer" in the share sheet (ShareActivity) is there only while ReZume is on.
 // Off until turned on: nothing is read, nothing runs.
-package com.twindesk.android
+package com.zantexalink.android
 
 import android.content.ComponentName
 import android.content.Intent
@@ -73,7 +73,7 @@ class Rezume(core: Core) : Feature(core) {
     // "Open on computer" in the share sheet only while ReZume is on.
     private fun shareTarget(v: Boolean) = runCatching {
         core.ctx.packageManager.setComponentEnabledSetting(
-            ComponentName(core.ctx, "com.twindesk.android.OpenOnComputer"),
+            ComponentName(core.ctx, "com.zantexalink.android.OpenOnComputer"),
             if (v) PackageManager.COMPONENT_ENABLED_STATE_ENABLED else PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
             PackageManager.DONT_KILL_APP,
         )
@@ -115,7 +115,7 @@ class Rezume(core: Core) : Feature(core) {
     private fun timers() {
         val p = peer
         val want = on && opt("send") && core.link.connected && p != null && p.optBoolean("on")
-        if (want && poll == null) poll = core.bg.scheduleWithFixedDelay({ runCatching { tick() }.onFailure { Log.e("TwinDesk", "rezume", it) } }, 1500, 1500, TimeUnit.MILLISECONDS)
+        if (want && poll == null) poll = core.bg.scheduleWithFixedDelay({ runCatching { tick() }.onFailure { Log.e("Zantexa Link", "rezume", it) } }, 1500, 1500, TimeUnit.MILLISECONDS)
         else if (!want) {
             poll?.cancel(false)
             poll = null
@@ -177,7 +177,7 @@ class Rezume(core: Core) : Feature(core) {
     private fun say(why: String) {
         if (why == said) return
         said = why
-        if (why.isNotEmpty()) Log.i("TwinDesk", "rezume: $why")
+        if (why.isNotEmpty()) Log.i("Zantexa Link", "rezume: $why")
     }
 
     private fun label(pkg: String): String = runCatching {
@@ -209,7 +209,7 @@ class Rezume(core: Core) : Feature(core) {
         outAt = System.currentTimeMillis()
         offered = o.optString("title")
         core.send(o)
-        Log.i("TwinDesk", "rezume: offered ${o.optString("kind")} ${o.optString("app")}${if (push) " (sent)" else ""}")
+        Log.i("Zantexa Link", "rezume: offered ${o.optString("kind")} ${o.optString("app")}${if (push) " (sent)" else ""}")
         core.changed()
     }
 
@@ -224,7 +224,7 @@ class Rezume(core: Core) : Feature(core) {
         val url = URL_IN.find(text)?.value ?: return "That has no link to open"
         val p = peer
         val name = core.host?.name ?: "your computer"
-        if (p == null) return "$name has no ReZume yet: update TwinDesk there"
+        if (p == null) return "$name has no ReZume yet: update Zantexa Link there"
         if (!p.optBoolean("on") || !p.optBoolean("web", true)) return "ReZume is off on $name"
         send(JSONObject().put("kind", "web").put("url", url).put("title", Uri.parse(url).host?.removePrefix("www.") ?: url).put("app", "").put("appName", ""), true)
         return null
@@ -237,7 +237,7 @@ class Rezume(core: Core) : Feature(core) {
             Proto.T.RZ_POLICY -> {
                 val was = peer?.optBoolean("on") == true
                 val first = peer == null
-                if (peer?.optBoolean("on") != m.optBoolean("on")) Log.i("TwinDesk", "rezume: ${if (m.optBoolean("on")) "on" else "off"} on the computer")
+                if (peer?.optBoolean("on") != m.optBoolean("on")) Log.i("Zantexa Link", "rezume: ${if (m.optBoolean("on")) "on" else "off"} on the computer")
                 peer = m
                 if (first) sendPolicy() // ours may have come before ReZume loaded there (when it's turned on)
                 if (!m.optBoolean("on")) clearOut()
@@ -277,7 +277,7 @@ class Rezume(core: Core) : Feature(core) {
             else -> return
         }
         val push = m.optBoolean("push") && opt("push")
-        Log.i("TwinDesk", "rezume: ${o.kind} from the computer${if (m.optBoolean("push")) " (sent)" else ""}")
+        Log.i("Zantexa Link", "rezume: ${o.kind} from the computer${if (m.optBoolean("push")) " (sent)" else ""}")
         if (push && Settings.canDrawOverlays(core.ctx)) return take(o) // Android lets an app with the overlay open things
         incoming = o
         if (opt("notify") || push) Notify.rezume(core.ctx, core.host?.name ?: "your computer", o, loud = push)

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // ReZume tab (Mac, PC and Linux; with a computer or a phone, shared/rezume.js): go on here with
 // the tab, document or phone app in use on the other device, and the other way round. Its switch at
 // the top turns it on (off until then: nothing is looked at, no permission asked). What goes
@@ -109,9 +109,9 @@
           : 'A phone app opens here in a window of its own, as it was');
         status.setHint(!h.connected ? 'Not connected'
           : !h.on ? 'Off here'
-            : !h.peerKnows ? 'No ReZume there yet: update TwinDesk on {name}'
+            : !h.peerKnows ? 'No ReZume there yet: update Zantexa Link on {name}'
               : !h.peerOn ? 'Off on {name}: turn it on there too'
-                : phone && !h.peerDetects ? (h.mirrorReady ? 'Ready: the phone’s apps through wireless debugging (its pages need TwinDesk’s Accessibility there)' : 'Ready for pages and documents. For what’s in use on the phone, turn on TwinDesk’s Accessibility there, or wireless debugging')
+                : phone && !h.peerDetects ? (h.mirrorReady ? 'Ready: the phone’s apps through wireless debugging (its pages need Zantexa Link’s Accessibility there)' : 'Ready for pages and documents. For what’s in use on the phone, turn on Zantexa Link’s Accessibility there, or wireless debugging')
                   : h.incoming ? 'Ready: something to go on with, above' : 'Ready');
         out.hidden = !h.out;
         if (h.out) {

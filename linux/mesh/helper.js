@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // ../helper.js with Multi-device's helper: macshare-linuxhelper-multi, the same sources built with
 // -DMULTI (several watched edges on X11: the #ifdef MULTI parts of linux-helper/src/capture.c and
 // main.c). Where it isn't built (an older bin/), the one-to-one helper starts instead and watches the

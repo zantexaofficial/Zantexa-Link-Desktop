@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The desktop's mouse acceleration, for the Wayland helper (linux-helper/src/wl.c): no app may
 // read where the pointer is there, so the helper follows it from the mouse's moves with libinput's
 // acceleration, and it has to be the one the desktop set, or a quick flick puts the helper's pointer

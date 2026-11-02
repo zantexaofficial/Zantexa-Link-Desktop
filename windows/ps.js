@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Run the app's own PowerShell scripts (windows/scripts/*.ps1, shipped with it): normally, or
 // elevated (one UAC prompt, waits for it to finish), with named arguments. Nothing is written to
 // temp and run from there, and nothing is an encoded or inline command: scripts dropped into temp

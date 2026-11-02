@@ -1,8 +1,8 @@
-# TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+# Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 # Builds and signs the calls' sparse package (AppxManifest.xml) into <Bin>\twindesk-calls.msix, with
 # its certificate's public half beside it (twindesk-calls.cer), which the installer trusts for app
 # packages only (LocalMachine\TrustedPeople). The certificate is self-signed, made once on the PC
-# that builds (CN=TwinDesk, as the manifests' publisher), its private key kept in that user's store.
+# that builds (CN=Zantexa Link, as the manifests' publisher), its private key kept in that user's store.
 # Run by build.cmd; needs the Windows SDK's makeappx and signtool.
 param([Parameter(Mandatory = $true)][string]$Bin)
 $ErrorActionPreference = 'Stop'
@@ -26,9 +26,9 @@ try {
   if ($LASTEXITCODE) { throw 'makeappx failed' }
 } finally { Remove-Item -Recurse -Force $stage }
 
-$cert = Get-ChildItem Cert:\CurrentUser\My | Where-Object { $_.Subject -eq 'CN=TwinDesk' -and $_.HasPrivateKey -and $_.NotAfter -gt (Get-Date).AddDays(30) } | Select-Object -First 1
+$cert = Get-ChildItem Cert:\CurrentUser\My | Where-Object { $_.Subject -eq 'CN=Zantexa Link' -and $_.HasPrivateKey -and $_.NotAfter -gt (Get-Date).AddDays(30) } | Select-Object -First 1
 if (-not $cert) {
-  $cert = New-SelfSignedCertificate -Type CodeSigningCert -Subject 'CN=TwinDesk' -CertStoreLocation Cert:\CurrentUser\My `
+  $cert = New-SelfSignedCertificate -Type CodeSigningCert -Subject 'CN=Zantexa Link' -CertStoreLocation Cert:\CurrentUser\My `
     -KeyUsage DigitalSignature -NotAfter (Get-Date).AddYears(10) -TextExtension @('2.5.29.19={text}')
 }
 Export-Certificate -Cert $cert -FilePath (Join-Path $Bin 'twindesk-calls.cer') | Out-Null

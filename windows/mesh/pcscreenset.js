@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Share screen to several devices at once (docs/screen-mesh.md). Every connected device gets a PcScreen
 // of its own, made by `make(scopedLink)` on a link scoped to that device (hub.scoped), so each target has
 // its own WebRTC session, mode, monitor and policy. The stream table (shared/screen-mesh.js) holds what

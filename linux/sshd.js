@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Terminal, the other computer → this one (Linux version of
 // windows/sshd.js): the other side sends `ssh.key`; with "Let {name} open a terminal on {me}" on
 // and the OpenSSH server running, its key goes into ~/.ssh/authorized_keys with the marker

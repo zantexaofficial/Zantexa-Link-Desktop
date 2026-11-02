@@ -1,11 +1,11 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // This device's screenshots onto the computer's clipboard, as a picture (Clip.kt sendPicture,
 // marked `shot`). On a computer a screenshot goes when it is put on the clipboard; Android puts
 // none there and tells apps in the background nothing about screenshots, so while connected we
 // watch the photo library for a new picture in a Screenshots folder (needs photo access, or the
 // All files access the computer may have had granted). Only while Pictures is on here and on the
 // computer; never through Bluetooth.
-package com.twindesk.android
+package com.zantexalink.android
 
 import android.Manifest
 import android.content.ContentUris
@@ -36,7 +36,7 @@ class Screenshots(core: Core) : Feature(core) {
     val canRead: Boolean get() = (Build.VERSION.SDK_INT >= 30 && Environment.isExternalStorageManager()) ||
         core.ctx.checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED
 
-    private val look = Runnable { core.bg.execute { runCatching { send() }.onFailure { Log.w("TwinDesk", "screenshot: ${it.message}") } } }
+    private val look = Runnable { core.bg.execute { runCatching { send() }.onFailure { Log.w("Zantexa Link", "screenshot: ${it.message}") } } }
 
     override fun onWelcome(host: Host) = watch()
     override fun onClosed() = watch()
@@ -56,7 +56,7 @@ class Screenshots(core: Core) : Feature(core) {
                 runCatching {
                     core.ctx.contentResolver.registerContentObserver(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, true, o)
                     observer = o
-                }.onFailure { Log.w("TwinDesk", "screenshots: ${it.message}") }
+                }.onFailure { Log.w("Zantexa Link", "screenshots: ${it.message}") }
             } else if (!want && observer != null) {
                 observer?.let { runCatching { core.ctx.contentResolver.unregisterContentObserver(it) } }
                 observer = null

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The bundled adb (Android platform-tools), for the phone's wireless debugging: pairing with
 // its code, connecting, shell commands, pushing scrcpy-server and port forwards. Port of
 // windows/adb.js. The packages have adb in linux/vendor/adb (installer/build.js fetches it,

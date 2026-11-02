@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // The cursor edges (windows/kvm.js, windows/layout-sync.js) on real sockets: node A has a real Kvm with a
 // fake helper (it records what it is told and lets the test emit helper events); B and C are other
 // computers whose hub bus records the kvm messages they get. Real Server, Pairing, LinkManager, Mesh,

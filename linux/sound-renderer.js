@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Hidden sound window: the other computer → here receiver (answers dir 'm2w') and the here → other
 // sender (offers dir 'w2m' with this computer's sound: the PulseAudio/PipeWire loopback source
 // loopback.js loads, picked by its label). Audio-only, Opus stereo. Copy of windows/sound-renderer.js.

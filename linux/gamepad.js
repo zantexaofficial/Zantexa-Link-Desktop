@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Remote › Real gamepad on Linux (shared/phone-remote.js's pad driver): the phone's gamepad as a
 // uinput gamepad with an Xbox 360 controller's ids, which games and SDL take as one. The first time
 // it's turned on (one password prompt, pkexec) a udev rule gives the person at the computer
@@ -26,10 +26,10 @@ function writable() {
 }
 
 const driver = {
-  name: 'TwinDesk Gamepad',
+  name: 'Zantexa Link Gamepad',
 
   async check() {
-    if (!fs.existsSync(WRITER)) return { supported: false, message: 'Not in this build of TwinDesk' };
+    if (!fs.existsSync(WRITER)) return { supported: false, message: 'Not in this build of Zantexa Link' };
     return { supported: true, installed: writable() };
   },
 

@@ -1,8 +1,8 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Two-way switches shared with the computer, remembered per pair (mac/pairsync.js): the
 // computer hosts, so after welcome it sends all of them and we adopt them; after that either side
 // sends one when its person flips it. Directions are told from the sender's side.
-package com.twindesk.android
+package com.zantexalink.android
 
 import org.json.JSONObject
 

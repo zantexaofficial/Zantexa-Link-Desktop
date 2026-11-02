@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // ../helper.js with Multi-device's helper: macshare-winhelper-multi.exe, the same sources built with MULTI
 // (several watched sides, windows-helper/src/CaptureMulti.cs). Where it isn't built (an older bin/), the
 // one-to-one helper starts instead and watches the first side the mesh names (kvm.js sends it as side).

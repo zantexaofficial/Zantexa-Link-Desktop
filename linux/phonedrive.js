@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // An Android phone in the file manager: shared/phonedrive.js's WebDAV server, mounted with GVFS
 // (`gio mount dav://…`, no root), so it shows in the sidebar of Files and the other GTK file
 // managers and as a folder under $XDG_RUNTIME_DIR/gvfs for every app. GVFS would ask for a

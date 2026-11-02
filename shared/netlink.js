@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Wi-Fi for a session that runs through Bluetooth: files and screens need more than Bluetooth
 // carries, so one side hosts a network for a while and the other joins it. Once both are on it,
 // discovery sees the host there and the guest moves the session onto it (hello {resume}): nothing

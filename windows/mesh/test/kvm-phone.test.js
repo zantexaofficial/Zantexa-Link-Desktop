@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // A phone and a computer connected at the same time: input goes to the device behind the edge (the partner), not to the phone because a phone is connected.
 // Computers A, B, C sit in a row in the shared layout (A - B - C) and are all linked (A drives through a
 // link to each). A drives B; B's pointer leaves to the right, A releases B and takes C; C's pointer

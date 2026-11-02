@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Linux checks for Setup and General: the desktop session, input access on Wayland
 // (/dev/uinput writable and /dev/input readable, through a udev rule and the `input`
 // group) and the firewall (ufw or firewalld must let 47800/tcp and 47801/udp in). Fixes ask for
@@ -34,15 +34,15 @@ function session() {
 async function checkFirewall(fixed) {
   const ufw = await run('systemctl', ['is-active', 'ufw']);
   if (ufw.out === 'active') {
-    return fixed ? { ok: true, tool: 'ufw', message: 'ufw lets TwinDesk in' }
-      : { ok: false, tool: 'ufw', message: 'ufw is on and may block TwinDesk.' };
+    return fixed ? { ok: true, tool: 'ufw', message: 'ufw lets Zantexa Link in' }
+      : { ok: false, tool: 'ufw', message: 'ufw is on and may block Zantexa Link.' };
   }
   const fwd = await run('firewall-cmd', ['--state']);
   if (fwd.out === 'running') {
     const tcp = await run('firewall-cmd', ['--query-port=' + PORTS.tcp + '/tcp']);
     const udp = await run('firewall-cmd', ['--query-port=' + PORTS.udp + '/udp']);
     const ok = tcp.out === 'yes' && udp.out === 'yes';
-    return { ok, tool: 'firewalld', message: ok ? 'firewalld lets TwinDesk in' : 'firewalld blocks TwinDesk.' };
+    return { ok, tool: 'firewalld', message: ok ? 'firewalld lets Zantexa Link in' : 'firewalld blocks Zantexa Link.' };
   }
   return { ok: true, tool: '', message: 'No firewall is on' };
 }
@@ -50,7 +50,7 @@ async function checkFirewall(fixed) {
 // Also mDNS (5353/udp): adb finds a phone's wireless debugging with it (phone-bridge.js).
 async function fixFirewall(tool) {
   if (fs.existsSync('/etc/NIXOS')) {
-    throw new Error('On NixOS, add networking.firewall.allowedTCPPorts = [ 47800 ]; and networking.firewall.allowedUDPPorts = [ 47801 5353 ]; in configuration.nix (or enable services.twindesk.enable).');
+    throw new Error('On NixOS, add networking.firewall.allowedTCPPorts = [ 47800 ]; and networking.firewall.allowedUDPPorts = [ 47801 5353 ]; in configuration.nix (or enable programs.zantexaLink.enable).');
   }
   const script = tool === 'firewalld'
     ? 'firewall-cmd --permanent --add-port=' + PORTS.tcp + '/tcp --add-port=' + PORTS.udp + '/udp --add-service=mdns && firewall-cmd --reload'
@@ -81,7 +81,7 @@ function inputAccess() {
 // The group counts from the next login.
 async function fixInput() {
   if (fs.existsSync('/etc/NIXOS')) {
-    throw new Error('On NixOS, enable hardware.uinput.enable = true; and add your user to the "input" and "uinput" groups in configuration.nix (or enable services.twindesk.enable).');
+    throw new Error('On NixOS, enable hardware.uinput.enable = true; and add your user to the "input" and "uinput" groups in configuration.nix (or enable programs.zantexaLink.enable).');
   }
   const user = require('os').userInfo().username;
   if (!/^[a-z_][a-z0-9_.-]*\$?$/i.test(user)) throw new Error('unexpected user name');

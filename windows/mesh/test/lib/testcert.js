@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Throwaway TLS certificate for the tests: made once per test process with openssl into a temp
 // folder, which is deleted when the process exits. No key material is kept in the repository.
 'use strict';

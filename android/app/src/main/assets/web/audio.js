@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The Mac's sound on the phone (mac/audio.js, direction m2w): the Mac offers an audio-only
 // WebRTC connection; this page, in a WebView the app keeps without a window, answers and plays it.
 'use strict';

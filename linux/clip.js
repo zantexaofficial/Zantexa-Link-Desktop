@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Clipboard sharing: directions, switch/instant mode, concealed filter, size limit, clip.policy
 // both ways, and the in-memory Recent list (never on disk). Text here; pictures, screenshots put
 // on the clipboard among them (Clipboard › Pictures, up to 10 MB), through shared/clipimage.js.

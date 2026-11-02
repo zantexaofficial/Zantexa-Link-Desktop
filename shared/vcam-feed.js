@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // What a camera's window (the other computer's: camera-view.html; a phone's: phoneview.html) sends
 // on from each picture (a VideoFrame, a video or a canvas), turned as Camera › Rotate says:
 //   - the Camera tab's picture: a small JPEG about 12 times a second ('vcam:preview');

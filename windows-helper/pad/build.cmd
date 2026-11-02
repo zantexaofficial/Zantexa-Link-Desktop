@@ -1,5 +1,5 @@
 @echo off
-rem TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+rem Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 rem Builds bin\twindesk-pad.exe (windows/gamepad.js: Remote › Real gamepad), the phone's gamepad as
 rem an Xbox 360 controller through ViGEmBus, with ViGEmClient (vigem\, MIT). x64: it only talks to
 rem the driver, so it also runs on ARM. Needs Visual Studio or its Build Tools with C++; without them

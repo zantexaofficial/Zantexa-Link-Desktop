@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // The mesh's files in the user data folder (docs/multi-device.md, rule 4). Everything goes through
 // ../store.js, except the one-to-one app's pairings, which the mesh starts from but never writes:
 //   pairings.json  the hosts this PC dials (links.js); the host paired in the one-to-one app

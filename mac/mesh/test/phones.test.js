@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Two phones at once on the Mac: a stack each (Phone, bridge, windows) on a link bound to its phone, Kvm's
 // `local` routed by the partner it drives, and what one phone says about itself never lands on the other.
 // Run with: node mac/test/phones.test.js  (NODE_PATH as in CI)

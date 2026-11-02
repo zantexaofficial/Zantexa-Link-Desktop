@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Tests for shared/keylayout.js: shortcuts by letter between different layouts.
 // Run with: node shared/test/keylayout.js
 'use strict';

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Wake the other computer over the network. Each side sends `wol.info {macs, address}`
 // after welcome; we keep it per paired device (settings.wake.peers) and send a Wake-on-LAN magic
 // packet (6 × 0xFF, then the MAC address 16 times) to every broadcast address and the last known

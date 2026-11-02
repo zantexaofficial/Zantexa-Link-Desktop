@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Tests for shared/kvm-moves.js: moves summed per turn, held while backed up, flushed before a click.
 // Run with: node shared/test/kvm-moves.js
 'use strict';

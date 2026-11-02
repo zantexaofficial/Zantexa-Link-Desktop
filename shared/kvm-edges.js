@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // The cursor edges of this PC (settings.kvm.edges): each side of the screen leads to one paired
 // device, or to none. Pure functions, used by windows/kvm.js and windows/settings.js.
 // docs/mesh.md, "Cursor and keyboard".

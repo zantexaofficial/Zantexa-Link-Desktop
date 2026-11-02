@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Is a phone with USB debugging on the cable? Asked of the system, without adb: adb (and the
 // server it starts) runs only once a phone is linked or plugged in, never just because the app
 // is open.

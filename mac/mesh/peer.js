@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // The one-to-one API the features have always used, over a hub route (hub.js): `current`, send(ctx,
 // msg), sendToClient(msg), inject(msg), keySwap(settings), and the events 'client', 'closed', 'rtt',
 // 'message' and 't:<type>'. Role swapping (this Mac is the non-native role when it is a guest of the

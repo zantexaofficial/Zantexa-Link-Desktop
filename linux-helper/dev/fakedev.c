@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Dev only (wl-test.js): a fake mouse + keyboard through /dev/uinput, for testing the helper's
 // Wayland backend without real hands. Reads commands on stdin, one per line:
 //   rel <dx> <dy>      key <evdev code> <0|1>      btn <evdev code> <0|1>

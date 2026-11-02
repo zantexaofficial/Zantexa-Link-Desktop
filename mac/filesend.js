@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Sends files to the PC: a drag
 // of files and folders is planned (every folder and file by relative path), announced with
 // `drag.start`, then each file is offered (`drop:'drag'`, `rel`) and sent one at a time in order —

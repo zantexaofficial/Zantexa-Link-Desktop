@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Monitors from XRandR (physical pixels), outer edges, offsets along a side (
 // "Words"), landing points and clamping. Port of windows-helper/src/Screens.cs.
 #include "helper.h"

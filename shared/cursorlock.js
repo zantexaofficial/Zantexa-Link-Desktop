@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Cursor lock: the pointer stays on the device it is on now, whichever computer the mouse is plugged
 // into. At home the edges don't cross; while driven the way back isn't watched; while driving the
 // driven device is told (kvm.lock) and stops watching its edges. Each device has its own lock key, and

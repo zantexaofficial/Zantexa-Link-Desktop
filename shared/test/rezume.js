@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // ReZume (shared/rezume.js) between two sides joined back to back, and the browser files it falls
 // back on (shared/browsertabs.js): what's offered, when, to whom, and what opening does.
 // Run with: node shared/test/rezume.js
@@ -223,7 +223,7 @@ const start = (p, a, b) => {
     start(p, a, b);
     a.now = { kind: 'web', url: 'https://example.com/again', title: 'Again' };
     await tick(a);
-    a.now = null; // the tab isn't in front any more (TwinDesk's own window is)
+    a.now = null; // the tab isn't in front any more (Zantexa Link's own window is)
     p.bus.up = false;
     p.bus.a.emit('closed');
     p.bus.b.emit('closed');

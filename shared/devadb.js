@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The phone's quick settings Android doesn't let an app switch (Wi-Fi, mobile data, Bluetooth on
 // Android 13+, battery saver), and Lock without its Accessibility service: switched from here over
 // wireless debugging when it's ready (shared/devctl.js otherwise asks the phone, which opens the

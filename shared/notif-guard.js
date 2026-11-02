@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // A loop breaker for the notification pool. A notification shown on one device can be read back as a
 // new one and sent on (a loop between devices), and each trip has its own id, so the pool's own
 // duplicate check never sees it. The same text from the same app within a few seconds is shown or
@@ -28,7 +28,7 @@ class NotifGuard {
   }
 }
 
-// TwinDesk's own notifications are never forwarded: they would only come back.
-const isOwn = (...names) => names.some((n) => /twindesk|macshare/i.test(String(n || '')));
+// Zantexa Link's own notifications are never forwarded: they would only come back.
+const isOwn = (...names) => names.some((n) => /zantexa.?link|macshare/i.test(String(n || '')));
 
 module.exports = { NotifGuard, isOwn };

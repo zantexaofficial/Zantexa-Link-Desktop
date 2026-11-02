@@ -1,7 +1,7 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The wire protocol from the phone's side: the same constants and pairing math as
 // shared/protocol.js (keep the two in step).
-package com.twindesk.android
+package com.zantexalink.android
 
 import org.json.JSONArray
 import org.json.JSONObject

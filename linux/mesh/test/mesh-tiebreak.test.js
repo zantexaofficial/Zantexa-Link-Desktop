@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Two computers that hold each other as hosts (each dials the other): exactly one link, the
 // smaller device id dials, the larger one waits INBOUND_WAIT_MS before dialling itself.
 'use strict';

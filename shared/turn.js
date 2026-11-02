@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // A small TURN server (RFC 8656) on 127.0.0.1, TCP only, for a phone on a USB cable. adb can
 // tunnel TCP (adb reverse) but not UDP, and WebRTC sends its media over UDP: with both ends told
 // to use only this relay (iceTransportPolicy 'relay'), each gets a relayed address here, the media

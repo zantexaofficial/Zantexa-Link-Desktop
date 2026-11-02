@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Fetches adb for Linux (Android platform-tools, x86-64) into a folder, linux/vendor/adb by
 // default. installer/build.js runs it for the packages; run it once (`npm run fetch-adb`) for a
 // dev copy that has no adb installed. Port of windows/scripts/fetch-adb.js; unpacks the zip with

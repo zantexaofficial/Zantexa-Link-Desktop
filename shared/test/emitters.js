@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // An EventEmitter whose class has a getter named on, once, off or emit hides that method, and the
 // first listener added to it throws: NowPlaying's `get on()` stopped the PC's phone setup there (no
 // Remote, no Bluetooth sound). No class in the apps does it.

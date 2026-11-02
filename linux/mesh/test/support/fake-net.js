@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Fake network for the pool tests (clip-pool.js, notifs-pool.js): devices with their own Mesh and a
 // bus with the same shape the app gives Clip and Notifs, joined by direct links. Messages go into one
 // FIFO queue and are delivered by run(); a delivery to a device runs its handlers, then the event

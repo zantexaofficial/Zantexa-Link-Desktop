@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // A one-time code in a notification's text ("Your code is 482913", "G-482913 is your Google
 // verification code", "OTP: 4829-13"): the digits, for a Copy button on the notification here and
 // in the lists. Only next to a word that says it's a code, so an order number or a price doesn't

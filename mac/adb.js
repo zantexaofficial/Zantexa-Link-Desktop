@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The bundled adb (Android platform-tools), for the phone's wireless debugging: pairing with
 // its code, connecting, shell commands, pushing scrcpy-server and port forwards. The built app has
 // it in Resources/adb (build-app.sh).
@@ -85,13 +85,13 @@ class Adb {
   }
 
   // macOS's Local Network privacy judges the adb server by whoever started it. One started
-  // before TwinDesk (a terminal, Android Studio, a dev run) is refused the LAN ("No route to
-  // host") even with TwinDesk allowed, so the first time that happens we start our own and retry.
+  // before Zantexa Link (a terminal, Android Studio, a dev run) is refused the LAN ("No route to
+  // host") even with Zantexa Link allowed, so the first time that happens we start our own and retry.
   async _lan(args, timeout) {
     let r = await this.run(args, { timeout });
     if (/no route to host/i.test(`${r.out}${r.err}`) && !this.restarted) {
       this.restarted = true;
-      console.log('[adb] no route to host: restarting the adb server from TwinDesk');
+      console.log('[adb] no route to host: restarting the adb server from Zantexa Link');
       await this.run(['kill-server'], { timeout: 5000 });
       await this.run(['start-server'], { timeout: 10000 });
       r = await this.run(args, { timeout });

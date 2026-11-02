@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Input inside Monitor 2 (in.* -> mac-helper `input`, keys swapped Ctrl<->Cmd when
 // `swapKeys()`; a phone's stylus with its `pen`). The clipboard lives in clipboard.js.
 //

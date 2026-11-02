@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // The Multi-device switch (docs/multi-device.md, rules 1 and 2), with `electron` stubbed: off (no
 // multi.json, or on: false), windows/main.js loads nothing of windows/mesh/ or the mesh core; on, it hands
 // over to mesh/main.js, which loads with every module it requires. Each case runs in a child process of

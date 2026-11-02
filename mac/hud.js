@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The popup that says where the mouse and keyboard are: a small pill at
 // the bottom of the screen under the pointer, like the volume HUD. Click-through, on every Space,
 // never captured into a screen stream (content protection), off with General › "Show a popup".

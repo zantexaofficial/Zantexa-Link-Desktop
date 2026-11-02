@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // PC apps on the Mac: the Start-menu apps with icons, opened on the
 // Mac's request; every visible window of an app opened that way is streamed on its own (`rtc2`
 // kind 'window', sender.js) while the Mac's `papp.policy` accepts and "Let the Mac open this PC's

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Mouse at 1000 Hz, between two computers (a benchmark, not part of the test run): the sender makes
 // a pointer move every millisecond for 30 s and sums them the way kvm.js does (one k.mm per turn of
 // the event loop), over a TLS WebSocket like the session's; the receiver hands them to a process

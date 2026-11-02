@@ -1,4 +1,4 @@
-// TwinDesk for Android. Builds from the command line: ./gradlew assembleDebug
+// Zantexa Link for Android. Builds from the command line: ./gradlew assembleDebug
 pluginManagement {
     repositories {
         google()
@@ -13,5 +13,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "TwinDesk"
+rootProject.name = "Zantexa Link"
 include(":app")

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // The mesh's files in userData (docs/multi-device.md, rule 4). Everything goes through ../store.js,
 // except what the one-to-one app keeps, which the mesh starts from but never writes:
 //   hosts.json     read and written as hosts-mesh.json, the hosts this Mac dials (links.js); each host

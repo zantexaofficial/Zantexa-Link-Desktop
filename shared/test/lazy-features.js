@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Features with a switch that's off until turned on (or can be turned off) aren't loaded while off:
 // their modules are required only where they're made (load…() in main.js, loadPad), never at the
 // top of a main.js.

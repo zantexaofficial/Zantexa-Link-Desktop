@@ -1,7 +1,7 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
-// Every notification TwinDesk posts: the link (the foreground service), invites, files arriving,
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Every notification Zantexa Link posts: the link (the foreground service), invites, files arriving,
 // files copied on the computer (Copy / Save), and the computer's own notifications.
-package com.twindesk.android
+package com.zantexalink.android
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -46,7 +46,7 @@ object Notify {
     fun channels(ctx: Context) {
         val n = nm(ctx)
         n.createNotificationChannel(NotificationChannel(CH_LINK, "Connection", NotificationManager.IMPORTANCE_LOW).apply {
-            description = "Shown while TwinDesk is ready for your computer"
+            description = "Shown while Zantexa Link is ready for your computer"
             setShowBadge(false)
         })
         n.createNotificationChannel(NotificationChannel(CH_INVITE, "Pairing requests", NotificationManager.IMPORTANCE_HIGH))
@@ -61,7 +61,7 @@ object Notify {
             description = "Your computer started sharing its screen with this phone"
         })
         n.createNotificationChannel(NotificationChannel(CH_UPDATES, "Updates", NotificationManager.IMPORTANCE_DEFAULT).apply {
-            description = "A new version of TwinDesk on GitHub"
+            description = "A new version of Zantexa Link on GitHub"
         })
     }
 
@@ -114,7 +114,7 @@ object Notify {
             else -> {
                 b.setContentTitle("Ready for your computer")
                 val near = core.hosts().firstOrNull { core.isNear(it.id) }
-                b.setContentText(if (near != null) "${near.name} is nearby" else "Open TwinDesk on your computer to connect")
+                b.setContentText(if (near != null) "${near.name} is nearby" else "Open Zantexa Link on your computer to connect")
                 if (near != null) b.addAction(Notification.Action.Builder(null, "Connect to ${near.name}", action(ctx, ActionReceiver.CONNECT, 13, near.id)).build())
             }
         }
@@ -128,7 +128,7 @@ object Notify {
             Notification.Builder(ctx, CH_INVITE)
                 .setSmallIcon(R.drawable.ic_stat)
                 .setContentTitle("$name wants to pair")
-                .setContentText("Open TwinDesk to compare the code")
+                .setContentText("Open Zantexa Link to compare the code")
                 .setContentIntent(openApp(ctx))
                 .setAutoCancel(true)
                 .build(),
@@ -174,7 +174,7 @@ object Notify {
                 .setAutoCancel(true)
                 .build())
         }
-        // TwinDesk on screen: the Wi-Fi panel straight away (Android ignores this from the background).
+        // Zantexa Link on screen: the Wi-Fi panel straight away (Android ignores this from the background).
         runCatching { ctx.startActivity(panel) }
     }
 
@@ -186,8 +186,8 @@ object Notify {
         val to = if (supported) Intent(android.provider.Settings.ACTION_ACCESSIBILITY_SETTINGS) else Intent(ctx, MainActivity::class.java)
         val open = PendingIntent.getActivity(ctx, 10, to.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
             PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT)
-        val text = if (supported) "To use $name’s mouse and keyboard here without wireless debugging, switch on TwinDesk in Accessibility (Installed apps). Tap to open it."
-            else "This build of TwinDesk can’t take $name’s mouse and keyboard without wireless debugging. Set up wireless debugging, then $name installs TwinDesk with notifications, which can (its Phone page › Install)."
+        val text = if (supported) "To use $name’s mouse and keyboard here without wireless debugging, switch on Zantexa Link in Accessibility (Installed apps). Tap to open it."
+            else "This build of Zantexa Link can’t take $name’s mouse and keyboard without wireless debugging. Set up wireless debugging, then $name installs Zantexa Link with notifications, which can (its Phone page › Install)."
         runCatching {
             nm(ctx).notify(ID_INPUT, Notification.Builder(ctx, CH_INVITE)
                 .setSmallIcon(R.drawable.ic_stat)
@@ -206,7 +206,7 @@ object Notify {
     fun sound(ctx: Context, name: String) {
         val start = PendingIntent.getActivity(ctx, 12, Intent(ctx, SoundActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
             PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT)
-        val text = "Without wireless debugging, TwinDesk captures it: Start, then Android asks once more. Apps that don’t allow it stay silent."
+        val text = "Without wireless debugging, Zantexa Link captures it: Start, then Android asks once more. Apps that don’t allow it stay silent."
         runCatching {
             nm(ctx).notify(ID_SOUND, Notification.Builder(ctx, CH_INVITE)
                 .setSmallIcon(R.drawable.ic_stat)
@@ -264,7 +264,7 @@ object Notify {
             ID_UPDATE,
             Notification.Builder(ctx, CH_UPDATES)
                 .setSmallIcon(R.drawable.ic_stat)
-                .setContentTitle("TwinDesk $latest is available")
+                .setContentTitle("Zantexa Link $latest is available")
                 .setContentText("You have $current. Tap to download the new version.")
                 .setContentIntent(open)
                 .setAutoCancel(true)
@@ -400,7 +400,7 @@ object Notify {
 
     fun cancelFclip(ctx: Context) = nm(ctx).cancel(ID_FCLIP)
 
-    // icon: the app's (from the computer), else TwinDesk's own shows.
+    // icon: the app's (from the computer), else Zantexa Link's own shows.
     fun fromComputer(ctx: Context, key: String, app: String, title: String, body: String, computer: String, icon: android.graphics.Bitmap? = null) {
         nm(ctx).notify(
             ID_COMPUTER_BASE + (key.hashCode() and 0xffff),

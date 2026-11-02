@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Messages' chat apps (Mac, PC and Linux): WhatsApp, Instagram, Telegram, Messenger and Signal
 // conversations from a phone, kept here per phone so they're there after a restart.
 //   chat.want {on}                      to the phone: send them (Messages › Chat apps in Messages)
@@ -7,7 +7,7 @@
 //                                       notification shows them (MessagingStyle); on chat.want, the
 //                                       ones open on the phone now; afterwards each one as it changes
 //   notif.reply {id, text}              to the phone: an answer, through the notification's own Reply
-// A phone without them (an older TwinDesk) never sends chat.conv: Messages then builds the chats
+// A phone without them (an older Zantexa Link) never sends chat.conv: Messages then builds the chats
 // from the notifications (shared/ui-messages.js), as before.
 // link: on('welcome' | 'closed' | type, fn), send(msg), current?: {deviceId}; want(): the switch.
 'use strict';

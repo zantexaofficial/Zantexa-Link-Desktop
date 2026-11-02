@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Joining everyone (mac/autojoin.js, shared/intro.js) on real loopback sockets: devices paired only
 // to one hub node find each other without any pairing of their own.
 'use strict';

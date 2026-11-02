@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Boots the control window: sidebar + one page per registered tab, pairing banner, rendering.
 'use strict';
 
@@ -280,7 +280,7 @@
       $('pair-code').hidden = $('pair-code-label').hidden = true;
       $('pair-allow').hidden = true;
       $('pair-deny').textContent = 'Cancel';
-      $('pair-hint').textContent = `TwinDesk on ${inv.name} asks to pair with this Mac. Press Pair there, then compare the codes.`;
+      $('pair-hint').textContent = `Zantexa Link on ${inv.name} asks to pair with this Mac. Press Pair there, then compare the codes.`;
       return;
     }
     const code = (p || g).code;

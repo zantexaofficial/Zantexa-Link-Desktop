@@ -1,9 +1,9 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The Mac's mouse and keyboard on this device, as the Mac shares them (its Kvm drives us through
 // wireless debugging): where the Mac is (kvm.layout), cursor sharing on/off (kvm.link, the same
 // switch as the hotkey's double-tap), and the Mac's hotkey (phone.mac). The rest of the Cursor and
 // Keyboard pages are pair.sync switches and values (PairSync).
-package com.twindesk.android
+package com.zantexalink.android
 
 import org.json.JSONObject
 

@@ -1,14 +1,14 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Clipboard text and pictures both ways. The computer's copies land on the phone's clipboard at
 // once (apps may write the clipboard from the background). Android lets only the app in front read
-// it, so the phone's copies go over while TwinDesk is open, from the share sheet and the Quick
+// it, so the phone's copies go over while Zantexa Link is open, from the share sheet and the Quick
 // Settings tile; with wireless debugging on, the Mac also follows the phone's clipboard itself
 // (scrcpy, text only).
 // Pictures (clip.image + clip.image.part, shared/clipimage.js): a PNG of up to 10 MB in pieces,
 // only while "Pictures" is on on both sides (clip.policy images), never through Bluetooth. Ours
 // land on the clipboard from a file in our cache; this device's screenshots go the same way
 // (Screenshots.kt).
-package com.twindesk.android
+package com.zantexalink.android
 
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -100,7 +100,7 @@ class Clip(core: Core) : Feature(core) {
             if (!mime.startsWith("image/") || uri.authority == "${core.ctx.packageName}.files" || !canSendPictures) return false
             pics.execute {
                 runCatching { toPng(core.ctx.contentResolver, uri, mime, -1) }
-                    .onFailure { Log.w("TwinDesk", "clipboard picture: ${it.message}") }
+                    .onFailure { Log.w("Zantexa Link", "clipboard picture: ${it.message}") }
                     .getOrNull()?.let { sendPicture(it, false) }
             }
             return true
@@ -151,7 +151,7 @@ class Clip(core: Core) : Feature(core) {
     fun receiveText(text: String) {
         lastIn = text
         remember(Item("in", text))
-        cm.setPrimaryClip(ClipData.newPlainText("TwinDesk", text))
+        cm.setPrimaryClip(ClipData.newPlainText("Zantexa Link", text))
         core.changed()
     }
 
@@ -159,7 +159,7 @@ class Clip(core: Core) : Feature(core) {
     fun copyAgain(item: Item) {
         val uri = item.picture
         if (uri != null) runCatching { cm.setPrimaryClip(ClipData.newUri(core.ctx.contentResolver, "Picture", uri)) }
-        else cm.setPrimaryClip(ClipData.newPlainText("TwinDesk", item.text))
+        else cm.setPrimaryClip(ClipData.newPlainText("Zantexa Link", item.text))
     }
 
     private fun remember(item: Item) {
@@ -226,12 +226,12 @@ class Clip(core: Core) : Feature(core) {
             val uri = FileProvider.getUriForFile(core.ctx, "${core.ctx.packageName}.files", file)
             main.post {
                 runCatching { cm.setPrimaryClip(ClipData.newUri(core.ctx.contentResolver, if (shot) "Screenshot" else "Picture", uri)) }
-                    .onFailure { Log.w("TwinDesk", "picture from the computer: ${it.message}") }
+                    .onFailure { Log.w("Zantexa Link", "picture from the computer: ${it.message}") }
             }
             val size = if (w > 0 && h > 0) "$w × $h" else "${png.size / 1024} KB"
             remember(Item("in", "${if (shot) "Screenshot" else "Picture"} · $size", uri))
         } catch (e: Exception) {
-            Log.w("TwinDesk", "picture from the computer: ${e.message}")
+            Log.w("Zantexa Link", "picture from the computer: ${e.message}")
         }
     }
 

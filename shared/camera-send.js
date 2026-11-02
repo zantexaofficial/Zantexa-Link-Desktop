@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The hidden sender (camera-send.html): this computer's camera, while the other computer's
 // window is open, as one WebRTC video track (we offer, the viewer answers recvonly). 1280 × 720 at
 // 30 fps when the camera has it, up to 4 Mb/s. The camera goes off with 'stop' or when the window
@@ -50,7 +50,7 @@ async function start(deviceId) {
     devices(); // with the camera allowed, its names are known now
   } catch (e) {
     if (!alive()) return;
-    const why = e.name === 'NotAllowedError' ? 'the camera isn’t allowed for TwinDesk'
+    const why = e.name === 'NotAllowedError' ? 'the camera isn’t allowed for Zantexa Link'
       : e.name === 'NotFoundError' ? 'this computer has no camera'
         : e.name === 'NotReadableError' ? 'another app is using the camera' : e.message;
     status('failed', why);

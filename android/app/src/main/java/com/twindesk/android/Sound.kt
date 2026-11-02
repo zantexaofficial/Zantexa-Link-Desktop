@@ -1,11 +1,11 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // This phone's sound on the computer without wireless debugging: Android's playback capture
 // (Android 10+, through a screen capture grant, asked for on the phone each time), Opus through
 // MediaCodec, over the session (phone.sound). The computer asks for it (phone.sound.want) while
 // "Play this device's sound" is on and adb can't carry it; when adb can, it says off again.
 // Apps that don't allow capture (some streaming apps, calls) stay silent there, and the sound keeps
 // playing on the phone as well: only adb can move it off the phone.
-package com.twindesk.android
+package com.zantexalink.android
 
 import android.Manifest
 import android.app.Activity
@@ -92,7 +92,7 @@ class SoundActivity : Activity() {
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (grantResults.firstOrNull() == PackageManager.PERMISSION_GRANTED) ask()
-        else { Core.get(this).sound.failed("Allow the microphone permission for TwinDesk on the phone (Android asks it for any sound capture)"); finish() }
+        else { Core.get(this).sound.failed("Allow the microphone permission for Zantexa Link on the phone (Android asks it for any sound capture)"); finish() }
     }
 
     private fun ask() {
@@ -140,7 +140,7 @@ class SoundService : Service() {
         try {
             begin(core, code, data)
         } catch (e: Exception) {
-            Log.w("TwinDesk", "sound: ${e.message}")
+            Log.w("Zantexa Link", "sound: ${e.message}")
             core.sound.failed(e.message ?: "couldn’t capture"); end(); stopSelf()
             return START_NOT_STICKY
         }

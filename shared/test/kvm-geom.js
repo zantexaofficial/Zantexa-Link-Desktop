@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Tests for shared/kvm-geom.js: touching stretches, zones and offsets between two computers.
 // Run with: node shared/test/kvm-geom.js
 'use strict';

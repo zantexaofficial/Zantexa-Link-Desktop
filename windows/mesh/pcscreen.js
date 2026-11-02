@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Display › PC → Mac: this PC's screen in a window on the Mac.
 // Mirror = one existing monitor; Extend = the virtual monitor (vdd.js). Sharing starts off every
 // time the app starts. We offer an `rtc2` session (kind `screen` / `screen+audio`) while sharing is

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // twindesk-pad.exe (windows/gamepad.js): the phone's gamepad as a real Xbox 360 controller, through
 // the ViGEmBus driver (ViGEmClient, MIT, in vigem\). Spawned only while Real gamepad is on.
 //   twindesk-pad status   prints {"bus":true|false}: whether ViGEmBus is there

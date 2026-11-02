@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Keys in a phone's window (phoneview.js) and with the computer's keyboard on the phone
 // (phone-bridge.js) that mean more than the key:
 //   Enter sends the message in a chat app (Phone page › Settings › Enter sends messages, on), and

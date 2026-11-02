@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // This computer's apps for Apps (pcapps.js): the desktop entries (*.desktop) the app menu shows,
 // from $XDG_DATA_HOME and $XDG_DATA_DIRS (flatpak and snap exports included), their icons from
 // the icon themes (PNG as is, SVG drawn to a PNG in a hidden window), and launching one with its

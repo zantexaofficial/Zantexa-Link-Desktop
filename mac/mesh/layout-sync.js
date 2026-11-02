@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // The shared layout of the mesh on this Mac (docs/mesh.md, "Shared layout"): the same file as
 // windows/layout-sync.js, with the same behaviour and API. The rules (place, view, neighbours) are in
 // shared/layout.js; this file holds the stored layout, the sync and the person's edits. Plain Node.

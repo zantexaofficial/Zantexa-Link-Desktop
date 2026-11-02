@@ -1,7 +1,7 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The connected computer in Android's share sheet: a sharing shortcut ("Inukas-MBA") in the
 // top row while it is connected, so sharing to it is one tap from any app (ShareActivity sends).
-package com.twindesk.android
+package com.zantexalink.android
 
 import android.content.Intent
 import androidx.core.content.pm.ShortcutInfoCompat
@@ -9,7 +9,7 @@ import androidx.core.content.pm.ShortcutManagerCompat
 import androidx.core.graphics.drawable.IconCompat
 
 class Shortcuts(core: Core) : Feature(core) {
-    private val category = "com.twindesk.android.SHARE_TARGET"
+    private val category = "com.zantexalink.android.SHARE_TARGET"
 
     override fun onWelcome(host: Host) {
         runCatching {

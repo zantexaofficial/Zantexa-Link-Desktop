@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The Remote page (RemoteActivity): this device as the computer's touchpad and keyboard, or a
 // gamepad whose sticks and buttons press the computer's keys. Everything goes out as remote.*
 // (relative, like the computers' own mouse and keyboard sharing); the computer answers
@@ -56,19 +56,19 @@
     $('name').textContent = game && opts.bt ? `Bluetooth gamepad · ${opts.btName || 'connected'}`
       : `${game ? (real ? 'Gamepad (real)' : 'Gamepad') : 'Touchpad'} · ${opts.name}`;
     const note = game && opts.bt ? ''
-      : !opts.connected ? `Not connected to ${opts.name}. Connect from TwinDesk’s Overview.`
+      : !opts.connected ? `Not connected to ${opts.name}. Connect from Zantexa Link’s Overview.`
       : allowed === false && off ? `Remote is off on ${opts.name}.`
-      : allowed === false ? (why || `${opts.name} doesn’t take input from ${opts.me}. On ${opts.name}, turn on Remote in TwinDesk.`)
-        : allowed === null && (opts.os === 'mac' || opts.os === 'linux') ? `${opts.name} doesn’t answer the remote: update TwinDesk there.`
+      : allowed === false ? (why || `${opts.name} doesn’t take input from ${opts.me}. On ${opts.name}, turn on Remote in Zantexa Link.`)
+        : allowed === null && (opts.os === 'mac' || opts.os === 'linux') ? `${opts.name} doesn’t answer the remote: update Zantexa Link there.`
           : '';
     $('note-text').textContent = note;
     $('note').hidden = !note;
     $('note-on').hidden = !(note && allowed === false && off && opts.connected);
     // A real controller: what the computer sees it as.
     const sees = !game ? ''
-      : opts.bt ? `${opts.btName || 'The computer'} sees ${opts.me} as “TwinDesk Gamepad”, a Bluetooth game controller`
+      : opts.bt ? `${opts.btName || 'The computer'} sees ${opts.me} as “Zantexa Link Gamepad”, a Bluetooth game controller`
         : real && opts.os === 'win' ? `Windows sees it as an Xbox 360 Controller: games take it as one (joy.cpl lists it under Game Controllers)`
-          : real && opts.os === 'linux' ? `${opts.name} sees it as “TwinDesk Gamepad”, an Xbox 360 controller`
+          : real && opts.os === 'linux' ? `${opts.name} sees it as “Zantexa Link Gamepad”, an Xbox 360 controller`
             : real ? `${opts.name} sees it as a game controller` : '';
     $('pad-note').textContent = sees;
     $('pad-note').hidden = !sees;

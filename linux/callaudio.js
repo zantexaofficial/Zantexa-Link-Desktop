@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The calls' sound on this computer over Bluetooth (shared/phonehub.js makes this only while Calls
 // and its Bluetooth option are on with a phone connected): BlueZ connects to the phone as its
 // hands-free, like a headset, and PipeWire (its hfp_hf role, on by default) plays the call through

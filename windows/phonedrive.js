@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // An Android phone in Explorer: shared/phonedrive.js's WebDAV server, mapped to a drive letter
 // through Windows' WebDAV client (the WebClient service; `net use` starts it). WebClient won't
 // send Basic auth over plain http, so a secret in the path keeps other apps out. Explorer would

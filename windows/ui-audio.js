@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Audio tab: sound both ways, each its own stream: play the Mac's sound (Mac → PC)
 // and send this PC's sound (PC → Mac). Screen sound lives in Display.
 'use strict';

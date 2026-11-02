@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The phone in windows on this PC: its screen (mirror, with its sound), and phone apps each in a
 // window of their own on a virtual display of the window's size (scrcpy new_display + flex, so
 // resizing the window resizes the app). One scrcpy session per window (scrcpy.js); the window
@@ -7,7 +7,7 @@
 // The window's controls sit in the title bar (the default), a side panel or a bar under the picture
 // (settings.phone.controls), and the window is sized for the picture plus those bars.
 // A phone app's windows have a taskbar identity of their own (its icon, Pin to taskbar starts it),
-// and pin() puts it in Start › TwinDesk Apps: both start "TwinDesk.exe --phone-app=<package>".
+// and pin() puts it in Start › Zantexa Link Apps: both start "Zantexa Link.exe --phone-app=<package>".
 //
 // Events: 'change' — the window list changed; 'focus' — a phone window got or lost focus.
 'use strict';
@@ -191,7 +191,7 @@ class PhoneViews extends EventEmitter {
   }
 
   cameraState() {
-    if (!this.cameraOn) return { on: false, facing: null, error: 'Camera is off on this computer: turn it on in TwinDesk’s Camera tab there', virtual: false };
+    if (!this.cameraOn) return { on: false, facing: null, error: 'Camera is off on this computer: turn it on in Zantexa Link’s Camera tab there', virtual: false };
     const v = [...this.views.values()].find((x) => x.kind === 'camera' && !x.ending);
     return { on: !!v, facing: v ? v.facing : null, error: v ? v.error || '' : '', virtual: !!(this.vcam && this.vcam.ready) };
   }
@@ -661,7 +661,7 @@ class PhoneViews extends EventEmitter {
     return 'org.macshare.phoneapp.' + crypto.createHash('sha1').update(pkg).digest('hex').slice(0, 10);
   }
 
-  // How this copy of TwinDesk opens one phone app: "TwinDesk.exe --phone-app=<package>".
+  // How this copy of Zantexa Link opens one phone app: "Zantexa Link.exe --phone-app=<package>".
   static relaunch(pkg) {
     const args = (app.isPackaged ? [] : [app.getAppPath()]).concat('--phone-app=' + pkg);
     return { target: process.execPath, args: args.map((x) => (/\s/.test(x) ? '"' + x + '"' : x)).join(' ') };
@@ -699,10 +699,10 @@ class PhoneViews extends EventEmitter {
     win.setAppDetails({ appId: PhoneViews.aumid(pkg), relaunchCommand: '"' + r.target + '" ' + r.args, relaunchDisplayName: name, ...(ico ? { appIconPath: ico, appIconIndex: 0 } : {}) });
   }
 
-  // Phone page › an app › Pin to Start: a shortcut in Start › TwinDesk Apps (pin it from there).
+  // Phone page › an app › Pin to Start: a shortcut in Start › Zantexa Link Apps (pin it from there).
   pin(pkg, name) {
     const a = this._app(pkg) || { id: pkg, name: name || pkg };
-    const dir = path.join(app.getPath('appData'), 'Microsoft', 'Windows', 'Start Menu', 'Programs', 'TwinDesk Apps');
+    const dir = path.join(app.getPath('appData'), 'Microsoft', 'Windows', 'Start Menu', 'Programs', 'Zantexa Link Apps');
     const safe = String(a.name).replace(/[<>:"/\\|?*\x00-\x1f]/g, '_').replace(/[. ]+$/, '').slice(0, 100) || 'Phone app';
     const file = path.join(dir, safe + '.lnk');
     const ico = this._ico(pkg);
@@ -710,11 +710,11 @@ class PhoneViews extends EventEmitter {
     try {
       fs.mkdirSync(dir, { recursive: true });
       const ok = shell.writeShortcutLink(file, fs.existsSync(file) ? 'replace' : 'create', {
-        target: r.target, args: r.args, description: a.name + ' on ' + ((this.server.current && this.server.current.name) || 'the phone') + ' (TwinDesk)',
+        target: r.target, args: r.args, description: a.name + ' on ' + ((this.server.current && this.server.current.name) || 'the phone') + ' (Zantexa Link)',
         appUserModelId: PhoneViews.aumid(pkg), ...(ico ? { icon: ico, iconIndex: 0 } : {}),
       });
       if (!ok) throw new Error('Windows refused the shortcut');
-      this.bridge.emit('popup', 'home', a.name + ' is in Start › TwinDesk Apps');
+      this.bridge.emit('popup', 'home', a.name + ' is in Start › Zantexa Link Apps');
     } catch (e) {
       this.bridge.emit('popup', 'driven', 'Couldn’t add ' + a.name + ' to Start: ' + e.message);
     }

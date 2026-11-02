@@ -1,4 +1,4 @@
-# TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+# Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 # Run elevated once (gamepad.js): installs the ViGEmBus driver
 # (https://github.com/nefarius/ViGEmBus, BSD-3-Clause, signed by Nefarius Software Solutions e.U.)
 # for Remote > Real gamepad: the phone's gamepad as an Xbox 360 controller.
@@ -9,7 +9,7 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 try {
-  $dir = Join-Path $env:ProgramData 'TwinDesk\vigem'
+  $dir = Join-Path $env:ProgramData 'Zantexa Link\vigem'
   New-Item -ItemType Directory -Force -Path $dir | Out-Null
   $exe = Join-Path $dir 'ViGEmBus-setup.exe'
   [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12

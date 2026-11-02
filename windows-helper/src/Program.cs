@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // macshare-winhelper: JSON lines on stdin (commands) / stdout (replies and events),
 // "Helper interface". The main thread runs the WinForms message loop (hooks and raw input need
 // it); a reader thread hands each line to it; one writer thread does all stdout I/O.
@@ -14,8 +14,8 @@ using System.Threading;
 using System.Windows.Forms;
 
 // The name Windows shows for this process: Location's prompt and its list of apps, Task Manager.
-[assembly: AssemblyTitle("TwinDesk")]
-[assembly: AssemblyProduct("TwinDesk")]
+[assembly: AssemblyTitle("Zantexa Link")]
+[assembly: AssemblyProduct("Zantexa Link")]
 
 namespace MacShare
 {

@@ -1,11 +1,11 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Camera tab (Mac, PC and Linux): its switch at the top turns Camera on (off: nothing of it is
 // loaded or runs, and nothing is shared); Start runs the other device's camera here. A
 // phone's, back or front, through wireless debugging (phoneview.js openCamera, Android 12 or later;
 // the phone's own Camera page starts it too); the other computer's, which it shares only with
 // "Let … see this camera" on there (camshare.js). Its picture shows on the page (turned with
 // Rotate), in a window with Window (or a click on the picture), and with Virtual camera on, in a
-// camera every app here can pick ("TwinDesk Camera", shared/vcam.js), installed the first time
+// camera every app here can pick ("Zantexa Link Camera", shared/vcam.js), installed the first time
 // it's turned on. This computer's own camera goes to the other one the same way.
 'use strict';
 
@@ -91,7 +91,7 @@
       const virtual = UI.switch((v) => cam({ do: 'virtual', on: v }), { label: 'Virtual camera' });
       const vRemove = UI.button('Remove', () => cam({ do: 'vcamRemove' }));
       const vRow = UI.row('Virtual camera', '', [vRemove, virtual]);
-      // Which camera it feeds, where there's a choice (the Mac: TwinDesk Camera or OBS Virtual Camera).
+      // Which camera it feeds, where there's a choice (the Mac: Zantexa Link Camera or OBS Virtual Camera).
       const vTarget = UI.select([], (t) => cam({ do: 'vcamTarget', target: t }));
       const vTargetRow = UI.row('Send to', 'The camera other apps pick', [vTarget]);
       const vCard = UI.card('Virtual camera', [vTargetRow, vRow]);
@@ -115,7 +115,7 @@
         const v = s.vcam || {};
         const phone = UI.isPhone(s);
         const on = running(s);
-        const vName = `“${v.name || 'TwinDesk Camera'}”`;
+        const vName = `“${v.name || 'Zantexa Link Camera'}”`;
         const w = phone ? phoneCam(s) : null;
         if (w && w.facing && w.facing !== facing) {
           facing = w.facing; // started or switched elsewhere (the phone's Camera page)
@@ -166,7 +166,7 @@
                 : v.ready && v.live ? `Sharing now: in Zoom, Teams, the browser…, choose only ${vName} as the camera`
                   : v.ready ? `Ready: the camera running here goes to ${vName}. Choose only that one in the app you call from`
                     : v.on ? (v.message || 'Not installed')
-                      : v.message || `Off: the picture stays in TwinDesk. On: it’s also ${vName}, a camera other apps can pick`);
+                      : v.message || `Off: the picture stays in Zantexa Link. On: it’s also ${vName}, a camera other apps can pick`);
 
         // This computer's own camera (not with a phone).
         ourCard.hidden = phone;

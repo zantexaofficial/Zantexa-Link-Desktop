@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The session through Bluetooth LE, for two devices that aren't on one network (P.BLE). The native
 // helper does the radio; this joins it to the session as a plain byte pipe, so TLS, the pinned
 // certificate, the token and every message work exactly as over the network:

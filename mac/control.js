@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Control window: a tiny UI kit (window.UI) and the shell (sidebar, tabs, pairing banner).
 // Tabs live in ui-*.js and call UI.tab({...}); ui-start.js boots the window.
 // Controls are built once per tab; render(state) only updates values, so a state push never
@@ -268,7 +268,7 @@ const UI = {
 
   // A small device glyph for lists: 'mac' | 'win' | 'linux' | 'android'.
   osClass: (os) => (os === 'mac' ? 'mac' : os === 'android' ? 'phone' : 'pc'),
-  // An app's icon in a grid: its own, else (none, or it doesn't load) TwinDesk's.
+  // An app's icon in a grid: its own, else (none, or it doesn't load) Zantexa Link's.
   appIcon(src) {
     const fallback = 'assets/sidebar-icon@2x.png';
     const img = UI.el('img', { src: src || fallback, alt: '' });

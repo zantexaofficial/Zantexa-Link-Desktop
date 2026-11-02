@@ -1,9 +1,9 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // What the Mac shows about the phone (its sidebar tile and Phone page): model, Android version,
 // battery, the screen, the wallpaper's colours and, when Android lets us read it, a small copy
 // of the wallpaper itself. The phone's apps for the Mac's app windows (phone.apps), and the state
 // of wireless debugging, which the Mac's screen, input and app windows go through (adb.state).
-package com.twindesk.android
+package com.zantexalink.android
 
 import android.Manifest
 import android.app.KeyguardManager
@@ -207,7 +207,7 @@ class Adb(core: Core) : Feature(core) {
     // Auto-off (General › Allow › "Turn off wireless debugging when disconnected", off until switched
     // on): wireless debugging is the phone's widest door, so once the computer has been gone for
     // AUTO_OFF_MS (not a brief drop: a computer's restart reconnects within seconds) it's switched
-    // off here, but only when TwinDesk switched it on (`ours`): switched on by the person (Settings,
+    // off here, but only when Zantexa Link switched it on (`ours`): switched on by the person (Settings,
     // the Quick Settings tile, the home screen shortcut) it stays on. Connecting switches it back on
     // (Core.connect, check()). Its own Handler: check() clears everything posted on `main`.
     private val autoOff = Handler(Looper.getMainLooper())
@@ -314,7 +314,7 @@ class Adb(core: Core) : Feature(core) {
     }
 
     // byPerson: the Quick Settings tile and the home screen shortcut, the person's own switch (auto-off
-    // leaves it on); TwinDesk's own (connecting, the computer asking, Turn on in this app) is `ours`.
+    // leaves it on); Zantexa Link's own (connecting, the computer asking, Turn on in this app) is `ours`.
     fun enable(on: Boolean, byPerson: Boolean = false): Boolean {
         if (!canEnable || on && !onWifiNetwork) return false
         val was = wifiDebugging
@@ -402,7 +402,7 @@ class Adb(core: Core) : Feature(core) {
         return true
     }
 
-    // ---- pairing from the phone: the code typed in TwinDesk's notification goes to the computer ----
+    // ---- pairing from the phone: the code typed in Zantexa Link's notification goes to the computer ----
 
     // "Pair device with pairing code" is open (or about to be): ask for the code in a notification
     // (typing it there keeps Settings' dialog open), and look for our own pairing port meanwhile.
@@ -426,7 +426,7 @@ class Adb(core: Core) : Feature(core) {
     fun sendPairCode(code: String) {
         val digits = code.filter { it.isDigit() }
         if (digits.length != 6) return Notify.pairResult(core.ctx, "The pairing code has six digits", "Type the code Settings shows.", true)
-        if (!core.link.connected) return Notify.pairResult(core.ctx, "Not connected", "Connect to your computer in TwinDesk first.", true)
+        if (!core.link.connected) return Notify.pairResult(core.ctx, "Not connected", "Connect to your computer in Zantexa Link first.", true)
         pairing = true
         core.send(msg(Proto.T.ADB_PAIR, "code" to digits, "port" to pairPort))
         Notify.pairResult(core.ctx, "Pairing…", "Sent to ${core.host?.name ?: "your computer"}", false, progress = true)

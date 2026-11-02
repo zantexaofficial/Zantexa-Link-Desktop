@@ -1,5 +1,5 @@
 #!/bin/sh
-# TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+# Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 # Renders background.html with headless Chrome at 1x and 2x and packs both into background.tiff,
 # the DMG window background used by build-dmg.sh. Run it after editing background.html.
 # CHROME=/path/to/chrome overrides the browser.

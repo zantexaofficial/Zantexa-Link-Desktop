@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Watches NSPasteboard.changeCount (cheap) so main reads the text only when it changed, and tells
 // whether the item is marked concealed/transient by a password manager (nspasteboard.org types).
 import Cocoa

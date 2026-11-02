@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Files dropped onto Monitor 2 → the Mac, and files and
 // folders dragged across the edge (`drag.start` + `file.offer {drop:'drag', rel}`, the
 // Mac shows a real drag and the drop target pulls the data): one file at a time over the control

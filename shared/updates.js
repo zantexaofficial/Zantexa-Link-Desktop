@@ -1,5 +1,5 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
-// Update check for all three apps: asks GitHub for the latest release of TwinDesk, compares its
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Update check for all three apps: asks GitHub for the latest release of Zantexa Link, compares its
 // tag with this app's version and picks the download for this platform and CPU. Nothing is
 // installed here; the app opens the download (or the release page) in the browser.
 //
@@ -8,7 +8,7 @@
 //   notify(title, body, onClick) once per new version; open() shows the download in the browser.
 'use strict';
 
-const REPO = 'InukaAsith/TwinDesk';
+const REPO = 'InukaAsith/Zantexa Link';
 const API = `https://api.github.com/repos/${REPO}/releases/latest`;
 const RELEASES = `https://github.com/${REPO}/releases`;
 const FIRST_DELAY = 15 * 1000;
@@ -232,7 +232,7 @@ class Updates {
     try {
       const url = `${API}?_=${Date.now()}`;
       const res = await this.fetch(url, {
-        headers: { Accept: 'application/vnd.github+json', 'User-Agent': `TwinDesk/${this.current}` },
+        headers: { Accept: 'application/vnd.github+json', 'User-Agent': `Zantexa Link/${this.current}` },
         cache: 'no-store',
       });
       if (res.status === 404) {
@@ -255,7 +255,7 @@ class Updates {
       this._set({
         checking: false,
         latest,
-        name: String(r.name || `TwinDesk ${latest}`),
+        name: String(r.name || `Zantexa Link ${latest}`),
         available,
         download,
         releaseUrl: r.html_url || RELEASES,
@@ -272,7 +272,7 @@ class Updates {
         this.save();
         if (!skipped) {
           this.notify(
-            `TwinDesk ${latest} is available`,
+            `Zantexa Link ${latest} is available`,
             manual ? 'Click to view update details.' : `You have ${this.current}. Click to view update details and release notes.`,
             () => this.onShowModal(),
           );

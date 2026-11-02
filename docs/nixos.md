@@ -1,15 +1,15 @@
-# TwinDesk on NixOS & Nix
+# Zantexa Link on NixOS & Nix
 
-TwinDesk provides first-class support for NixOS and Nix via `flake.nix`.
+Zantexa Link provides first-class support for NixOS and Nix via `flake.nix`.
 
 ---
 
 ## 🚀 Quick Run with Nix Flakes
 
-You can run TwinDesk directly without installing it system-wide:
+You can run Zantexa Link directly without installing it system-wide:
 
 ```sh
-nix run github:InukaAsith/TwinDesk
+nix run .
 # Or from a local clone:
 nix run .
 ```
@@ -24,24 +24,24 @@ nix develop
 
 ## ❄️ NixOS System Configuration
 
-Add TwinDesk to your system flake inputs and enable the NixOS module:
+Add Zantexa Link to your system flake inputs and enable the NixOS module:
 
 ### `flake.nix`
 ```nix
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    twindesk.url = "github:InukaAsith/TwinDesk"; # or local checkout
+    zantexaLink.url = "path:/path/to/zantexa-link-checkout";
   };
 
-  outputs = { self, nixpkgs, twindesk, ... }: {
+  outputs = { self, nixpkgs, zantexaLink, ... }: {
     nixosConfigurations.myhostname = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        twindesk.nixosModules.default
+        zantexaLink.nixosModules.default
         {
-          # Enable TwinDesk
-          programs.twindesk = {
+          # Enable Zantexa Link
+          programs.zantexaLink = {
             enable = true;
             user = "yourusername"; # Automatically adds your user to 'input' and 'uinput' groups
           };
@@ -52,7 +52,7 @@ Add TwinDesk to your system flake inputs and enable the NixOS module:
 }
 ```
 
-> **Note:** Both `programs.twindesk` and `services.twindesk` are accepted by the module.
+> **Note:** Both `programs.zantexaLink` and `services.zantexaLink` are accepted by the module.
 
 ---
 
@@ -60,12 +60,12 @@ Add TwinDesk to your system flake inputs and enable the NixOS module:
 
 | Option | Type | Default | Description |
 |---|---|---|---|
-| `programs.twindesk.enable` | `bool` | `false` | Enable TwinDesk application and system integration. |
-| `programs.twindesk.package` | `package` | `twindesk` | The TwinDesk package derivation to use. |
-| `programs.twindesk.user` | `nullOr str` | `null` | Your username. If specified, adds the user to the `input` and `uinput` groups. |
-| `programs.twindesk.openFirewall` | `bool` | `true` | Automatically opens TCP port `47800` (peer traffic) and UDP ports `47801` (discovery) & `5353` (mDNS). |
-| `programs.twindesk.uinput` | `bool` | `true` | Enables `hardware.uinput.enable` and configures udev rules for Wayland input capture & injection. |
-| `programs.twindesk.enableWifiDirect` | `bool` | `true` | Creates `/run/wrappers/bin/twindesk-wifiap` with `CAP_NET_ADMIN` so Wi-Fi Direct interface management works seamlessly without root password prompts. |
+| `programs.zantexaLink.enable` | `bool` | `false` | Enable Zantexa Link application and system integration. |
+| `programs.zantexaLink.package` | `package` | `zantexa-link` | The Zantexa Link package derivation to use. |
+| `programs.zantexaLink.user` | `nullOr str` | `null` | Your username. If specified, adds the user to the `input` and `uinput` groups. |
+| `programs.zantexaLink.openFirewall` | `bool` | `true` | Automatically opens TCP port `47800` (peer traffic) and UDP ports `47801` (discovery) & `5353` (mDNS). |
+| `programs.zantexaLink.uinput` | `bool` | `true` | Enables `hardware.uinput.enable` and configures udev rules for Wayland input capture & injection. |
+| `programs.zantexaLink.enableWifiDirect` | `bool` | `true` | Enables the privileged Wi-Fi Direct helper without root password prompts. |
 
 ---
 
@@ -74,7 +74,7 @@ Add TwinDesk to your system flake inputs and enable the NixOS module:
 ### 1. Wayland Mouse & Keyboard (KVM)
 On Wayland, input capture and injection operate via `/dev/input/event*` and `/dev/uinput`.
 - The NixOS module automatically enables `hardware.uinput.enable = true;` and configures `/etc/udev/rules.d` for uinput.
-- Ensure your user belongs to both `input` and `uinput` groups (configured automatically when setting `programs.twindesk.user = "yourusername";`).
+- Ensure your user belongs to both `input` and `uinput` groups (configured automatically when setting `programs.zantexaLink.user = "yourusername";`).
 - Remember to log out and back in if you were just added to those groups.
 
 ### 2. Wi-Fi Direct & Hotspot Links
@@ -88,7 +88,7 @@ Creating a secondary access point interface on supported Wi-Fi adapters requires
     group = "root";
   };
   ```
-- TwinDesk automatically detects `/run/wrappers/bin/twindesk-wifiap` and connects without needing `pkexec` prompts.
+- Zantexa Link automatically detects `/run/wrappers/bin/twindesk-wifiap` and connects without needing `pkexec` prompts.
 
 ### 3. Extend (Virtual Displays)
 - **GNOME on Wayland**: Uses Mutter's virtual monitor portal. The package wrapper automatically bundles and sets up Python 3 with `pygobject` and `gst-python` with all GStreamer PipeWire plugins and GI typelibs.

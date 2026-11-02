@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Main process (Linux): lifecycle, windows, tray, IPC and the state pushed to the
 // main window. Follows windows/main.js: L0–L2 discovery, pairing, clipboard, the other screen in a
 // window; L3 mouse and keyboard (kvm.js + linux-helper); L4 the host role (server, pairing
@@ -75,7 +75,7 @@ app.commandLine.appendSwitch('disable-features', 'WebRtcHideLocalIpsWithMdns');
 app.commandLine.appendSwitch('force-fieldtrials', 'WebRTC-ForceSendPlayoutDelay/min_ms:0,max_ms:0/WebRTC-FlexFEC-03/Enabled/WebRTC-FlexFEC-03-Advertised/Enabled/');
 // Wayland (L6): screen capture through the desktop portal and PipeWire.
 app.commandLine.appendSwitch('enable-features', 'WebRTCPipeWireCapturer');
-// Renamed MacShare → TwinDesk: settings, pairing and keys stay in the folder they've always been
+// Renamed MacShare → Zantexa Link: settings, pairing and keys stay in the folder they've always been
 // in (Electron would follow the new product name). A dev copy's --user-data-dir still wins.
 if (!app.commandLine.hasSwitch('user-data-dir')) app.setPath('userData', path.join(app.getPath('appData'), 'MacShare'));
 require('../shared/applog.js').start(app); // console.* and crashes into the log folder, both apps
@@ -85,7 +85,7 @@ if (!app.requestSingleInstanceLock()) {
   app.quit();
 } else {
   Menu.setApplicationMenu(null); // its accelerators would steal keys meant for the other computer
-  // Starting TwinDesk again shows the window (no tray on some desktops); a Mac app's launcher starts
+  // Starting Zantexa Link again shows the window (no tray on some desktops); a Mac app's launcher starts
   // "twindesk --mac-app=<id>": open that app instead; the file managers' Send to, --send-files.
   app.on('second-instance', (_e, argv) => {
     if (sendTo && sendTo.handle(argv)) return;
@@ -454,7 +454,7 @@ function startPhone(server, pairing) {
   loadBtAudio();
   // Remote off: its page hears so; on, PhoneRemote answers instead.
   pl.on(`t:${P.T.REMOTE_HELLO}`, () => !phoneRemote && pl.current && pl.current.os === P.OS.ANDROID
-    && pl.sendToClient({ t: P.T.REMOTE_STATE, allowed: false, off: true, why: 'Remote is off on this computer: turn it on in TwinDesk’s Remote page there' }));
+    && pl.sendToClient({ t: P.T.REMOTE_STATE, allowed: false, off: true, why: 'Remote is off on this computer: turn it on in Zantexa Link’s Remote page there' }));
   loadRemote();
   phoneViews.on('change', pushState);
   viaWifi(phoneViews, 'openScreen', 'phone');
@@ -1052,7 +1052,7 @@ function buildState() {
     audio: { ...settings.audio, ...sound.view() },
     pcScreen: pcScreen.view(),
     files: { ...settings.files, ...fileDrop.view(), received: receivedDir(settings, app.getPath('downloads')), smb: smb.view(), incoming: fileRecv.view(), drag: kvm.dragRecv.view(), macDrags: kvm.peerDrags, clip: fileClip.view(), session: session.type },
-    terminal: { ...settings.terminal, ...(terminal ? terminal.view() : { status: 'off', message: '', command: 'ssh twindesk' }), installedKey: undefined, server: sshd.view() },
+    terminal: { ...settings.terminal, ...(terminal ? terminal.view() : { status: 'off', message: '', command: 'ssh zantexa-link' }), installedKey: undefined, server: sshd.view() },
     apps: link.peerOs === P.OS.MAC ? apps.view() : peerApps.view(), // a PC's or Linux computer's apps come through peerapps.js
     pcApps: pcApps.view(),
     macApps: settings.macApps,
@@ -1087,7 +1087,7 @@ function qrPairView() {
   const addrs = ownAddresses().filter((a) => isIPv4(a)).slice(0, 4);
   if (!port || !addrs.length) return { url: '', why: !addrs.length ? 'No network' : 'Starting…' };
   const q = new URLSearchParams({ id: device.id, n: device.name, a: addrs.join(','), p: String(port), k: qrPair.nonce });
-  return { url: 'twindesk://pair?' + q.toString(), until: qrPair.until };
+  return { url: 'zantexalink://pair?' + q.toString(), until: qrPair.until };
 }
 // Connection › Wireless debugging › Pair with a QR code (shared/adbqr.js): on while shown.
 let adbQr = null;
@@ -1190,7 +1190,7 @@ function createMainWindow(tab) {
     y: b.y,
     minWidth: 720,
     minHeight: 480,
-    title: 'TwinDesk',
+    title: 'Zantexa Link',
     icon: path.join(__dirname, 'assets', 'icon.png'),
     backgroundColor: nativeTheme.shouldUseDarkColors ? '#2b2b2e' : '#e9e9ee',
     show: false,
@@ -1250,10 +1250,10 @@ function createTray() {
     img.addRepresentation({ scaleFactor: 2, buffer: nativeImage.createFromPath(path.join(__dirname, 'assets', 'tray@2x.png')).toPNG() });
     tray = new Tray(img);
   } catch (e) {
-    console.error('[tray]', e.message); // no tray on this desktop: start TwinDesk again to show the window
+    console.error('[tray]', e.message); // no tray on this desktop: start Zantexa Link again to show the window
     return;
   }
-  tray.setToolTip('TwinDesk');
+  tray.setToolTip('Zantexa Link');
   tray.on('click', showMain);
   updateTray(buildState());
 }
@@ -1263,7 +1263,7 @@ function createTray() {
 let trayKey = '';
 function updateTray(s) {
   if (!tray) return;
-  tray.setToolTip('TwinDesk: ' + statusLine(s));
+  tray.setToolTip('Zantexa Link: ' + statusLine(s));
   const connected = s.link.state === 'connected';
   const name = connected && s.peer ? s.peer.name : '';
   const k = settings.kvm;
@@ -1315,7 +1315,7 @@ function updateTray(s) {
     lookAgain: () => discovery.probe(),
     again: again ? { label: (s.link.busy ? 'Take Over ' : 'Connect to ') + host, click: () => link.connect(true) } : null,
     disconnect: connected ? { label: 'Disconnect ' + name, click: () => link.disconnect() } : null,
-    update: s.updates && s.updates.available ? { label: 'Download TwinDesk ' + s.updates.latest + '…', click: showUpdateWindow } : null,
+    update: s.updates && s.updates.available ? { label: 'Download Zantexa Link ' + s.updates.latest + '…', click: showUpdateWindow } : null,
     rezume: rezumeItems(),
     open: showMain,
     log: () => require('../shared/applog.js').open(),

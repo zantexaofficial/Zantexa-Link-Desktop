@@ -1,5 +1,5 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
-// The `Host twindesk` entry in ~/.ssh/config, so `ssh twindesk` opens a shell on the paired
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// The `Host zantexa-link` entry in ~/.ssh/config, so `ssh zantexa-link` opens a shell on the paired
 // computer on every OS. Only our marked block is touched; the rest of the file stays byte for byte,
 // and a one-time backup is kept. Blocks written by older versions (`macshare-pc`) are removed too.
 'use strict';
@@ -8,12 +8,12 @@ const fs = require('fs');
 const os = require('os');
 const path = require('path');
 
-const ALIAS = 'twindesk';
+const ALIAS = 'zantexa-link';
 const SSH_DIR = path.join(os.homedir(), '.ssh');
 const CONFIG = path.join(SSH_DIR, 'config');
-const BEGIN = '# >>> twindesk (managed by TwinDesk, do not edit)';
-const END = '# <<< twindesk';
-const OLD = [['# >>> macshare', '# <<< macshare']];
+const BEGIN = '# >>> zantexa-link (managed by Zantexa Link, do not edit)';
+const END = '# <<< zantexa-link';
+const OLD = [['# >>> twindesk', '# <<< twindesk'], ['# >>> macshare', '# <<< macshare']];
 
 // A value for the config file, quoted when it has spaces (Windows paths often do).
 const quote = (v) => (/[\s"]/.test(v) ? `"${String(v).replace(/"/g, '')}"` : String(v));
@@ -54,8 +54,8 @@ function setHost(host) {
   }
   if (text === before) return;
   fs.mkdirSync(SSH_DIR, { recursive: true, mode: 0o700 });
-  const backup = `${CONFIG}.before-twindesk`;
-  if (fs.existsSync(CONFIG) && !fs.existsSync(backup) && !fs.existsSync(`${CONFIG}.before-macshare`)) fs.copyFileSync(CONFIG, backup);
+  const backup = `${CONFIG}.before-zantexa-link`;
+  if (fs.existsSync(CONFIG) && !fs.existsSync(backup) && !fs.existsSync(`${CONFIG}.before-twindesk`) && !fs.existsSync(`${CONFIG}.before-macshare`)) fs.copyFileSync(CONFIG, backup);
   const mode = fs.existsSync(CONFIG) ? fs.statSync(CONFIG).mode & 0o777 : 0o600;
   fs.writeFileSync(CONFIG, text, { mode });
 }

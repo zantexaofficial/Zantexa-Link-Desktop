@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Hidden sound window: the Mac → PC receiver (answers dir 'm2w') and the PC → Mac sender
 // (offers dir 'w2m' with the system sound from WASAPI loopback). Audio-only, Opus stereo.
 'use strict';

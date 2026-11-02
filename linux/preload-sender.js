@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The hidden sender window's API: commands and rtc2.* in, rtc2.*, state and stats out.
 const { contextBridge, ipcRenderer } = require('electron');
 

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // General › Received files (Windows, Linux): the folder where files arrive that weren't dropped on
 // a folder — Send files from another computer or a phone, the phone's Share, and what's saved from a
 // phone's Files and Photos — settings.files.receivedFolder, '' = Downloads. A chosen folder that

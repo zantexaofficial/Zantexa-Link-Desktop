@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // macshare-linuxhelper: shared declarations. JSON lines on stdin/stdout, the same commands and
 // events as windows-helper.
 #ifndef MACSHARE_HELPER_H

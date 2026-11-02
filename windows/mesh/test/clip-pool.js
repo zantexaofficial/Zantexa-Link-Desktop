@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Clipboard as one pool across devices (docs/mesh.md): Clip on simulated devices, each with its own
 // Mesh and fake clipboard, joined by fake links (full meshes, partial meshes, rings, a legacy peer).
 // Run with: node windows/test/clip-pool.js  (NODE_PATH and ELECTRON_OVERRIDE_DIST_PATH as in CI)

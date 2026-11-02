@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // shared/traymenu.js: the tray menu by kind; only connecting, the window and Quit while not connected.
 'use strict';
 
@@ -15,9 +15,9 @@ const model = (connected) => ({
 });
 const labels = (t) => t.filter((i) => i.label).map((i) => i.label);
 
-assert.deepStrictEqual(labels(template(model(false))), ['Not connected', 'Connect To', 'Open TwinDesk…', 'Quit TwinDesk']);
+assert.deepStrictEqual(labels(template(model(false))), ['Not connected', 'Connect To', 'Open Zantexa Link…', 'Quit Zantexa Link']);
 const on = template(model(true));
-assert.deepStrictEqual(labels(on), ['Connected to PC', 'Cursor Sharing', 'Mouse and Keyboard', 'Screen', 'Clipboard and Sound', 'Files', 'Connection', 'Update', 'Open TwinDesk…', 'Open Log Folder', 'Quit TwinDesk']);
+assert.deepStrictEqual(labels(on), ['Connected to PC', 'Cursor Sharing', 'Mouse and Keyboard', 'Screen', 'Clipboard and Sound', 'Files', 'Connection', 'Update', 'Open Zantexa Link…', 'Open Log Folder', 'Quit Zantexa Link']);
 assert.deepStrictEqual(labels(on.find((i) => i.label === 'Screen').submenu), ['Share Screen', 'Receive Screen']);
 assert.strictEqual(on.find((i) => i.label === 'Connection').submenu[0].label, 'Disconnect PC');
 assert.strictEqual(on.find((i) => i.label === 'Mouse and Keyboard').submenu[0].label, 'Share Keyboard');

@@ -1,8 +1,8 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Notifications both ways: the phone's (read by NotifListener, which needs Notification access)
 // go to the computer while it accepts them (`notif.policy`); the computer's show here as real
 // notifications, one channel per computer app is overkill, so one "From the computer" channel.
-package com.twindesk.android
+package com.zantexalink.android
 
 import android.app.Notification
 import android.content.ComponentName

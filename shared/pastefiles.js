@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Files pasted into an app (mac/fclip.js, linux/fclip.js; Windows' helper does its own): the paste
 // shortcut was pressed with an app in front, not the file manager, so the files arrive in a folder
 // of ours, go on the clipboard as files (as the file manager's Copy puts them), and the helper
@@ -14,7 +14,7 @@ const SETTLE_MS = 500; // after the files land, before the paste keys
 
 // A new folder for one paste; earlier ones go after a day.
 function pasteDir() {
-  const root = path.join(os.tmpdir(), 'TwinDesk Paste');
+  const root = path.join(os.tmpdir(), 'Zantexa Link Paste');
   try {
     for (const d of fs.readdirSync(root)) {
       const p = path.join(root, d);

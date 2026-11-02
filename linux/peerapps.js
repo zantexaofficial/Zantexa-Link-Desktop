@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Apps from a PC or another Linux computer here (copy of
 // windows/peerapps.js): list and open its apps (papps.list / papp.launch); each of their windows
 // arrives as its own `rtc2` session (kind 'window') and is shown in its own window here

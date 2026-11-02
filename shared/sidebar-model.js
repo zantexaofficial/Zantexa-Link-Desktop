@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // The main window's left sidebar as data (docs/mesh.md): every device the app knows (computers and
 // phones) as a tile, and which sections (Calls, Files, Terminal, ...) belong to which kind of
 // device. Pure: the three apps (Windows, Mac, Linux) turn the result into DOM.

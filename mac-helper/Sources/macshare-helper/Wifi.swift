@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Joining another device's Wi-Fi for a moment (its Wi-Fi Direct group, or a phone's hotspot) when
 // it isn't on this Mac's network, then back to whatever network macOS picks (the one it was on).
 // A Mac has one Wi-Fi radio, so while joined it is on that network only.

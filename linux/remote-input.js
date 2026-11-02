@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // `in.*` from a Mac window that shows something of this PC (the screen: an app
 // window), injected by the helper. Only while KVM is at home and "Let the Mac control it" is on;
 // keys go through P.mapKeyFromOtherPlatform when Ctrl/Cmd swapping is on.

@@ -1,11 +1,11 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Calls, Messages, Photos and Files on the computer (shared/phonehub.js there). Each is off until it is
 // switched on (its page on the computer, or Overview here), and while it's off nothing of it runs:
 // no receiver, no observer, no thread, and the classes that do the work (Calls.kt, Messages.kt,
 // Media.kt, FsBrowse.kt) aren't even made. Switched off, or the session gone: all of it stops at once.
 // What each needs is asked for when it's switched on (here, or Allow at the top of its page on
 // the computer), never in Setup.
-package com.twindesk.android
+package com.zantexalink.android
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -55,7 +55,7 @@ class Hub(core: Core) : Feature(core) {
                 Thread({ Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND); r.run() }, "td-hub").apply { isDaemon = true }
             }.also { io = it }
         }
-        runCatching { e.execute { runCatching(block).onFailure { Log.e("TwinDesk", "hub", it) } } }
+        runCatching { e.execute { runCatching(block).onFailure { Log.e("Zantexa Link", "hub", it) } } }
     }
 
     // A new session, or none: all off until the computer says (hub.policy).
@@ -165,7 +165,7 @@ class Hub(core: Core) : Feature(core) {
 
     fun granted(p: String) = core.ctx.checkSelfPermission(p) == PackageManager.PERMISSION_GRANTED
 
-    // In this build at all (the SMS permissions are only in TwinDesk with notifications).
+    // In this build at all (the SMS permissions are only in Zantexa Link with notifications).
     private val declared: Set<String> by lazy {
         runCatching {
             core.ctx.packageManager.getPackageInfo(core.ctx.packageName, PackageManager.GET_PERMISSIONS).requestedPermissions?.toSet()
@@ -202,7 +202,7 @@ class Hub(core: Core) : Feature(core) {
     }
 
     // The person on the phone is asked (the computer's Allow): the prompt opens straight away when
-    // Android lets us (display over other apps, or TwinDesk on screen), else a notification.
+    // Android lets us (display over other apps, or Zantexa Link on screen), else a notification.
     private fun ask(what: String) {
         if (what !in listOf("calls", "messages", "media", "files", "bt")) return
         val i = Intent(core.ctx, PermActivity::class.java).putExtra("what", what).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -212,7 +212,7 @@ class Hub(core: Core) : Feature(core) {
 
     // ---- Bluetooth: calls' sound on the computer needs this phone paired with it ----
     // Over classic Bluetooth (BR/EDR): hands-free runs only there. The person pairs them in Bluetooth
-    // settings (the Calls pages say how): TwinDesk doesn't pair them itself. A pairing over Bluetooth
+    // settings (the Calls pages say how): Zantexa Link doesn't pair them itself. A pairing over Bluetooth
     // LE only (le below) can't carry a call: Forget, on either side, starts over.
 
     @Volatile private var bonding = false // pairing with the computer right now
@@ -288,7 +288,7 @@ class Hub(core: Core) : Feature(core) {
         val d = runCatching { a.getRemoteDevice(btAddress) }.getOrNull() ?: return true
         forget = false
         if (d.bondState != BluetoothDevice.BOND_NONE && !unbond(d)) {
-            Log.i("TwinDesk", "bt: can't forget $btAddress here")
+            Log.i("Zantexa Link", "bt: can't forget $btAddress here")
             btSettings()
             forget = true
             sendState()
@@ -331,7 +331,7 @@ class Hub(core: Core) : Feature(core) {
 
 // Invisible: Android's own prompt for what Calls, Messages or Photos need (or Nearby devices, to
 // see the pairing for calls' sound; Files: All files access in Settings). Refused for good
-// before (Android won't ask again): TwinDesk's page in Settings instead.
+// before (Android won't ask again): Zantexa Link's page in Settings instead.
 class PermActivity : Activity() {
     private var what = ""
 

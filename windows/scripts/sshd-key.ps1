@@ -1,4 +1,4 @@
-# TwinDesk - Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+# Zantexa Link - Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 # sshd.js, elevated: in administrators_authorized_keys (Path), the lines ending with Marker taken
 # out and, with KeyFile, its line added; only Administrators and SYSTEM may then read the file.
 param(

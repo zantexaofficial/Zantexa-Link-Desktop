@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // The mesh's own files (windows/mesh/store.js, windows/mesh/settings.js; docs/multi-device.md, rule 4):
 // the one-to-one app's pairing files are read to start from and never written or removed; a device
 // forgotten in the mesh stays forgotten; the mesh's settings live in multi.json, never in settings.json.

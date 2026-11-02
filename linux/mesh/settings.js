@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Multi-device settings: ../settings.js as it is, plus what only the mesh uses (the cursor edges, the
 // shared layout and Join every device automatically). Loaded with Multi-device on only; the one-to-one
 // app never sees these keys.

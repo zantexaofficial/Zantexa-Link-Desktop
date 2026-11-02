@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // This PC's Wi-Fi for a session through Bluetooth (shared/netlink.js): hosting a network the other
 // side joins (Wi-Fi Direct's access point, in the helper: Wfd.cs), or joining the other side's (a
 // phone's Wi-Fi Direct group, another PC's access point). Joining: a temporary profile, connect,

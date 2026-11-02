@@ -1,10 +1,10 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
-// Capture from phone (the computer's Explorer › TwinDesk, cam.capture): the phone's own camera app
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Capture from phone (the computer's Explorer › Zantexa Link, cam.capture): the phone's own camera app
 // opens, and every photo taken goes to the computer, into the folder that was right-clicked there,
 // then the camera opens again for the next one. Back in the camera ends it, and the computer hears
 // it (cam.capture {on: false}); the computer ending it closes this. The photos also stay in the
-// phone's Pictures/TwinDesk.
-package com.twindesk.android
+// phone's Pictures/Zantexa Link.
+package com.zantexalink.android
 
 import android.content.ContentValues
 import android.net.Uri
@@ -51,11 +51,11 @@ class CaptureActivity : ComponentActivity() {
     }
 
     private fun next() {
-        val name = "TwinDesk_" + SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(Date()) + ".jpg"
+        val name = "Zantexa Link_" + SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(Date()) + ".jpg"
         val values = ContentValues().apply {
             put(MediaStore.Images.Media.DISPLAY_NAME, name)
             put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg")
-            if (android.os.Build.VERSION.SDK_INT >= 29) put(MediaStore.Images.Media.RELATIVE_PATH, "Pictures/TwinDesk")
+            if (android.os.Build.VERSION.SDK_INT >= 29) put(MediaStore.Images.Media.RELATIVE_PATH, "Pictures/Zantexa Link")
         }
         val u = runCatching { contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values) }.getOrNull() ?: return end()
         uri = u

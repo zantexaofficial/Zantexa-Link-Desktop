@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Helpers for the Mac integration tests: real Server + Pairing + LinkManager + Hub nodes on loopback,
 // the real pairing protocol, and a raw client that talks like the Android app.
 // The Windows helpers are reused where they are the same (run.js); the node is the Mac's own.

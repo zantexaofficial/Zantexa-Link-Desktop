@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Every `rtc2` video session this PC sends (its screen: one per app window)
 // runs in one hidden window (sender.html). Session numbers come from one counter, since the Mac
 // routes `rtc2.ice` / `rtc2.stop` by session. Answers and candidates from the Mac are routed here.

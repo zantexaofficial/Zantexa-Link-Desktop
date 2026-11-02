@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Tiny wrapper over JavaScriptSerializer: parse a command line, read typed fields, write a line.
 using System;
 using System.Collections.Generic;

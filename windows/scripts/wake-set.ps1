@@ -1,4 +1,4 @@
-# TwinDesk - Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+# Zantexa Link - Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 # wake.js, elevated: up physical adapters may wake the PC on a magic packet (-On), or not.
 param([switch]$On)
 Get-NetAdapter -Physical | Where-Object Status -eq 'Up' | ForEach-Object {

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The Mac's pointer on the phone's screen. While the Mac's mouse is over here, the Mac injects the
 // mouse through wireless debugging at positions it keeps itself (so it knows when the pointer
 // reaches the edge to go back), and tells us where it is (`phone.pointer {on, x, y}`, physical
@@ -7,7 +7,7 @@
 //   With the Accessibility service on, the window is the service's (TYPE_ACCESSIBILITY_OVERLAY):
 // an app's overlay is drawn under the notification shade, and Settings hides it on its screens
 // (Android 12+, against tapjacking), so the arrow vanished there (#53). Without it, the app's.
-package com.twindesk.android
+package com.zantexalink.android
 
 import android.content.Context
 import android.graphics.Canvas
@@ -65,7 +65,7 @@ class Pointer(core: Core) : Feature(core) {
             ).apply {
                 gravity = Gravity.TOP or Gravity.START
                 layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS
-                title = "TwinDesk pointer"
+                title = "Zantexa Link pointer"
             }
             val m = want.getSystemService(Context.WINDOW_SERVICE) as WindowManager
             runCatching { m.addView(nv, p) }.onFailure { return }

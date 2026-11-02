@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Photos page (Mac, PC and Linux): the phone's photos and videos, newest first, a page at a
 // time; small pictures only for the tiles on screen; click one to see it big; Save copies the
 // files here (into Downloads, as Send does). On USB, Wi-Fi or Wi-Fi Direct; over Bluetooth it says

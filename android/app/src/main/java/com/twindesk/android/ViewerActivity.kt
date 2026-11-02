@@ -1,8 +1,8 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The Mac's screen, full screen: Mirror (the Mac's own screen) or Extend (a second screen for the
 // Mac, sized to this one). The picture and the touches are viewer.html's; this activity adds a
 // small bar (tap the handle at the top): Mirror / Extend, Start / Stop, keyboard, close.
-package com.twindesk.android
+package com.zantexalink.android
 
 import android.os.Bundle
 import android.view.WindowManager

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Tests for shared/pairlimit.js: pairing time limits and their reasons.
 // Run with: node shared/test/pairlimit.js
 'use strict';
@@ -13,8 +13,8 @@ assert.ok(L.limitMessage('connecting', 'Desk PC', 'ble:ab').includes('over Bluet
 assert.ok(L.limitMessage('waiting', 'Desk PC', '1.2.3.4').startsWith('Desk PC didn’t answer'));
 
 // Version mismatch: which side to update, from the host's "speaks protocol vN".
-assert.strictEqual(L.versionMessage({ message: `speaks protocol v${P.PROTOCOL_VERSION + 1}` }, 'Mac'), 'This TwinDesk is older than the one on Mac. Update it here.');
-if (P.PROTOCOL_VERSION > 1) assert.strictEqual(L.versionMessage({ message: `speaks protocol v${P.PROTOCOL_VERSION - 1}` }, 'Mac'), 'Mac runs an older TwinDesk. Update it there.');
+assert.strictEqual(L.versionMessage({ message: `speaks protocol v${P.PROTOCOL_VERSION + 1}` }, 'Mac'), 'This Zantexa Link is older than the one on Mac. Update it here.');
+if (P.PROTOCOL_VERSION > 1) assert.strictEqual(L.versionMessage({ message: `speaks protocol v${P.PROTOCOL_VERSION - 1}` }, 'Mac'), 'Mac runs an older Zantexa Link. Update it there.');
 assert.strictEqual(L.versionMessage({ message: 'no version here' }, 'Mac'), null);
 assert.strictEqual(L.versionMessage(null, 'Mac'), null);
 

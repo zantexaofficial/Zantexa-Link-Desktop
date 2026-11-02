@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Notifications as one pool across devices (docs/mesh.md): Notifs on simulated devices, each with its
 // own Mesh, helper fake and toast class, joined by fake links (full, partial, ring, a legacy peer).
 // Run with: node linux/mesh/test/notifs-pool.js  (NODE_PATH and ELECTRON_OVERRIDE_DIST_PATH as in CI)
@@ -27,7 +27,7 @@ async function world(ids, links, o = {}) {
       helper: dev.helper,
       settings: dev.settings,
       save: () => {},
-      selfIds: ['TwinDesk.test'],
+      selfIds: ['Zantexa Link.test'],
       peerName: () => '',
       onChange: () => {},
       onClick: () => {},

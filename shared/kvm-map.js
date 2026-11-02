@@ -1,9 +1,9 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The crossing map in main (one-to-one, every platform): reports this computer's monitors
 // (kvm.displays, on connect and when they change), keeps the other computer's, and turns the
 // arrangement ({side, along}, shared/kvm-geom.js) into what the helper needs: the zones where the
 // monitors touch, and offsets mapped to the other side. Without the other computer's monitors (an
-// older TwinDesk) zones are null (the whole side, as before) and offsets pass through unchanged.
+// older Zantexa Link) zones are null (the whole side, as before) and offsets pass through unchanged.
 //
 // Identify: a big number on each monitor for a moment (kvm.identify asks the other computer too).
 //

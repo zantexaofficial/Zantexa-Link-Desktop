@@ -1,5 +1,5 @@
 @echo off
-rem TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+rem Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 rem Builds the virtual camera (windows/vcam.js): bin\twindesk-vcam-x64.dll and, when Visual Studio
 rem has the ARM64 tools, bin\twindesk-vcam-arm64.dll (Frame Server loads the one of Windows' own
 rem architecture), and bin\twindesk-vcam.exe (x64; it only adds the camera and feeds it, so it also
@@ -33,7 +33,7 @@ rem A loaded DLL can be renamed but not overwritten: the new one is built beside
 cl %CFLAGS% /LD /Fo"%OBJ%\%2\\" "%SRC%source.cpp" /link /DEF:"%SRC%source.def" /OUT:"%BIN%\twindesk-vcam-%2.new.dll" /IMPLIB:"%OBJ%\%2\source.lib" %LIBS% || exit /b 1
 del /q "%BIN%\twindesk-vcam-%2.old*.dll" 2>nul
 if exist "%BIN%\twindesk-vcam-%2.dll" ren "%BIN%\twindesk-vcam-%2.dll" twindesk-vcam-%2.old-%RANDOM%.dll
-ren "%BIN%\twindesk-vcam-%2.new.dll" twindesk-vcam-%2.dll
+ren "%BIN%\twindesk-vcam-%2.new.dll" -vcam-%2.dll
 del /q "%BIN%\twindesk-vcam-%2.new.*" 2>nul
 if "%2"=="x64" (
   cl %CFLAGS% /Fo"%OBJ%\%2\\" "%SRC%vcam.cpp" /link /OUT:"%BIN%\twindesk-vcam.exe" %LIBS% || exit /b 1

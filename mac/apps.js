@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Mac apps on the PC: app list, launch, and the windows of launched
 // apps as rectangles normalized over the stream picture, so the PC crops each into its own window.
 //

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Copy and paste files between the computers with two global shortcuts (default
 // Ctrl+Alt+C / Ctrl+Alt+V, Files tab).
 // Copy announces the files selected in the Explorer window in front (else the files on the
@@ -181,7 +181,7 @@ class FileClip {
       front = (await this.helper.request('frontFolder')) || {};
     } catch (_) { /* Desktop */ }
     let dir = front.path || '';
-    // An app in front (not File Explorer, the desktop or TwinDesk itself): the files go into it.
+    // An app in front (not File Explorer, the desktop or Zantexa Link itself): the files go into it.
     const into = !dir && front.app && front.pid !== process.pid ? { hwnd: front.hwnd, title: String(front.title || '') } : null;
     if (into) dir = this._pasteDir();
     if (!dir || !fs.existsSync(dir)) dir = app.getPath('desktop');
@@ -196,7 +196,7 @@ class FileClip {
 
   // A new folder for files pasted into an app; the ones from earlier pastes go after a day.
   _pasteDir() {
-    const root = path.join(app.getPath('temp'), 'TwinDesk Paste');
+    const root = path.join(app.getPath('temp'), 'Zantexa Link Paste');
     try {
       for (const d of fs.readdirSync(root)) {
         const p = path.join(root, d);

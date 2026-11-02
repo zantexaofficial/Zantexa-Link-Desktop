@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // The shared layout of the mesh (docs/mesh.md, "Shared layout"): where every device sits relative to
 // the others, one map for the whole mesh, edited from any device and synced through its own Pool.
 // The rules (place, view, neighbours) are in shared/layout.js; this file holds the stored layout,

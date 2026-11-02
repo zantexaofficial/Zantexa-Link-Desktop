@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Capture with several watched sides, for Multi-device (docs/multi-device.md, docs/mesh.md "Shared
 // layout"): built into macshare-winhelper-multi.exe only (build.cmd, /define:MULTI), which the mesh app
 // starts (windows/mesh/helper.js). Each side of this PC can lead to another device: the edge push is

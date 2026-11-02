@@ -1,6 +1,6 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
-// The virtual camera on the Mac (shared/vcam.js's driver): "TwinDesk Camera", a Camera Extension
-// (mac-helper/Sources/twindesk-camera) inside TwinDesk.app/Contents/Library/SystemExtensions.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// The virtual camera on the Mac (shared/vcam.js's driver): "Zantexa Link Camera", a Camera Extension
+// (mac-helper/Sources/twindesk-camera) inside Zantexa Link.app/Contents/Library/SystemExtensions.
 // Installing it is twindesk-vcam activate (Contents/MacOS: the extension must be in its main
 // bundle), and the first time macOS asks the person to allow it in System Settings; twindesk-vcam
 // feed then writes the frames into the camera. macOS loads a camera extension only from an app in
@@ -21,7 +21,7 @@ const TOOL = path.join(CONTENTS, 'MacOS', 'twindesk-vcam');
 const EXTENSION = path.join(CONTENTS, 'Library', 'SystemExtensions', 'org.macshare.mac.camera.systemextension');
 
 const OBS = 'OBS Virtual Camera';
-const TARGETS = [{ value: 'obs', label: OBS }, { value: 'twindesk', label: 'TwinDesk Camera' }]; // OBS's first: the default
+const TARGETS = [{ value: 'obs', label: OBS }, { value: 'twindesk', label: 'Zantexa Link Camera' }]; // OBS's first: the default
 
 function tool(cmd, onLine, timeout = 20000, args = []) {
   return new Promise((resolve) => {
@@ -51,9 +51,9 @@ function tool(cmd, onLine, timeout = 20000, args = []) {
 const obsInstalled = () => ['/Applications/OBS.app', path.join(require('os').homedir(), 'Applications', 'OBS.app')].some((p) => fs.existsSync(p));
 
 const driver = {
-  name: 'TwinDesk Camera',
+  name: 'Zantexa Link Camera',
   targets: TARGETS,
-  nameOf: (target) => (target === 'obs' ? OBS : 'TwinDesk Camera'),
+  nameOf: (target) => (target === 'obs' ? OBS : 'Zantexa Link Camera'),
   removable: (target) => target !== 'obs',
 
   async check(target) {
@@ -69,9 +69,9 @@ const driver = {
       };
     }
     if (!fs.existsSync(TOOL) || !fs.existsSync(EXTENSION)) {
-      return { supported: false, message: 'Not in this build: macOS takes camera extensions only from TwinDesk signed by its developer (a release build). Choose OBS Virtual Camera instead' };
+      return { supported: false, message: 'Not in this build: macOS takes camera extensions only from Zantexa Link signed by its developer (a release build). Choose OBS Virtual Camera instead' };
     }
-    if (!/^\/Applications\//.test(CONTENTS)) return { supported: false, message: 'Move TwinDesk to the Applications folder first: macOS installs camera extensions only from there' };
+    if (!/^\/Applications\//.test(CONTENTS)) return { supported: false, message: 'Move Zantexa Link to the Applications folder first: macOS installs camera extensions only from there' };
     const st = await tool('status');
     return { supported: true, installed: st.camera === true };
   },

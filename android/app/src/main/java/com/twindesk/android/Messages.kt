@@ -1,9 +1,9 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Messages on the computer (Hub.kt): the phone's conversations (SMS and MMS) read from Android's
 // message store, new ones as they come (sms.new), and texts sent from the computer through this
 // phone (sms.send). Made only while Messages is on: the store's observer and the "sent" receiver
-// are registered then and gone with it. Needs TwinDesk with notifications (the SMS permissions).
-package com.twindesk.android
+// are registered then and gone with it. Needs Zantexa Link with notifications (the SMS permissions).
+package com.zantexalink.android
 
 import android.Manifest
 import android.app.Activity
@@ -268,7 +268,7 @@ class Messages(private val hub: Hub, private val core: Core) {
     }
 
     companion object {
-        private const val SENT = "com.twindesk.android.SMS_SENT"
+        private const val SENT = "com.zantexalink.android.SMS_SENT"
         private val SMS_COLS = arrayOf("_id", "address", "body", "date", "type", "thread_id")
         private val MMS_COLS = arrayOf("_id", "date", "msg_box", "thread_id")
     }

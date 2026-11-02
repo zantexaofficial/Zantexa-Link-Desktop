@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Mirroring and Apps (Mac, PC and Linux), the phone's two pages that were on the Phone page:
 //   Mirroring: the phone's screen in a window, what's open here, and how phone windows look and
 //   behave (sound, picture, controls, keys).

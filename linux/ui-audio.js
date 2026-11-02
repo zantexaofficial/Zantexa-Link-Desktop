@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Audio tab (copy of windows/ui-audio.js): sound both ways, each its own stream: play the
 // other computer's sound here, and send this computer's sound there (PulseAudio/PipeWire loopback,
 // loopback.js). Screen sound lives in Share screen.

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Server with many clients: primary choice, same-device replacement only, per-client keep-alive
 // (busy 1 s / idle 5 s) with a fake clock, and no phone exclusivity.
 'use strict';

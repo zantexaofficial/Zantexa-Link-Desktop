@@ -1,4 +1,4 @@
-# TwinDesk - Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+# Zantexa Link - Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 # identity.js: this PC's host certificate, self-signed, exported to Pfx with Pass and then taken
 # out of the certificate store again.
 param(

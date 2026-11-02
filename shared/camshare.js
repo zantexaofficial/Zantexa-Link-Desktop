@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Camera sharing between two computers (the Camera tab): one computer's camera in a window on the
 // other. The other computer opens the window (cam.open); this one, with Camera › "Let {name} see
 // this camera" on (off until turned on), opens its camera in a hidden window (camera-send.html)
@@ -81,7 +81,7 @@ class CamShare {
   async setShare(on, askFirst) {
     this.shareError = '';
     if (on && askFirst && !(await askFirst())) {
-      this.shareError = 'The camera isn’t allowed for TwinDesk: allow it in System Settings › Privacy & Security › Camera';
+      this.shareError = 'The camera isn’t allowed for Zantexa Link: allow it in System Settings › Privacy & Security › Camera';
       return this.onChange();
     }
     this.cfg().share = !!on;

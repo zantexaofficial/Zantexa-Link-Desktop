@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The host side of going to sleep (every computer). Going to sleep (powerMonitor 'suspend') ends the
 // session with `asleep` (server.sleep): the guest stops reconnecting on its own. Until a real wake
 // ('resume') sessions are refused: a sleeping Mac wakes for a few seconds now and then (Power Nap,

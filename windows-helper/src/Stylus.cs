@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // A phone's stylus (the `pen` command: in.* with `pen`, shared/protocol.js P.penOf) as a Windows
 // pen: a synthetic pen pointer device (InjectSyntheticPointerInput, Windows 10 1809 and later), with
 // its pressure, tilt and rotation, the side button as the barrel button and the eraser end as the

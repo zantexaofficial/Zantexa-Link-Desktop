@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Share this Mac's screen to several devices at once (docs/screen-mesh.md). Every connected device gets a
 // Stream of its own (stream.js) on a peer bound to that device, so each target has its own WebRTC
 // session, policy and display. A target follows the shared settings (`sharing.on`, `sharing.displayId`,

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // XTest injection of k.* events. Moves are absolute
 // (current position + delta, clamped to the desktop), so X's pointer acceleration isn't applied a
 // second time. XTest events come from the XTest slave device, which capture.c skips (rule 4).

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The viewer (camera-view.html): the other computer's camera, answered recvonly to its offer.
 // It opens hidden: its picture goes to the Camera tab, and to the virtual camera while that's on
 // (shared/vcam-feed.js); Camera › Window shows it. Camera › Rotate turns it here too.

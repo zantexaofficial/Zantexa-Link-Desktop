@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Host role: pairing responder (numeric comparison),
 // paired.json (the computers that connect to this PC), and `hello` auth. Port of mac/pairing.js.
 //

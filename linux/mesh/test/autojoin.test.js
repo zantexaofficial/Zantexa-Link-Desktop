@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Joining everyone (windows/autojoin.js, shared/intro.js) on real sockets: W (the hub both others are
 // paired to), M (a computer) and P (a guest; its id is the larger one, so M is the host of the pair).
 // Run with: node linux/mesh/test/autojoin.test.js  (NODE_PATH and ELECTRON_OVERRIDE_DIST_PATH as in CI)

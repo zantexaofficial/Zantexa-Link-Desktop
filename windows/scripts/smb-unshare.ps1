@@ -1,4 +1,4 @@
-# TwinDesk - Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+# Zantexa Link - Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 # smb.js, elevated: the share and its account removed.
 param(
   [Parameter(Mandatory = $true)][string]$Share,

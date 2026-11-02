@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // ../sender.js with a first session number of its own: a sender on a link of its own (pcscreenset.js)
 // starts high, so its numbers never meet those of the selected device's sender on the same link (the
 // Mac routes by session).

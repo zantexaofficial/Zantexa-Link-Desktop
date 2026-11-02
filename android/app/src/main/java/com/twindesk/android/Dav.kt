@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // A folder of this phone over WebDAV, for the computer's file manager (FolderShare.kt): Finder,
 // Explorer (WebClient) and GVFS mount it through shared/foldershare.js's proxy there, only at
 // https://<phone>:<port>/<secret>/<volume>/. TLS with this phone's own key (ShareKey), whose
@@ -8,7 +8,7 @@
 // while mapping.
 // The computers' own files (.DS_Store and ._* from a Mac, desktop.ini and Thumbs.db from Windows,
 // .directory from KDE) stay in memory here, so nothing of theirs lands on the phone.
-package com.twindesk.android
+package com.zantexalink.android
 
 import android.net.Uri
 import android.util.Log
@@ -82,7 +82,7 @@ class Dav(private val root: File, private val secret: String, private val volume
             try {
                 handle(parts[0].uppercase(), parts[1], headers, body, out)
             } catch (e: Exception) {
-                Log.w("TwinDesk", "dav ${parts[0]} ${parts[1]}: $e")
+                Log.w("Zantexa Link", "dav ${parts[0]} ${parts[1]}: $e")
                 return
             }
             body.drain()

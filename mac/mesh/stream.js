@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Screen sharing: hidden capture window (getDisplayMedia + RTCPeerConnection, the offerer),
 // session numbering, rtc.* relay between the capture window and the Windows client, stats.
 // We capture only while a viewer is open on the other side (its `screen.policy

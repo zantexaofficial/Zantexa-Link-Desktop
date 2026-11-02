@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // ../../shared/sleepwake.js for several devices: going to sleep ends every session (server.sleep
 // returns their ids), waking invites each of them back as soon as discovery sees it on the network.
 // The one-to-one app keeps the shared one.

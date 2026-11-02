@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // The copy/paste-files shortcuts at home (linux/fclip.js) and the cursor lock key (shared/cursorlock.js),
 // for both backends: Electron's globalShortcut needs X11 and an X window in front, so the helper, which
 // reads every key anyway (the hotkey), watches for them. The keys still reach the app in front (nothing

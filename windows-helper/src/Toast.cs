@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // A live toast with a progress bar (files on their way), changed in place: its text and bar are
 // bound to NotificationData, so each step updates them without a new toast (no sound, no banner
 // again). Dismissed by the person: left alone until the end. main passes the app's

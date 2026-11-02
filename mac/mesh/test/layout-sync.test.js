@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // The shared layout on this Mac (mac/layout-sync.js, shared/layout.js) on real sockets: every node has a
 // real Server, Pairing, LinkManager, Mesh, Hub and LayoutSync, paired with the real pairing protocol.
 // The same scenarios as windows/test/layout-sync.test.js.

@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Every two-way section is one setting shared by both
 // computers, remembered per pair. "Show this PC's notifications on the Mac" is this PC's
 // notifs.send AND the Mac's notifs.receive: flip it on either computer and the other follows.

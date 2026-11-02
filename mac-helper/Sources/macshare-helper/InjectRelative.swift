@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Relative KVM input while the PC drives this Mac (`inject`). Main has already
 // mapped keys and applied speed / reverse scrolling.
 import Cocoa

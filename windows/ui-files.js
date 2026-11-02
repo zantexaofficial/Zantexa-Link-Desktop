@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Files tab: Send files (drop zone + Choose…) and copy/paste files with shortcuts,
 // then two direction cards — files and the Mac's folder coming here, files and
 // this PC's folder going to the Mac — then transfers. Drags across the edge,

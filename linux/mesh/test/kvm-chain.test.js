@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Chains of devices (docs/mesh.md, "Shared layout"): real Kvm instances with fake helpers on real sockets.
 // Computers A, B, C sit in a row in the shared layout (A - B - C) and are all linked (A drives through a
 // link to each). A drives B; B's pointer leaves to the right, A releases B and takes C; C's pointer

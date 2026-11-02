@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Chains of devices on the Mac (docs/mesh.md, "Shared layout"): real Kvm instances (mac/kvm.js) with fake
 // helpers on real sockets. Computers A, B, C sit in a row in the shared layout (A - B - C) and are linked
 // (A drives through a link to each). A is the owner (the Mac whose keyboard is used), B the middle device

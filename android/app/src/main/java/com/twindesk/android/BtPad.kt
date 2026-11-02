@@ -1,12 +1,12 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Remote › As a Bluetooth gamepad: this device as a Bluetooth game controller (Android's HID device
-// profile), for any computer, the Mac too, with no driver and without TwinDesk there. While it's on,
+// profile), for any computer, the Mac too, with no driver and without Zantexa Link there. While it's on,
 // the app is registered as a gamepad (16 buttons, a hat, two sticks, two triggers); the person pairs
 // this device in the computer's Bluetooth settings once, and after that it connects by itself. While
 // a computer is connected, the Remote page's gamepad sends its state here (TD.pad) and it goes out
 // as HID reports. Some phones' makers leave the profile out: the switch then says so. Created only
 // when the Remote page first asks for it.
-package com.twindesk.android
+package com.zantexalink.android
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -77,7 +77,7 @@ class BtPad(private val core: Core) {
     // Registered while it's on (the Remote page calls this whenever it's shown).
     fun start() {
         if (!on || state != "off" && state != "unavailable") return
-        if (!allowed()) return set("off", "Allow Nearby devices for TwinDesk first")
+        if (!allowed()) return set("off", "Allow Nearby devices for Zantexa Link first")
         val adapter = manager?.adapter
         if (adapter == null || !adapter.isEnabled) return set("off", "Turn on Bluetooth first")
         set("starting", "")
@@ -86,7 +86,7 @@ class BtPad(private val core: Core) {
                 val h = proxy as BluetoothHidDevice
                 hid = h
                 if (!on) return stop()
-                val sdp = BluetoothHidDeviceAppSdpSettings("TwinDesk Gamepad", "${core.store.deviceName} as a gamepad", "TwinDesk",
+                val sdp = BluetoothHidDeviceAppSdpSettings("Zantexa Link Gamepad", "${core.store.deviceName} as a gamepad", "Zantexa Link",
                     BluetoothHidDevice.SUBCLASS2_GAMEPAD, DESCRIPTOR)
                 if (!h.registerApp(sdp, null, null, io, callback)) set("unavailable", "Another app is using this device as a Bluetooth keyboard or controller: turn that off first")
             }

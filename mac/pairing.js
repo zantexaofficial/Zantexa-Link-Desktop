@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Pairing (numeric comparison), paired.json, and `hello` auth.
 //
 // Events: 'change' — the pending request or the paired list changed;

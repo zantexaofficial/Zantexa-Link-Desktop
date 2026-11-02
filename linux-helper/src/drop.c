@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Drag files across the edge, this computer → the other one (X11; port of windows-helper's
 // DropEdge.cs). While the left button is held at home with edge crossing on, an invisible strip
 // covers the outer edge facing the other computer: an XDND drop target. A file drag that enters
@@ -46,7 +46,7 @@ static void make(void) {
   XChangeProperty(dpy_in, strip, A_AWARE, XA_ATOM, 32, PropModeReplace, (unsigned char *)&version, 1);
   Atom type = atom("_NET_WM_WINDOW_TYPE_DND"); // no shadow from compositors
   XChangeProperty(dpy_in, strip, atom("_NET_WM_WINDOW_TYPE"), XA_ATOM, 32, PropModeReplace, (unsigned char *)&type, 1);
-  XStoreName(dpy_in, strip, "TwinDesk drop edge");
+  XStoreName(dpy_in, strip, "Zantexa Link drop edge");
 }
 
 static void hide(void) {

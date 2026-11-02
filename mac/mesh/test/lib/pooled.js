@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // The pooled features on top of a test node (lib/mesh.js): the Clip and Notifs of shared/mesh.js
 // with fakes for the OS clipboard, the helper process and the notification centre.
 'use strict';

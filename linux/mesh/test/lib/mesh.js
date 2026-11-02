@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Helpers for the integration tests: real Server + Pairing + LinkManager + Sessions nodes on
 // loopback, the real pairing protocol, and a raw client that talks like the Android app.
 'use strict';

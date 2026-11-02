@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // Creates the helper-backed services and wires them together: display, stream, Monitor 2 input,
 // clipboard, shared cursor/keyboard. Restarts the helper if it dies and keeps the display
 // awake while a device is connected. The pooled features (clipboard, notifications) talk to the

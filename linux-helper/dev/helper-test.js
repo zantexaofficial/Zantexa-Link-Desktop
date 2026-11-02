@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // Dev check for macshare-linuxhelper: edge, capture, keys, buttons,
 // wheel, stop at an edge, dead-man, place, injected moves and the return edge, the hotkey. Needs a
 // display nobody's mouse is over (Xephyr picks up the PC's pointer): `Xvfb :3 -screen 0

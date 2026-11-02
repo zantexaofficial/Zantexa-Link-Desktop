@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith, Erdoğan Yeşil. GPL-3.0, see LICENSE.
 // "The latest copy wins": what was copied last, on any device, is what every device pastes.
 //
 // Every copy gets a time {ts, o}: ts from a hybrid logical clock (milliseconds that never go

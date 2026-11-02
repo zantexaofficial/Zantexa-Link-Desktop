@@ -1,4 +1,4 @@
-// TwinDesk — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
+// Zantexa Link — Copyright (C) 2026 inukaasith. GPL-3.0, see LICENSE.
 // A phone's stylus (in.* with `pen`, shared/protocol.js P.penOf) as a tablet pen: the mouse events
 // Injector posts for it are of the tablet-point subtype, with its pressure, tilt and rotation, and
 // proximity events say when it comes near and goes (its eraser end comes as an eraser), so drawing
