@@ -10,6 +10,7 @@ const assetsByPlatform = {
   'macos-x64': (name) => /^Zantexa Link-.*-x64\.dmg$/i.test(name),
   'linux-appimage': (name) => /^Zantexa-Link-.*\.AppImage$/i.test(name),
   'linux-deb': (name) => /^Zantexa-Link-.*\.deb$/i.test(name),
+  'linux-arch': (name) => /^twindesk-bin-.*-x86_64\.pkg\.tar\.zst$/i.test(name),
   'android-standard': (name) => /^Zantexa Link-.*\.apk$/i.test(name) && !/-full\.apk$/i.test(name),
   'android-full': (name) => /^Zantexa Link-.*-full\.apk$/i.test(name),
 };
@@ -39,7 +40,7 @@ async function loadRelease() {
     });
     if (!response.ok) throw new Error(`Release lookup returned ${response.status}`);
     const releases = await response.json();
-    const release = releases.find((item) => !item.draft);
+    const release = releases.find((item) => !item.draft && !item.prerelease);
     if (!release) {
       showUnavailable('Installers are not published yet. Check the release page for updates.');
       return;

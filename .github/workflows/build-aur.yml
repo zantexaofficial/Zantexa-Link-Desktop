@@ -13,6 +13,16 @@ on:
         required: false
         default: main
 
+  workflow_call:
+    inputs:
+      tag:
+        type: string
+        required: true
+      ref:
+        type: string
+        required: false
+        default: main
+
 # Write: the .deb can be on a draft release, which a read-only token can't see.
 permissions:
   contents: write

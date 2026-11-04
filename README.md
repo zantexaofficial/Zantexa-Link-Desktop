@@ -781,6 +781,14 @@ Set the `ANDROID_KEYSTORE` secret to the key the Android app is signed with
 Windows builds carry the full Android app. Without it the APKs get the runner's own key and the
 computers' builds leave the Android app out.
 
+To publish a complete public release, push a version tag such as `v2.5.1` after updating the
+version in `windows/package.json`, `mac/package.json`, `linux/package.json` and
+`android/app/build.gradle.kts`. **Publish release** builds Windows, macOS, Linux, Android and Arch
+packages, checks that every download is present, and publishes only after all builds pass. Set the
+`ANDROID_KEYSTORE` repository secret first; without the signing key the workflow intentionally
+stops instead of publishing APKs that cannot be updated later. The website finds the latest stable
+release and links each platform's button directly to its GitHub download.
+
 To Authenticode-sign the Windows installers, set the `WIN_CSC_LINK` secret to a base64-encoded
 Windows code-signing `.pfx` certificate and `WIN_CSC_KEY_PASSWORD` to its password. Keep the
 certificate and password out of the repository. When `WIN_CSC_LINK` is set, the Windows build fails

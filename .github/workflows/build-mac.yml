@@ -12,6 +12,16 @@ on:
         required: false
         default: main
 
+  workflow_call:
+    inputs:
+      tag:
+        type: string
+        required: true
+      ref:
+        type: string
+        required: false
+        default: main
+
 # Write: draft releases and release asset uploads require write permissions.
 permissions:
   contents: write
