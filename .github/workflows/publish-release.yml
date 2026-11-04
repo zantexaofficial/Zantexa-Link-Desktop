@@ -89,4 +89,4 @@ jobs:
           TAG: ${{ github.ref_name }}
         run: |
           release_id=$(gh release view "$TAG" --json databaseId --jq '.databaseId')
-          gh api --method PATCH "repos/$GITHUB_REPOSITORY/releases/$release_id" -F draft=false -F make_latest=true
+          gh api --method PATCH "repos/$GITHUB_REPOSITORY/releases/$release_id" -F draft=false -f make_latest=true
