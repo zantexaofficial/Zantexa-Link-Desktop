@@ -30,15 +30,13 @@ jobs:
           done
           grep -Fq "versionName = \"$VERSION\"" android/app/build.gradle.kts || { echo "::error::Android version does not match $VERSION"; exit 1; }
 
-      - name: Create the draft release
+      - name: Check the release is not already public
         env:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ github.ref_name }}
         run: |
           if is_draft=$(gh release view "$TAG" --json isDraft --jq '.isDraft' 2>/dev/null); then
             [[ "$is_draft" == "true" ]] || { echo "::error::Release $TAG is already public; use a new version tag"; exit 1; }
-          else
-            gh release create "$TAG" --draft --target "$TAG" --title "$TAG" --notes ""
           fi
 
   windows:
