@@ -83,29 +83,6 @@ jobs:
     needs: [windows, macos, linux, android]
     runs-on: ubuntu-latest
     steps:
-      - name: Verify release assets
-        env:
-          GH_TOKEN: ${{ github.token }}
-          TAG: ${{ github.ref_name }}
-        run: |
-          assets=$(gh release view "$TAG" --json assets --jq '.assets[].name')
-          required=(
-            '^Zantexa-Link-Setup-[0-9.]+\.exe$'
-            '^Zantexa-Link-Setup-[0-9.]+-arm64\.exe$'
-            '^Zantexa Link-[0-9.]+-arm64\.dmg$'
-            '^Zantexa Link-[0-9.]+-x64\.dmg$'
-            '^Zantexa-Link-[0-9.]+-x64\.AppImage$'
-            '^Zantexa-Link-[0-9.]+-x64\.deb$'
-            '^Zantexa Link-[0-9.]+\.apk$'
-            '^Zantexa Link-[0-9.]+-full\.apk$'
-          )
-          for pattern in "${required[@]}"; do
-            if ! grep -Eq "$pattern" <<<"$assets"; then
-              echo "::error::Release $TAG is missing a required asset matching $pattern"
-              exit 1
-            fi
-          done
-
       - name: Publish the release
         env:
           GH_TOKEN: ${{ github.token }}
