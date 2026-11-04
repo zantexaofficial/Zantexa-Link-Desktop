@@ -88,5 +88,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ github.ref_name }}
         run: |
+          if gh release edit "$TAG" --draft=false; then
+            exit 0
+          fi
           release_id=$(gh release view "$TAG" --json databaseId --jq '.databaseId')
           gh api --method PATCH "repos/$GITHUB_REPOSITORY/releases/$release_id" -F draft=false -f make_latest=true
