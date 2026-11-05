@@ -88,9 +88,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ github.ref_name }}
         run: |
-          api="https://api.github.com/repos/$GITHUB_REPOSITORY"
-          headers=(-H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28")
-          release=$(curl --fail-with-body --silent --show-error "${headers[@]}" "$api/releases/tags/$TAG")
+          release=$(gh api "repos/$GITHUB_REPOSITORY/releases/tags/$TAG")
           release_id=$(jq -er '.id' <<<"$release")
           is_draft=$(jq -er '.draft' <<<"$release")
           if [[ "$is_draft" != "true" ]]; then
@@ -98,10 +96,8 @@ jobs:
             exit 1
           fi
 
-          published=$(curl --fail-with-body --silent --show-error --request PATCH "${headers[@]}" \
-            --header "Content-Type: application/json" \
-            --data '{"draft":false,"make_latest":"true"}' \
-            "$api/releases/$release_id")
+          published=$(printf '{"draft":false,"make_latest":"true"}' | \
+            gh api --method PATCH "repos/$GITHUB_REPOSITORY/releases/$release_id" --input -)
           if [[ $(jq -er '.draft' <<<"$published") != "false" ]]; then
             echo "::error::GitHub did not publish release $TAG"
             exit 1
