@@ -122,15 +122,17 @@ It selects the newest release that is neither a draft nor a prerelease, finds as
 |---|---|---|
 | `windows-x64` | Windows x64 installer | `Zantexa-Link-Setup-<version>.exe` |
 | `windows-arm64` | Windows ARM64 installer | `Zantexa-Link-Setup-<version>-arm64.exe` |
-| `macos-arm64` | Apple silicon disk image | `Zantexa Link-<version>-arm64.dmg` |
-| `macos-x64` | Intel Mac disk image | `Zantexa Link-<version>-x64.dmg` |
-| `linux-appimage` | Linux AppImage | `Zantexa-Link-<version>-x64.AppImage` |
-| `linux-deb` | Debian/Ubuntu package | `Zantexa-Link-<version>-x64.deb` |
+| `macos-arm64` | Apple silicon disk image | `Zantexa Link-<version>-arm64.dmg` or `Zantexa.Link-<version>-arm64.dmg` |
+| `macos-x64` | Intel Mac disk image | `Zantexa Link-<version>-x64.dmg` or `Zantexa.Link-<version>-x64.dmg` |
+| `linux-appimage` | Linux AppImage | `Zantexa-Link-<version>-<arch>.AppImage` |
+| `linux-deb` | Debian/Ubuntu package | `Zantexa-Link-<version>-<arch>.deb` |
 | `linux-arch` | Arch Linux package | `twindesk-bin-<version>-1-x86_64.pkg.tar.zst` |
-| `android-standard` | Standard Android APK | `Zantexa Link-<version>.apk` |
-| `android-full` | Full Android APK | `Zantexa Link-<version>-full.apk` |
+| `android-standard` | Standard Android APK | `Zantexa Link-<version>.apk` or `Zantexa.Link-<version>.apk` |
+| `android-full` | Full Android APK | `Zantexa Link-<version>-full.apk` or `Zantexa.Link-<version>-full.apk` |
 
 Filename matching is implemented in [`app.js`](./app.js); keep it aligned with each platform build workflow and the generated asset names. The standard APK pattern must not accidentally match the `-full.apk` asset.
+
+The published v2.5.0 release uses dot-separated `Zantexa.Link` names for its macOS and Android assets, and `amd64` / `x86_64` architecture names for its Linux assets. It currently contains no Intel Mac DMG or Arch package, so those two website options should remain unavailable until a release includes those files. The other seven options have matching v2.5.0 assets.
 
 ## 7. Visual direction in the current concept
 

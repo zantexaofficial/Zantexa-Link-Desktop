@@ -6,13 +6,13 @@ const apiUrl = `https://api.github.com/repos/${repo}/releases?per_page=10`;
 const assetsByPlatform = {
   'windows-x64': (name) => /^Zantexa-Link-Setup-.*\.exe$/i.test(name) && !/-arm64\.exe$/i.test(name),
   'windows-arm64': (name) => /-arm64\.exe$/i.test(name),
-  'macos-arm64': (name) => /^Zantexa Link-.*-arm64\.dmg$/i.test(name),
-  'macos-x64': (name) => /^Zantexa Link-.*-x64\.dmg$/i.test(name),
+  'macos-arm64': (name) => /^Zantexa[ .]Link-.*-arm64\.dmg$/i.test(name),
+  'macos-x64': (name) => /^Zantexa[ .]Link-.*-x64\.dmg$/i.test(name),
   'linux-appimage': (name) => /^Zantexa-Link-.*\.AppImage$/i.test(name),
   'linux-deb': (name) => /^Zantexa-Link-.*\.deb$/i.test(name),
   'linux-arch': (name) => /^twindesk-bin-.*-x86_64\.pkg\.tar\.zst$/i.test(name),
-  'android-standard': (name) => /^Zantexa Link-.*\.apk$/i.test(name) && !/-full\.apk$/i.test(name),
-  'android-full': (name) => /^Zantexa Link-.*-full\.apk$/i.test(name),
+  'android-standard': (name) => /^Zantexa[ .]Link-.*\.apk$/i.test(name) && !/-full\.apk$/i.test(name),
+  'android-full': (name) => /^Zantexa[ .]Link-.*-full\.apk$/i.test(name),
 };
 
 const state = document.querySelector('#release-state');
