@@ -88,8 +88,18 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ github.ref_name }}
         run: |
-          if gh release edit "$TAG" --draft=false; then
-            exit 0
+          release=$(gh api "repos/$GITHUB_REPOSITORY/releases/tags/$TAG")
+          release_id=$(jq -er '.id' <<<"$release")
+          is_draft=$(jq -er '.draft' <<<"$release")
+          if [[ "$is_draft" != "true" ]]; then
+            echo "::error::Release $TAG is not a draft; refusing to change an already published release"
+            exit 1
           fi
-          release_id=$(gh release view "$TAG" --json databaseId --jq '.databaseId')
-          gh api --method PATCH "repos/$GITHUB_REPOSITORY/releases/$release_id" -F draft=false -f make_latest=true
+
+          published=$(gh api --method PATCH "repos/$GITHUB_REPOSITORY/releases/$release_id" \
+            -F draft=false -f make_latest=true)
+          if [[ $(jq -er '.draft' <<<"$published") != "false" ]]; then
+            echo "::error::GitHub did not publish release $TAG"
+            exit 1
+          fi
+          echo "Published release $TAG with $(jq '.assets | length' <<<"$published") assets"
