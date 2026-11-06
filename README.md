@@ -96,8 +96,8 @@ X11 and Wayland · shared folders through Samba · the phone app page by page ·
 
 **🍎 macOS**<br><sub>13 Ventura or later</sub>
 
-<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.0/Zantexa%20Link-2.5.0-arm64.dmg"><img src="https://img.shields.io/badge/Apple_Silicon-.dmg-000000?style=for-the-badge" alt="macOS, Apple Silicon"></a><br>
-<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.0/Zantexa%20Link-2.5.0-x64.dmg"><img src="https://img.shields.io/badge/Intel-.dmg-555555?style=for-the-badge" alt="macOS, Intel"></a>
+<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.0/Zantexa.Link-2.5.0-arm64.dmg"><img src="https://img.shields.io/badge/Apple_Silicon-.dmg-000000?style=for-the-badge" alt="macOS, Apple Silicon"></a><br>
+<sub>Intel Mac installer is not available in this release.</sub>
 
 </td>
 <td width="25%" align="center" valign="top">
@@ -112,9 +112,9 @@ X11 and Wayland · shared folders through Samba · the phone app page by page ·
 
 **🐧 Linux**<br><sub>X11 and Wayland, x86_64</sub>
 
-<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.0/Zantexa-Link-2.5.0-x64.deb"><img src="https://img.shields.io/badge/Debian_·_Ubuntu-.deb-d70a53?style=for-the-badge" alt="Linux, .deb"></a><br>
-<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.0/Zantexa-Link-2.5.0-x64.AppImage"><img src="https://img.shields.io/badge/Any_distro-AppImage-f0a30a?style=for-the-badge" alt="Linux, AppImage"></a><br>
-<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.0/twindesk-bin-2.5.0-1-x86_64.pkg.tar.zst"><img src="https://img.shields.io/badge/Arch-pkg.tar.zst-1793d1?style=for-the-badge" alt="Linux, Arch package"></a><br>
+<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.0/Zantexa-Link-2.5.0-amd64.deb"><img src="https://img.shields.io/badge/Debian_·_Ubuntu-.deb-d70a53?style=for-the-badge" alt="Linux, .deb"></a><br>
+<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.0/Zantexa-Link-2.5.0-x86_64.AppImage"><img src="https://img.shields.io/badge/Any_distro-AppImage-f0a30a?style=for-the-badge" alt="Linux, AppImage"></a><br>
+<sub>Arch package is not available in this release.</sub><br>
 <sub>NixOS: <code>nix run .</code> from a checkout (<a href="#nixos--nix-flakes">more</a>)</sub>
 
 </td>
@@ -122,8 +122,8 @@ X11 and Wayland · shared folders through Samba · the phone app page by page ·
 
 **🤖 Android**<br><sub>10 or later, phones and tablets</sub>
 
-<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.0/Zantexa%20Link-2.5.0.apk"><img src="https://img.shields.io/badge/Phone_app-.apk-3ddc84?style=for-the-badge" alt="Android app"></a><br>
-<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.0/Zantexa%20Link-2.5.0-full.apk"><img src="https://img.shields.io/badge/Full_app-.apk-1b8a4c?style=for-the-badge" alt="Android full app"></a><br>
+<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.0/Zantexa.Link-2.5.0.apk"><img src="https://img.shields.io/badge/Phone_app-.apk-3ddc84?style=for-the-badge" alt="Android app"></a><br>
+<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.0/Zantexa.Link-2.5.0-full.apk"><img src="https://img.shields.io/badge/Full_app-.apk-1b8a4c?style=for-the-badge" alt="Android full app"></a><br>
 <sub>The full app adds notifications, texts and Accessibility; the computer can install it for you over wireless debugging</sub>
 
 </td>
@@ -161,15 +161,17 @@ xattr -dr com.apple.quarantine /Applications/Zantexa Link.app
 2. When the installer shows **Windows protected your PC** (SmartScreen), click **More info**, then
    **Run anyway**.
 
-On Windows 11 with **Smart App Control** on, unsigned apps are blocked with no Run anyway button.
-The only way past it is turning it off (Windows Security › App & browser control › Smart App Control
-settings), and on many Windows 11 versions it can't be turned back on without reinstalling Windows.
+These installers are currently unsigned. Windows security features may block an unsigned installer;
+do not disable Smart App Control to install it. A trusted Authenticode signature can improve publisher
+identity and reputation, but does not guarantee that every Windows security warning will disappear.
 
 **🤖 Android**
 
 1. Open the downloaded .apk. Android asks to allow your browser or Files app to **install unknown
    apps**: tap **Settings**, turn on **Allow from this source**, go back and tap **Install**.
-2. If Play Protect warns about an unrecognised developer, tap **More details › Install anyway**.
+2. If Play Protect warns about or blocks the APK, use its built-in app review/report option if shown.
+   Do not turn off Play Protect. Sideloaded APKs can still be warned about; installing through Google
+   Play is the preferred option when a Play Store release is available.
 
 The **full app** (notifications, texts and Accessibility) is easiest installed by the computer over
 [wireless debugging](#wireless-debugging) (Phone page › Notifications from the phone): Android then
