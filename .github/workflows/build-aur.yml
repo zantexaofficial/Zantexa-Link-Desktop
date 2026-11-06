@@ -48,8 +48,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           VER="${{ inputs.tag }}"; VER="${VER#v}"
-          gh release download "${{ inputs.tag }}" -R "${{ github.repository }}" -p "Zantexa-Link-$VER-x64.deb"
-          SUM=$(sha256sum "Zantexa-Link-$VER-x64.deb" | cut -d' ' -f1)
+          gh release download "${{ inputs.tag }}" -R "${{ github.repository }}" -p "Zantexa-Link-$VER-amd64.deb"
+          SUM=$(sha256sum "Zantexa-Link-$VER-amd64.deb" | cut -d' ' -f1)
           sed -i -e "s/^pkgver=.*/pkgver=$VER/" -e "s/^pkgrel=.*/pkgrel=1/" -e "s/^sha256sums=.*/sha256sums=('$SUM')/" PKGBUILD
           grep -E '^(pkgver|pkgrel|sha256sums)=' PKGBUILD
 

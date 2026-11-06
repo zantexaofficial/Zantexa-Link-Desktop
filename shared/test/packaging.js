@@ -33,4 +33,12 @@ for (const f of ['windows/installer/build.js', 'linux/installer/build.js']) {
 }
 assert.ok(/cp "\$ROOT"\/shared\/\*\.js/.test(read('mac/build-app.sh')), 'mac/build-app.sh copies every shared/*.js');
 
+const aurWorkflow = read('.github/workflows/build-aur.yml');
+const aurPackage = read('linux/aur/PKGBUILD');
+assert.ok(aurWorkflow.includes('Zantexa-Link-$VER-amd64.deb'), 'AUR workflow fetches the published Debian asset name');
+assert.ok(
+  aurPackage.includes('Zantexa-Link-${pkgver}-amd64.deb::${url}/releases/download/v${pkgver}/Zantexa-Link-${pkgver}-amd64.deb'),
+  'AUR package source uses the published Debian asset name',
+);
+
 console.log(`packaging: passed (${required.size} shared modules required, all staged)`);

@@ -16,7 +16,7 @@ optdepends=('bluez: devices not on this network over Bluetooth'
 provides=("$_pkgname")
 conflicts=("$_pkgname")
 options=('!strip' '!debug')
-source=("Zantexa-Link-${pkgver}-x64.deb::${url}/releases/download/v${pkgver}/Zantexa-Link-${pkgver}-x64.deb")
+source=("Zantexa-Link-${pkgver}-amd64.deb::${url}/releases/download/v${pkgver}/Zantexa-Link-${pkgver}-amd64.deb")
 sha256sums=('3a90972b447407207cc6f4cc2b10231c912f5ea48ff937d0ac4503d7ebc534ac')
 
 package() {
