@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <a href="#download"><b>⬇️ Download 2.5.0</b></a> ·
+  <a href="#download"><b>⬇️ Download 2.5.1</b></a> ·
   <a href="https://twin-desk.vercel.app"><b>Website</b></a> ·
   <a href="#-new-in-23"><b>What's new</b></a> ·
   <a href="#-get-started"><b>Get started</b></a> ·
@@ -96,7 +96,7 @@ X11 and Wayland · shared folders through Samba · the phone app page by page ·
 
 **🍎 macOS**<br><sub>13 Ventura or later</sub>
 
-<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.0/Zantexa.Link-2.5.0-arm64.dmg"><img src="https://img.shields.io/badge/Apple_Silicon-.dmg-000000?style=for-the-badge" alt="macOS, Apple Silicon"></a><br>
+<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.1/Zantexa.Link-2.5.1-arm64.dmg"><img src="https://img.shields.io/badge/Apple_Silicon-.dmg-000000?style=for-the-badge" alt="macOS, Apple Silicon"></a><br>
 <sub>Intel Mac installer is not available in this release.</sub>
 
 </td>
@@ -104,16 +104,16 @@ X11 and Wayland · shared folders through Samba · the phone app page by page ·
 
 **🪟 Windows**<br><sub>10 and 11</sub>
 
-<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.0/Zantexa-Link-Setup-2.5.0.exe"><img src="https://img.shields.io/badge/x64-Installer-0078d4?style=for-the-badge" alt="Windows, x64"></a><br>
-<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.0/Zantexa-Link-Setup-2.5.0-arm64.exe"><img src="https://img.shields.io/badge/ARM64-Installer-005a9e?style=for-the-badge" alt="Windows on ARM"></a>
+<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.1/Zantexa-Link-Setup-2.5.1.exe"><img src="https://img.shields.io/badge/x64-Installer-0078d4?style=for-the-badge" alt="Windows, x64"></a><br>
+<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.1/Zantexa-Link-Setup-2.5.1-arm64.exe"><img src="https://img.shields.io/badge/ARM64-Installer-005a9e?style=for-the-badge" alt="Windows on ARM"></a>
 
 </td>
 <td width="25%" align="center" valign="top">
 
 **🐧 Linux**<br><sub>X11 and Wayland, x86_64</sub>
 
-<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.0/Zantexa-Link-2.5.0-amd64.deb"><img src="https://img.shields.io/badge/Debian_·_Ubuntu-.deb-d70a53?style=for-the-badge" alt="Linux, .deb"></a><br>
-<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.0/Zantexa-Link-2.5.0-x86_64.AppImage"><img src="https://img.shields.io/badge/Any_distro-AppImage-f0a30a?style=for-the-badge" alt="Linux, AppImage"></a><br>
+<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.1/Zantexa-Link-2.5.1-amd64.deb"><img src="https://img.shields.io/badge/Debian_·_Ubuntu-.deb-d70a53?style=for-the-badge" alt="Linux, .deb"></a><br>
+<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.1/Zantexa-Link-2.5.1-x86_64.AppImage"><img src="https://img.shields.io/badge/Any_distro-AppImage-f0a30a?style=for-the-badge" alt="Linux, AppImage"></a><br>
 <sub>Arch package is not available in this release.</sub><br>
 <sub>NixOS: <code>nix run .</code> from a checkout (<a href="#nixos--nix-flakes">more</a>)</sub>
 
@@ -122,8 +122,8 @@ X11 and Wayland · shared folders through Samba · the phone app page by page ·
 
 **🤖 Android**<br><sub>10 or later, phones and tablets</sub>
 
-<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.0/Zantexa.Link-2.5.0.apk"><img src="https://img.shields.io/badge/Phone_app-.apk-3ddc84?style=for-the-badge" alt="Android app"></a><br>
-<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.0/Zantexa.Link-2.5.0-full.apk"><img src="https://img.shields.io/badge/Full_app-.apk-1b8a4c?style=for-the-badge" alt="Android full app"></a><br>
+<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.1/Zantexa.Link-2.5.1.apk"><img src="https://img.shields.io/badge/Phone_app-.apk-3ddc84?style=for-the-badge" alt="Android app"></a><br>
+<a href="https://github.com/zantexaofficial/Zantexa-Link-Desktop/releases/download/v2.5.1/Zantexa.Link-2.5.1-full.apk"><img src="https://img.shields.io/badge/Full_app-.apk-1b8a4c?style=for-the-badge" alt="Android full app"></a><br>
 <sub>The full app adds notifications, texts and Accessibility; the computer can install it for you over wireless debugging</sub>
 
 </td>
@@ -674,8 +674,8 @@ npm start                       # run from source
 npm run dist && npm run dmg     # build Zantexa Link.app and Zantexa Link-<version>-<arch>.dmg in mac/dist/
 ```
 
-The disk image is named after the app inside it: `Zantexa Link-2.5.0-arm64.dmg` for Apple Silicon,
-`Zantexa Link-2.5.0-x64.dmg` for Intel. Keep those names on a release: the in-app updater picks the
+The disk image is named after the app inside it: `Zantexa Link-2.5.1-arm64.dmg` for Apple Silicon,
+`Zantexa Link-2.5.1-x64.dmg` for Intel. Keep those names on a release: the in-app updater picks the
 one for each Mac by them.
 
 By default, `npm run dist` targets the Mac's current architecture. To build an Intel
