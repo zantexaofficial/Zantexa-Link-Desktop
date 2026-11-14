@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; media-src 'self' blob:">
+  <title>Classroom screen</title>
+  <link rel="stylesheet" href="classroom-student.css">
+</head>
+<body>
+  <h1 id="heading">Classroom</h1>
+  <p id="status" role="status" aria-live="polite">Waiting for the teacher to share the screen…</p>
+  <video id="screen" autoplay playsinline controls hidden></video>
+  <section id="files-section" aria-label="Files shared by the teacher" hidden>
+    <h2>Files from the teacher</h2>
+    <div id="files"></div>
+  </section>
+  <button id="leave" type="button">Leave class</button>
+  <script src="classroom-file-transfer.js" defer></script>
+  <script src="classroom-view.js" defer></script>
+</body>
+</html>

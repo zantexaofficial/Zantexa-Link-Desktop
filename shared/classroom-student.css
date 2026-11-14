@@ -1,0 +1,10 @@
+:root { color-scheme: light dark; font: 16px system-ui, sans-serif; }
+body { max-width: 760px; margin: 40px auto; padding: 0 20px; }
+input, button { font: inherit; padding: 10px 12px; margin: 5px 0; }
+input { box-sizing: border-box; width: 100%; }
+button { cursor: pointer; }
+video { width: 100%; max-height: 75vh; background: #111; }
+section { margin: 24px 0; }
+#files a { display: block; margin: 8px 0; }
+[hidden] { display: none !important; }
+#status { min-height: 1.5em; }

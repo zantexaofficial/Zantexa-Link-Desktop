@@ -358,6 +358,13 @@ class Hub extends EventEmitter {
   _makeBus() {
     return {
       on: (type, fn) => addTo(this._busHandlers, type, fn),
+      off: (type, fn) => {
+        const handlers = this._busHandlers.get(type);
+        if (!handlers) return;
+        const index = handlers.indexOf(fn);
+        if (index >= 0) handlers.splice(index, 1);
+        if (!handlers.length) this._busHandlers.delete(type);
+      },
       onPeer: (event, fn) => addTo(this._peerHandlers, event, fn),
       send: (peerId, msg) => {
         const s = this.sessions.get(peerId);

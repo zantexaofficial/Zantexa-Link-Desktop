@@ -54,6 +54,7 @@ app.setPath('userData', process.env.MACSHARE_PROFILE || path.join(app.getPath('a
 require('../shared/applog.js').start(app); // console.* and crashes into the log folder, both apps
 // Multi-device switched on (multi.js, docs/multi-device.md): mesh/main.js runs instead of everything below.
 if (require('./multi').on()) return void require('./mesh/main.js');
+require('../shared/classroom-app.js').install({ WebSocketServer: require('ws').WebSocketServer });
 if (!app.requestSingleInstanceLock()) {
   app.quit();
   process.exit(0);

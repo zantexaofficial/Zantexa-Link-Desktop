@@ -17,6 +17,16 @@ const ACTIONS = [
 
 const api = {
   getState: () => ipcRenderer.invoke('getState'),
+  classroomState: () => ipcRenderer.invoke('classroomState'),
+  classroomStart: () => ipcRenderer.invoke('classroomStart'),
+  classroomStop: () => ipcRenderer.invoke('classroomStop'),
+  classroomDisplays: () => ipcRenderer.invoke('classroomDisplays'),
+  classroomShare: (id) => ipcRenderer.invoke('classroomShare', id),
+  classroomShareFiles: () => ipcRenderer.invoke('classroomShareFiles'),
+  classroomStopShare: () => ipcRenderer.invoke('classroomStopShare'),
+  classroomDecide: (id, accept) => ipcRenderer.invoke('classroomDecide', id, accept),
+  classroomJoin: (address, code) => ipcRenderer.invoke('classroomJoin', address, code),
+  onClassroom: (fn) => ipcRenderer.on('classroom-state', (_e, s) => fn(s)),
   phoneAssets: () => ipcRenderer.invoke('phoneAssets'),
   onState: (fn) => ipcRenderer.on('state', (_e, s) => fn(s)),
   onShowUpdate: (fn) => ipcRenderer.on('show-update', () => fn()),

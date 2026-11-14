@@ -6,6 +6,18 @@ const call = (name) => (...args) => ipcRenderer.invoke(name, ...args);
 
 contextBridge.exposeInMainWorld('macshare', {
   getState: call('getState'),
+  classroomState: call('classroomState'),
+  classroomStart: call('classroomStart'),
+  classroomStop: call('classroomStop'),
+  classroomDisplays: call('classroomDisplays'),
+  classroomShare: call('classroomShare'),
+  classroomShareFiles: call('classroomShareFiles'),
+  classroomStopShare: call('classroomStopShare'),
+  classroomDecide: call('classroomDecide'),
+  classroomJoin: call('classroomJoin'),
+  classroomJoinPeer: call('classroomJoinPeer'),
+  classroomLeave: call('classroomLeave'),
+  onClassroom: (fn) => ipcRenderer.on('classroom-state', (_e, s) => fn(s)),
   onState: (fn) => ipcRenderer.on('state', (_e, s) => fn(s)),
   onShowUpdate: (fn) => ipcRenderer.on('show-update', () => fn()),
   onGo: (fn) => ipcRenderer.on('go', (_e, tab) => fn(tab)),

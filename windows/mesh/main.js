@@ -167,6 +167,7 @@ function start() {
   links = new LinkManager({ device, resolveAddress: (macId) => discovery.get(macId) });
   mesh = new Mesh({ selfId: device.id });
   hub = new Hub({ device, links, mesh });
+  require('../../shared/classroom-mesh-app.js').install({ hub, selfId: device.id, selfName: device.name });
   link = hub.facade;
   // Overview's controls of the selected device (a computer or a phone), and this computer's for it.
   const { DevCtl } = require('../../shared/devctl.js');

@@ -311,6 +311,14 @@ Pair as many computers and phones as you like. **Switch** moves the session to a
 device nearby, **Take over** claims one that's busy with someone else, and **Disconnect** lets go.
 All from the Overview, the menu bar or the tray.
 
+## 🏫 Classroom screen sharing
+
+Use [Classroom](docs/classroom.md) for a teacher-led class: students request access, the teacher
+accepts them, then the teacher can share one screen and selected files with the class. In
+**Multi-device** mode it uses
+the connected Zantexa Link apps, so the computers need not be on the same Wi-Fi; direct IP reachability
+is still required for screen video. Standard one-to-one mode keeps the same-network option.
+
 ## 🕸 Zantexa Link Mesh: every device at once
 
 <p align="center">

@@ -509,6 +509,7 @@ app.whenReady().then(() => {
   links.on('change', pushState);
   links.on('request', showWindow);
   hub = new Hub({ device: { id: id.macId, name: id.macName }, links, mesh, server, pairing });
+  require('../../shared/classroom-mesh-app.js').install({ hub, selfId: id.macId, selfName: id.macName });
   hub.on('change', pushState);
   // Joining everyone (autojoin.js, shared/intro.js): the devices a connected device knows are linked by themselves.
   autoJoin = new AutoJoin({
