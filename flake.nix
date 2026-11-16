@@ -27,7 +27,7 @@
         rec {
           zantexaLink = pkgs.stdenv.mkDerivation rec {
             pname = "zantexa-link";
-            version = "2.6.0";
+            version = "2.5.2";
 
             src = self;
 
