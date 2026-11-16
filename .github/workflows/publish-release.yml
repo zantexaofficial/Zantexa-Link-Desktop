@@ -39,6 +39,18 @@ jobs:
             [[ "$is_draft" == "true" ]] || { echo "::error::Release $TAG is already public; use a new version tag"; exit 1; }
           fi
 
+      - name: Create the release draft
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+          VERSION: ${{ github.ref_name }}
+        run: |
+          VERSION="${VERSION#v}"
+          if ! gh release view "$TAG" >/dev/null 2>&1; then
+            gh release create "$TAG" --draft --target "$GITHUB_SHA" \
+              --title "Zantexa Link $VERSION" --generate-notes
+          fi
+
   windows:
     needs: prepare
     uses: ./.github/workflows/build-windows.yml
