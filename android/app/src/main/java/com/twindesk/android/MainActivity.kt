@@ -143,6 +143,7 @@ private enum class Tab(val title: String, val icon: ImageVector, val colors: Lis
     Rezume("ReZume", Ico.rezume, grad(0xFF64D2FF, 0xFF0A84FF), "Share"),
     Sound("Sound", Ico.audio, grad(0xFFFF6482, 0xFFFF2D55), "More"),
     Camera("Camera", Ico.camera, grad(0xFFBF5AF2, 0xFF8944AB), "More"),
+    Classroom("Classroom", Ico.classroom, grad(0xFFFF9F0A, 0xFFC36A00), "More"),
     General("General", Ico.general, grad(0xFFAEAEB2, 0xFF636366), "bottom"),
     About("About", Ico.about, grad(0xFF64D2FF, 0xFF0A84FF), "bottom"),
 }
@@ -366,6 +367,7 @@ private fun Page(core: Core, v: Int, tab: Tab, modifier: Modifier) {
                 Tab.Rezume -> RezumePage(core, v)
                 Tab.Sound -> SoundPage(core, v)
                 Tab.Camera -> CameraPage(core, v)
+                Tab.Classroom -> ClassroomPage()
                 Tab.General -> GeneralPage(core, v)
                 Tab.About -> AboutPage(core, v)
             }
@@ -384,6 +386,86 @@ private fun Secondary(label: String, onClick: () -> Unit) = OutlinedButton(onCli
 private fun NotConnected(core: Core, v: Int) {
     @Suppress("UNUSED_EXPRESSION") v // redraw on every Core change (Compose skips unread parameters)
     Note("Not connected. Connect to ${them(core)} on the Overview page.", "warn")
+}
+
+@Composable
+private fun ClassroomPage() {
+    val ctx = LocalContext.current
+    var address by rememberSaveable { mutableStateOf("") }
+    var code by rememberSaveable { mutableStateOf("") }
+    var name by rememberSaveable { mutableStateOf("") }
+    var error by rememberSaveable { mutableStateOf("") }
+    PageHead("Classroom", "Join a teacher’s classroom from this phone.")
+    Note("The teacher must start a LAN classroom on a computer. Connect this phone to the same Wi-Fi or hotspot.")
+    MacCard("Join as a student") {
+        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+            OutlinedTextField(
+                address,
+                { address = it; error = "" },
+                label = { Text("Teacher address and port") },
+                placeholder = { Text("192.168.1.20:43157", color = pal.faint) },
+                singleLine = true,
+                modifier = Modifier.fillMaxWidth(),
+                textStyle = androidx.compose.ui.text.TextStyle(fontSize = 15.sp, color = pal.text),
+                shape = RoundedCornerShape(8.dp),
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Uri),
+            )
+            OutlinedTextField(
+                code,
+                { code = it.filter(Char::isDigit).take(6); error = "" },
+                label = { Text("6-digit class code") },
+                singleLine = true,
+                modifier = Modifier.fillMaxWidth(),
+                textStyle = androidx.compose.ui.text.TextStyle(fontSize = 15.sp, color = pal.text),
+                shape = RoundedCornerShape(8.dp),
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.NumberPassword),
+            )
+            OutlinedTextField(
+                name,
+                { name = it.take(48); error = "" },
+                label = { Text("Your name") },
+                singleLine = true,
+                modifier = Modifier.fillMaxWidth(),
+                textStyle = androidx.compose.ui.text.TextStyle(fontSize = 15.sp, color = pal.text),
+                shape = RoundedCornerShape(8.dp),
+            )
+            if (error.isNotEmpty()) Note(error, "bad")
+            Primary("Open classroom") {
+                val match = Regex("""^(\d{1,3}(?:\.\d{1,3}){3}):(\d{1,5})$""").matchEntire(address.trim())
+                val ip = match?.groupValues?.get(1)?.split(".")?.mapNotNull { it.toIntOrNull() }.orEmpty()
+                val port = match?.groupValues?.get(2)?.toIntOrNull()
+                val privateIp = ip.size == 4 && ip.all { it in 0..255 } && (
+                    ip[0] == 10 ||
+                        (ip[0] == 192 && ip[1] == 168) ||
+                        (ip[0] == 172 && ip[1] in 16..31) ||
+                        (ip[0] == 127 && ip[1] == 0 && ip[2] == 0 && ip[3] == 1)
+                    )
+                when {
+                    !privateIp || port == null || port !in 1..65535 ->
+                        error = "Enter the private-network address and port shown on the teacher’s Classroom page."
+                    !Regex("""^\d{6}$""").matches(code.trim()) ->
+                        error = "Enter the six-digit room code shown by the teacher."
+                    name.isBlank() -> error = "Enter your name so the teacher can approve your request."
+                    else -> {
+                        val uri = Uri.Builder()
+                            .scheme("http")
+                            .encodedAuthority(address.trim())
+                            .path("/")
+                            .appendQueryParameter("code", code.trim())
+                            .appendQueryParameter("name", name.trim())
+                            .build()
+                        try {
+                            ctx.startActivity(Intent(Intent.ACTION_VIEW, uri))
+                            error = ""
+                        } catch (e: android.content.ActivityNotFoundException) {
+                            error = "No browser is available to open the teacher’s classroom."
+                        }
+                    }
+                }
+            }
+        }
+    }
+    Note("The teacher reviews your join request. Once accepted, the class screen and shared files appear in the browser.")
 }
 
 // ---- Overview ----

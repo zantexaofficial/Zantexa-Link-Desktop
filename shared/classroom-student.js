@@ -10,8 +10,11 @@
   const filesSection = document.getElementById('files-section');
   const files = document.getElementById('files');
   const fileReceiver = new window.ClassroomFileTransfer.Receiver();
-  const presetCode = new URLSearchParams(location.search).get('code');
+  const params = new URLSearchParams(location.search);
+  const presetCode = params.get('code');
+  const presetName = params.get('name');
   if (/^\d{6}$/.test(presetCode || '')) code.value = presetCode;
+  if (presetName && presetName.length <= 48) name.value = presetName;
   let socket = null;
   let pc = null;
   let pendingIce = [];

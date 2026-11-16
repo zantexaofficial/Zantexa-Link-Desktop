@@ -47,6 +47,11 @@ HTTP page and room code are not encrypted in transit, so use it only on a truste
 Teacher-shared files use the same direct WebRTC connection as the screen and are limited to 100 MB
 each. Only currently approved students receive them, and each student chooses whether to save.
 
+The Android app provides **Classroom** under **More** for students. Enter the teacher's displayed
+private-network address, room code, and your name; the app opens the classroom page in a browser,
+where the teacher can approve the request and share the screen and files. Android does not host
+teacher classrooms.
+
 ## Privacy
 
 In Multi-device mode, room requests and signaling travel over the authenticated Zantexa Link

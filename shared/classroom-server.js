@@ -75,10 +75,26 @@ class ClassroomServer extends EventEmitter {
       wss.handleUpgrade(req, socket, head, (ws) => wss.emit('connection', ws, req));
     });
     wss.on('connection', (ws, req) => this._connect(ws, req));
-    await new Promise((resolve, reject) => {
-      const onError = (err) => {
+    try {
+      await this._listen(server, this.port);
+    } catch (error) {
+      if (error.code !== 'EADDRINUSE' || this.port === 0) throw error;
+      console.warn(`[classroom] port ${this.port} is busy; trying an available port`);
+      await this._listen(server, 0);
+    }
+    this.httpServer = server;
+    this.wsServer = wss;
+    this.port = server.address().port;
+    this.addresses = localAddresses();
+    this._changed();
+    return this.view();
+  }
+
+  _listen(server, port) {
+    return new Promise((resolve, reject) => {
+      const onError = (error) => {
         server.off('listening', onListening);
-        reject(err);
+        reject(error);
       };
       const onListening = () => {
         server.off('error', onError);
@@ -86,14 +102,8 @@ class ClassroomServer extends EventEmitter {
       };
       server.once('error', onError);
       server.once('listening', onListening);
-      server.listen(this.port, this.host);
+      server.listen(port, this.host);
     });
-    this.httpServer = server;
-    this.wsServer = wss;
-    this.port = server.address().port;
-    this.addresses = localAddresses();
-    this._changed();
-    return this.view();
   }
 
   _http(req, res) {

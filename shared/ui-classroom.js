@@ -17,7 +17,13 @@ UI.tab({
     const error = UI.note('bad', '');
     const start = UI.button('Start class', async () => {
       start.disabled = true;
-      try { await api.classroomStart(); } catch (e) { error.set(e.message || 'Could not start the classroom.'); }
+      try {
+        const state = await api.classroomStart();
+        if (!state || state.running !== true) throw new Error('The classroom server did not start.');
+      } catch (e) {
+        console.error('[classroom] could not start:', e);
+        error.set(e.message || 'Could not start the classroom.');
+      }
       finally { start.disabled = false; }
     }, 'small primary');
     const stop = UI.button('End class', async () => {

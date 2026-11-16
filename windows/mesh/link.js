@@ -340,7 +340,14 @@ class Link {
       case T.PAIR_CANCEL: return this._pairFailed('Pairing was cancelled on {name}.');
       case T.WELCOME: return this._onWelcome(msg);
       case T.ERROR: return this._onError(msg);
-      case T.PING: return this.authed && ws.readyState === WebSocket.OPEN && ws.send(JSON.stringify({ t: T.PONG, ts: msg.ts }));
+      case T.PING: {
+        if (!this.authed || ws.readyState !== WebSocket.OPEN) return;
+        const now = Date.now();
+        ws.lastTx = now;
+        this.lastTx = now;
+        ws.send(JSON.stringify({ t: T.PONG, ts: msg.ts }));
+        return;
+      }
       case T.PONG:
         if (typeof msg.ts === 'number') this.status.rtt = Math.max(0, Date.now() - msg.ts);
         return this._changed();
@@ -541,6 +548,7 @@ class Link {
       } else if (ws.readyState === WebSocket.OPEN && (busy ? now - (ws.lastPing || 0) >= P.PING_MS : now - (ws.lastTx || 0) >= P.IDLE_PING_MS)) {
         ws.lastPing = now;
         ws.lastTx = now;
+        if (ws === this.ws) this.lastTx = now;
         ws.send(JSON.stringify({ t: T.PING, ts: now }));
       }
     }

@@ -182,7 +182,12 @@ class Server extends EventEmitter {
       return this.fail(ctx, P.E.BAD_MESSAGE, `"${msg.t}" is not allowed before welcome`);
     }
 
-    if (msg.t === P.T.PING) return this.send(ctx, { t: P.T.PONG, ts: msg.ts });
+    if (msg.t === P.T.PING) {
+      const now = this._now();
+      ctx.lastTx = now;
+      if (ctx.ws && ctx.ws.readyState === ctx.ws.OPEN) ctx.ws.lastTx = now;
+      return this.send(ctx, { t: P.T.PONG, ts: msg.ts });
+    }
     if (msg.t === P.T.BYE) { // Disconnect there: nothing to wait for
       ctx.released = true;
       if (ctx.alt) { // the whole session goes, its fallback path too

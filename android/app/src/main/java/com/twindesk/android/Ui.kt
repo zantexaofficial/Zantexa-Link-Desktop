@@ -124,6 +124,7 @@ object Ico {
     val camera = lineIcon("camera", "M2.5 6h10v8h-10z M12.5 8.5l5-2.5v8l-5-2.5")
     val photo = lineIcon("photo", "M3 4.5h14v11H3z M3 13l4-4 3.5 3.5 2-2L17 14.5 M12.5 7.5h.1")
     val folder = lineIcon("folder", "M2.5 5h5.5l1.5 2h8v9.5h-15z")
+    val classroom = lineIcon("classroom", "M3 3.5h14v10H3z M6 6.5h3 M6 9h8 M8 17h4 M10 13.5v3.5")
 }
 
 // A sidebar tile: the icon in white on its section's gradient (the Mac's `.tile`).
